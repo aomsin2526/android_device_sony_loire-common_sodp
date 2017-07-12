@@ -157,7 +157,7 @@ LOCAL_C_INCLUDES += \
 LOCAL_SHARED_LIBRARIES := liblog libhardware libutils libcutils libdl libsync
 LOCAL_SHARED_LIBRARIES += libmmcamera_interface libmmjpeg_interface libui libcamera_metadata
 LOCAL_SHARED_LIBRARIES += libqdMetaData libqservice libbinder
-LOCAL_SHARED_LIBRARIES += libcutils libdl libhal_dbg
+LOCAL_SHARED_LIBRARIES += libbase libcutils libdl libhal_dbg
 ifeq ($(IS_QC_BOKEH_SUPPORTED),true)
 LOCAL_SHARED_LIBRARIES += libdualcameraddm
 LOCAL_CFLAGS += -DENABLE_QC_BOKEH
