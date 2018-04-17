@@ -19,6 +19,7 @@ allow netmgrd netmgr_data_file:dir rw_dir_perms;
 allow netmgrd netmgr_data_file:file create_file_perms;
 allow netmgrd netmgrd_socket:dir w_dir_perms;
 allow netmgrd netmgrd_socket:sock_file create_file_perms;
+allow netmgrd netutils_wrapper:process sigkill;
 allow netmgrd proc_net:file rw_file_perms;
 allow netmgrd self:capability { net_admin setgid setpcap setuid };
 allow netmgrd self:netlink_generic_socket create_socket_perms_no_ioctl;
