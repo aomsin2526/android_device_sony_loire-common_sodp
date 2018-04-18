@@ -54,7 +54,7 @@ TARGET_KERNEL_VERSION := 4.9
 
 # Kernel configurations
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom printk.devkmsg=on msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.usbconfigfs=true
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom printk.devkmsg=on msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci cgroup.memory=nokmem lpm_levels.sleep_disabled=1 androidboot.usbconfigfs=true
 BOARD_KERNEL_BASE := 0x20000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
