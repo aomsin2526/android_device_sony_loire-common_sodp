@@ -181,6 +181,11 @@ ifneq (,$(filter msm8952 msm8937_32go-userdebug, $(TARGET_BOARD_PLATFORM)))
 LOCAL_CFLAGS += -DSUPPORT_ONLY_HAL3
 endif
 
+ifeq ($(TARGET_USES_CASH_EXTENSION), true)
+LOCAL_SHARED_LIBRARIES += libcashctl
+LOCAL_CFLAGS += -DTARGET_HAS_CASH
+endif
+
 LOCAL_STATIC_LIBRARIES := android.hardware.camera.common@1.0-helper
 
 
