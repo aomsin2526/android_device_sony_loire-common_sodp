@@ -107,6 +107,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true \
     ro.opengles.version=196610
 
+# Disable buffer age (b/74534157)
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.hwui.use_buffer_age=false
+
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.calls.on.ims=1 \
