@@ -115,6 +115,7 @@ TARGET_USES_MKE2FS := true
 TARGET_NO_RPC := true
 
 # HIDL
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(PLATFORM_PATH)/framework_manifest.xml
 DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
 DEVICE_MANIFEST_FILE += $(PLATFORM_PATH)/manifest-lineage.xml
 DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
