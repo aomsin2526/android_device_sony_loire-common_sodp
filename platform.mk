@@ -287,6 +287,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SimDetect
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
 # Telephony
 PRODUCT_PACKAGES += \
     telephony-ext
