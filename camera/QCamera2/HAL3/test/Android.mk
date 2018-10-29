@@ -13,8 +13,7 @@ else
     LOCAL_CFLAGS += -DCAMERA_CHIPSET_8937
 endif
 
-LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
-LOCAL_C_INCLUDES+= $(kernel_includes)
+LOCAL_HEADER_LIBRARIES := generated_kernel_headers
 
 LOCAL_C_INCLUDES += \
     $(LOCAL_PATH)/../ \
@@ -22,7 +21,7 @@ LOCAL_C_INCLUDES += \
     $(call project-path-for,qcom-media)/libstagefrighthw \
     $(call project-path-for,qcom-media)/mm-core/inc
 
-LOCAL_HEADER_LIBRARIES := libhardware_headers
+LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libbinder_headers
 LOCAL_HEADER_LIBRARIES += libandroid_sensor_headers
 
