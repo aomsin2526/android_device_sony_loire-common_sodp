@@ -20,6 +20,7 @@ genfscon proc /sys/kernel/sched_window_stats_policy   u:object_r:proc_kernel_sch
 # debugfs
 genfscon debugfs /kgsl/proc                           u:object_r:debugfs_kgsl:s0
 genfscon debugfs /rmt_storage                         u:object_r:debugfs_rmt_storage:s0
+genfscon debugfs /rpm_stats                           u:object_r:debugfs_rpm:s0
 
 # sysfs
 genfscon sysfs /bus/msm_subsys                                          u:object_r:sysfs_msm_subsys:s0
