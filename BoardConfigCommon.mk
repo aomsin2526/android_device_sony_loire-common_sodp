@@ -115,9 +115,6 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
 
-# Extended Filesystem Support
-TARGET_EXFAT_DRIVER := exfat
-
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
 
