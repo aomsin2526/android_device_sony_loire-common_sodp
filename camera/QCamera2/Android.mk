@@ -177,6 +177,9 @@ ifeq ($(TARGET_HAS_LOW_RAM), true)
 LOCAL_CFLAGS += -DHAS_LOW_RAM
 endif
 
+ifneq (,$(filter msm8937_32go-userdebug, $(TARGET_BOARD_PLATFORM)))
+LOCAL_CFLAGS += -DSUPPORT_ONLY_HAL3
+endif
 
 LOCAL_STATIC_LIBRARIES := android.hardware.camera.common@1.0-helper
 
