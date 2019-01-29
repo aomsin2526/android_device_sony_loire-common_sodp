@@ -13,7 +13,7 @@ LOCAL_CFLAGS += -Wall -Wextra -Werror -Wno-unused-parameter
 
 LOCAL_HEADER_LIBRARIES += generated_kernel_headers
 
-LIB2D_ROTATION=true
+LIB2D_ROTATION=false
 
 LOCAL_C_INCLUDES += \
     $(LOCAL_PATH)/inc \
