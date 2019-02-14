@@ -151,6 +151,8 @@ on enable-low-power
     # Set allocstall_threshold to 0
     write /sys/module/vmpressure/parameters/allocstall_threshold 0
 
+    write /proc/sys/vm/watermark_scale_factor 1
+
     start qcom-post-boot
 
     # Set perfd properties
