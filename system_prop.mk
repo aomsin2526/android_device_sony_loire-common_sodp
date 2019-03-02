@@ -53,8 +53,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.cne.feature=1 \
-    persist.cne.rat.wlan.chip.oem=nqc
+    persist.vendor.cne.feature=1 \
+    persist.vendor.cne.rat.wlan.chip.oem=nqc
 
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
