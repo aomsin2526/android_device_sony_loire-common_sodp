@@ -470,16 +470,6 @@ service vendor.charger /system/bin/charger
     capabilities SYS_BOOT
     seclabel u:r:charger:s0
 
-service vendor.cnd /vendor/bin/cnd
-    class main
-    user system
-    group system wifi inet radio wakelock net_admin
-
-service vendor.dpmQmiMgr /vendor/bin/dpmQmiMgr
-    class main
-    user system
-    group system
-
 service vendor.ims_rtp_daemon /vendor/bin/ims_rtp_daemon
     class main
     user radio
