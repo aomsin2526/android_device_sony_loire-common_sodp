@@ -11,8 +11,6 @@ binder_call(netmgrd, netd)
 qmux_socket(netmgrd)
 wakelock_use(netmgrd)
 
-unix_socket_connect(netmgrd, netd, netd)
-
 get_prop(netmgrd, hwservicemanager_prop)
 set_prop(netmgrd, vendor_net_radio_prop)
 

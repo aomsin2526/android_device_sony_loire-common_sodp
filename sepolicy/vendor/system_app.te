@@ -1,4 +1,2 @@
-unix_socket_connect(system_app, netd, netd)
-
 #============= system_app ==============
 allow system_app self:netlink_kobject_uevent_socket { bind create read setopt };
