@@ -61,6 +61,7 @@ type sysfs_camera, sysfs_type, fs_type;
 type sysfs_graphics, sysfs_type, fs_type;
 type sysfs_irq, sysfs_type, fs_type;
 type sysfs_kgsl, sysfs_type, fs_type;
+type sysfs_kgsl_proc, sysfs_type, fs_type;
 type sysfs_mdss_mdp_caps, sysfs_type, fs_type;
 type sysfs_memory, sysfs_type, fs_type;
 type sysfs_mmc, sysfs_type, fs_type;
