@@ -191,8 +191,8 @@ WPA_SUPPLICANT_VERSION      := VER_0_8_X
 # SELinux
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := $(PLATFORM_PATH)/sepolicy/public
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR := $(PLATFORM_PATH)/sepolicy/private
-BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
-BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy-lineage/vendor
+BOARD_VENDOR_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
+BOARD_VENDOR_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy-lineage/vendor
 
 # Shims
 TARGET_LD_SHIM_LIBS := /vendor/lib/hw/camera.vendor.qcom.so|libshim_camera.so
