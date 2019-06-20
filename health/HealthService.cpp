@@ -51,7 +51,7 @@ static CycleCountBackupRestore ccBackupRestoreBMS(
     8, kCycleCountsBins, "/persist/battery/qcom_cycle_counts_bins");
 static LearnedCapacityBackupRestore lcBackupRestore;
 
-#define EMMC_DIR "/sys/devices/soc/7824900.sdhci"
+#define EMMC_DIR "/sys/devices/platform/soc/7824900.sdhci"
 const std::string kEmmcHealthEol{EMMC_DIR "/health/eol"};
 const std::string kEmmcHealthLifetimeA{EMMC_DIR "/health/lifetimeA"};
 const std::string kEmmcHealthLifetimeB{EMMC_DIR "/health/lifetimeB"};

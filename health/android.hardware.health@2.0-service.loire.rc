@@ -4,12 +4,12 @@ on fs
 
 on early-boot
     # Health HAL needs to be able to RW
-    chown system system /sys/devices/soc/qpnp-fg-17/cycle_counts_bins
-    chown system system /sys/devices/soc/qpnp-fg-17/power_supply/bms/charge_full
+    chown system system /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/cycle_counts_bins
+    chown system system /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/power_supply/bms/charge_full
 
     # HardwareInfo needs to be able to read CC bins and charge_full
-    chmod 644 /sys/devices/soc/qpnp-fg-17/cycle_counts_bins
-    chmod 644 /sys/devices/soc/qpnp-fg-17/power_supply/bms/charge_full
+    chmod 644 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/cycle_counts_bins
+    chmod 644 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/power_supply/bms/charge_full
 
 service vendor.health-hal-2-0 /vendor/bin/hw/android.hardware.health@2.0-service.loire
     class hal

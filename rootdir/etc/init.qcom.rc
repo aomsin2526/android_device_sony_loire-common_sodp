@@ -55,7 +55,7 @@ on init
     # Avoid long waits for rcu grace periods
     write /sys/kernel/rcu_expedited 1
 
-    write /sys/devices/soc/7864900.sdhci/mmc_host/mmc1/clkgate_delay 1
+    write /sys/devices/platform/soc/7864900.sdhci/mmc_host/mmc1/clkgate_delay 1
 
     # Setup all the sub-system as related
     write /sys/bus/msm_subsys/devices/subsys0/restart_level RELATED
