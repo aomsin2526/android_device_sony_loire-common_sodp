@@ -122,6 +122,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     av.debug.disable.pers.cache=1 \
+    debug.stagefright.omx_default_rank=0 \
+    debug.stagefright.omx_default_rank.sw-audio=1 \
     media.aac_51_output_enabled=true \
     media.msm8956hw=1 \
     media.vpp.enable=true \
