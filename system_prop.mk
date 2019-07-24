@@ -130,6 +130,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=1 \
     debug.enable.sglscale=1 \
     debug.mdpcomp.logs=0 \
+    debug.sf.enable_gl_backpressure=1 \
     debug.sf.hw=1 \
     debug.sf.latch_unsignaled=1 \
     debug.sf.recomputecrop=0 \
