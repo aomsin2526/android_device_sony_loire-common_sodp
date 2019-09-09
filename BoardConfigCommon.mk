@@ -45,7 +45,6 @@ TARGET_BOOTLOADER_BOARD_NAME := msm8952
 TARGET_NO_BOOTLOADER := true
 
 # Kernel properties
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_SOURCE := kernel/sony/msm8956
 
 # Kernel configurations
