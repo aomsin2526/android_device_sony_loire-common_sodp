@@ -291,6 +291,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SimDetect
 
+# Shims
+PRODUCT_PACKAGES += libshim_camera
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 

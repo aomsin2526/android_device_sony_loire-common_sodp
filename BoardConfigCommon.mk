@@ -197,6 +197,9 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR := $(PLATFORM_PATH)/sepolicy/private
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy-lineage/vendor
 
+# Shims
+TARGET_LD_SHIM_LIBS := /vendor/lib/hw/camera.vendor.qcom.so|libshim_camera.so
+
 # Vendor SPL
 VENDOR_SECURITY_PATCH = "2018-09-01"
 
