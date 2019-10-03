@@ -186,6 +186,7 @@ WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/wlan/parameters/fwpath"
 WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/wlan/bcmdhd/fw_bcmdhd.bin"
 WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
+WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
 
 # SELinux
