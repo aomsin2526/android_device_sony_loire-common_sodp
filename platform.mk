@@ -189,14 +189,11 @@ PRODUCT_PACKAGES += \
 
 # IMS
 PRODUCT_PACKAGES += \
-    ims-ext-common_system \
+    ims-ext-common \
     ims_ext_common.xml \
     libbase_shim \
     libgui_shim \
     libui_shim
-
-PRODUCT_BOOT_JARS += \
-    ims-ext-common_system
 
 # Init
 PRODUCT_PACKAGES += \
