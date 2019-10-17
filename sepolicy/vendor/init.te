@@ -6,4 +6,5 @@ allow init {
     idd_root_dir 
     persist_file
 }:dir mounton;
+allow init system_file:file mounton;
 allow init tmpfs:lnk_file create;
