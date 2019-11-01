@@ -209,12 +209,6 @@
     <!-- Operating volatage for bluetooth controller. 0 by default-->
     <integer translatable="false" name="config_bluetooth_operating_voltage_mv">3300</integer>
 
-    <!-- Boolean indicating whether the wifi chipset supports background scanning mechanism -->
-    <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
-
-    <!-- Wifi driver supports batched scan -->
-    <bool translatable="false" name="config_wifi_batched_scan_supported">true</bool>
-
     <!-- Whether WiFi display is supported by this device.
          There are many prerequisites for this feature to work correctly.
          Here are a few of them:
@@ -344,7 +338,4 @@
 
     <!-- Disable rounded corners on windows to improve graphics performance -->
     <bool name="config_supportsRoundedCornersOnWindows">false</bool>
-
-    <!-- True if the firmware supports Wi-Fi link probing -->
-    <bool name="config_wifi_link_probing_supported">true</bool>
 </resources>
