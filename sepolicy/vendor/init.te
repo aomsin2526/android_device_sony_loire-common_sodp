@@ -7,4 +7,3 @@ allow init {
     persist_file
 }:dir mounton;
 allow init system_file:file mounton;
-allow init tmpfs:lnk_file create;
