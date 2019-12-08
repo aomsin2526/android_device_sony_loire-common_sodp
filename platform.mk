@@ -188,6 +188,7 @@ PRODUCT_BOOT_JARS += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.qcom.msim.sh \
     init.qcom.post_boot.sh \
     init.qcom.power.rc \
     init.qcom.rc \
