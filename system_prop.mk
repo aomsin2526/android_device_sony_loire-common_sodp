@@ -150,6 +150,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     rild.libargs=-d[SPACE]/dev/smd0 \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     ro.telephony.call_ring.multiple=false \
+    ro.telephony.use_old_mnc_mcc_format=true \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.rcs.supported=0 \
     persist.rild.nitz_long_ons_0="" \
