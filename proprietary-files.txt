@@ -42,7 +42,7 @@ vendor/lib64/libaudcal.so|7a70996b7207e6d9c2143ff3f7c6a02af9376a9a
 vendor/lib64/libaudioalsa.so|5a3d2400b25d073be45cc777a2dada281d9e9aa9
 
 # Bluetooth
-etc/firmware/BCM43xx.hcd:vendor/firmware/BCM4345C0.hcd
+system/etc/firmware/BCM43xx.hcd:vendor/firmware/BCM4345C0.hcd
 
 # Bluetooth (aptX) - from crosshatch - RQ1A.201205.003
 system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
@@ -169,11 +169,11 @@ vendor/firmware/cpp_firmware_v1_5_1.fw|f3f622ab29a560b170d0f2c6ddec14b933f2d476
 odm/lib/libmmcamera_imx300.so|76331636b229829b56e5a60eee480a867f61490f
 
 # CMN firmware
-etc/firmware/cmnlib.b00
-etc/firmware/cmnlib.b01
-etc/firmware/cmnlib.b02
-etc/firmware/cmnlib.b03
-etc/firmware/cmnlib.mdt
+system/etc/firmware/cmnlib.b00
+system/etc/firmware/cmnlib.b01
+system/etc/firmware/cmnlib.b02
+system/etc/firmware/cmnlib.b03
+system/etc/firmware/cmnlib.mdt
 
 # CNE - from daisy - QKQ1.191002.002
 product/lib64/com.quicinc.cne.api@1.0.so:system_ext/lib64/com.quicinc.cne.api@1.0.so|06764410022518f75a8e7fa1de35b7577cdbe8f9
@@ -384,21 +384,21 @@ product/lib64/libimsmedia_jni.so:system_ext/lib64/libimsmedia_jni.so|3540752cc36
 -product/priv-app/ims/ims.apk:system_ext/priv-app/ims/ims.apk|9c4ca91e0ec7a567d22251d7ca0640abf13fdd7b
 
 # IMS
-lib/com.qualcomm.qti.imscmservice@1.0.so:system_ext/lib/com.qualcomm.qti.imscmservice@1.0.so
-lib/lib-imscamera.so:system_ext/lib/lib-imscamera.so
-lib/lib-imsvideocodec.so:system_ext/lib/lib-imsvideocodec.so
-lib/lib-imsvtextutils.so:system_ext/lib/lib-imsvtextutils.so
-lib/lib-imsvtutils.so:system_ext/lib/lib-imsvtutils.so
-lib/librcc.so:system_ext/lib/librcc.so
-lib/vendor.qti.imsrtpservice@1.0.so:system_ext/lib/vendor.qti.imsrtpservice@1.0.so
-lib64/com.qualcomm.qti.imscmservice@1.0.so:system_ext/lib64/com.qualcomm.qti.imscmservice@1.0.so
-lib64/lib-imscamera.so:system_ext/lib64/lib-imscamera.so
-lib64/lib-imsvideocodec.so:system_ext/lib64/lib-imsvideocodec.so
-lib64/lib-imsvt.so:system_ext/lib64/lib-imsvt.so
-lib64/lib-imsvtextutils.so:system_ext/lib64/lib-imsvtextutils.so
-lib64/lib-imsvtutils.so:system_ext/lib64/lib-imsvtutils.so
-lib64/librcc.so:system_ext/lib64/librcc.so
-lib64/vendor.qti.imsrtpservice@1.0.so:system_ext/lib64/vendor.qti.imsrtpservice@1.0.so
+system/lib/com.qualcomm.qti.imscmservice@1.0.so:system_ext/lib/com.qualcomm.qti.imscmservice@1.0.so
+system/lib/lib-imscamera.so:system_ext/lib/lib-imscamera.so
+system/lib/lib-imsvideocodec.so:system_ext/lib/lib-imsvideocodec.so
+system/lib/lib-imsvtextutils.so:system_ext/lib/lib-imsvtextutils.so
+system/lib/lib-imsvtutils.so:system_ext/lib/lib-imsvtutils.so
+system/lib/librcc.so:system_ext/lib/librcc.so
+system/lib/vendor.qti.imsrtpservice@1.0.so:system_ext/lib/vendor.qti.imsrtpservice@1.0.so
+system/lib64/com.qualcomm.qti.imscmservice@1.0.so:system_ext/lib64/com.qualcomm.qti.imscmservice@1.0.so
+system/lib64/lib-imscamera.so:system_ext/lib64/lib-imscamera.so
+system/lib64/lib-imsvideocodec.so:system_ext/lib64/lib-imsvideocodec.so
+system/lib64/lib-imsvt.so:system_ext/lib64/lib-imsvt.so
+system/lib64/lib-imsvtextutils.so:system_ext/lib64/lib-imsvtextutils.so
+system/lib64/lib-imsvtutils.so:system_ext/lib64/lib-imsvtutils.so
+system/lib64/librcc.so:system_ext/lib64/librcc.so
+system/lib64/vendor.qti.imsrtpservice@1.0.so:system_ext/lib64/vendor.qti.imsrtpservice@1.0.so
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
@@ -467,23 +467,23 @@ vendor/lib64/libOmxWmaDec.so|36eaa580575d346714ef68e4a8dad51420e71b60
 vendor/lib64/libvpplibrary.so|89b49c112864bf0d33c07c78fb7750d4bd7eb663
 
 # Media firmware
-etc/firmware/venus.b00
-etc/firmware/venus.b01
-etc/firmware/venus.b02
-etc/firmware/venus.b03
-etc/firmware/venus.b04
-etc/firmware/venus.mbn
-etc/firmware/venus.mdt
-etc/firmware/venus-v1.b00
-etc/firmware/venus-v1.b01
-etc/firmware/venus-v1.b02
-etc/firmware/venus-v1.b03
-etc/firmware/venus-v1.b04
-etc/firmware/venus-v1.mbn
-etc/firmware/venus-v1.mdt
+system/etc/firmware/venus.b00
+system/etc/firmware/venus.b01
+system/etc/firmware/venus.b02
+system/etc/firmware/venus.b03
+system/etc/firmware/venus.b04
+system/etc/firmware/venus.mbn
+system/etc/firmware/venus.mdt
+system/etc/firmware/venus-v1.b00
+system/etc/firmware/venus-v1.b01
+system/etc/firmware/venus-v1.b02
+system/etc/firmware/venus-v1.b03
+system/etc/firmware/venus-v1.b04
+system/etc/firmware/venus-v1.mbn
+system/etc/firmware/venus-v1.mdt
 
 # NFC
-lib64/hw/libpn547_fw.so:vendor/lib/libpn547_fw.so
+system/lib64/hw/libpn547_fw.so:vendor/lib/libpn547_fw.so
 
 # Perf - from olive - V12.5.3.0.QCNMIXM
 vendor/bin/hw/vendor.qti.hardware.perf@2.0-service|2112f2d6d3a6b256257d0e400ef86148f5dfb115
@@ -515,10 +515,10 @@ vendor/lib/libprotobuf-c.so
 vendor/lib64/libprotobuf-c.so
 
 # QMI
-etc/permissions/qti_libpermissions.xml:system_ext/etc/permissions/qti_libpermissions.xml
-etc/permissions/qti_permissions.xml:system_ext/etc/permissions/qti_permissions.xml|6993660f18d05de4dd16bb9352beca45868d80ed
-lib/libdiag_system.so:system_ext/lib/libdiag_system.so
-lib64/libdiag_system.so:system_ext/lib64/libdiag_system.so
+system/etc/permissions/qti_libpermissions.xml:system_ext/etc/permissions/qti_libpermissions.xml
+system/etc/permissions/qti_permissions.xml:system_ext/etc/permissions/qti_permissions.xml|6993660f18d05de4dd16bb9352beca45868d80ed
+system/lib/libdiag_system.so:system_ext/lib/libdiag_system.so
+system/lib64/libdiag_system.so:system_ext/lib64/libdiag_system.so
 vendor/bin/irsc_util
 vendor/bin/mlog_qmi_service
 vendor/lib/libdiag.so
@@ -557,12 +557,12 @@ vendor/lib/libqmi_cci.so|a921e84ec500f7cfb7fe88a4ffba149581410a44
 vendor/lib64/libqmi_cci.so|411a074dc765fb263bec50531ce5c408dd72388f
 
 # RIL
--app/QtiTelephonyService/QtiTelephonyService.apk:system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
-etc/permissions/qcrilhook.xml:system_ext/etc/permissions/qcrilhook.xml
-etc/permissions/telephonyservice.xml:system_ext/etc/permissions/telephonyservice.xml
-framework/qcrilhook.jar:system_ext/framework/qcrilhook.jar
-framework/QtiTelephonyServicelibrary.jar:system_ext/framework/QtiTelephonyServicelibrary.jar
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+-system/app/QtiTelephonyService/QtiTelephonyService.apk:system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+system/etc/permissions/qcrilhook.xml:system_ext/etc/permissions/qcrilhook.xml
+system/etc/permissions/telephonyservice.xml:system_ext/etc/permissions/telephonyservice.xml
+system/framework/qcrilhook.jar:system_ext/framework/qcrilhook.jar
+system/framework/QtiTelephonyServicelibrary.jar:system_ext/framework/QtiTelephonyServicelibrary.jar
+-system/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 product/framework/qti-telephony-common.jar:system_ext/framework/qti-telephony-common.jar|b4d187700f279cdbd40e74b4c3be4504f10d8b29
 vendor/bin/ATFWD-daemon
 vendor/bin/netmgrd
@@ -611,7 +611,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
 # Secd
-lib64/vendor.semc.hardware.secd@1.0.so
+system/lib64/vendor.semc.hardware.secd@1.0.so
 vendor/bin/hw/vendor.semc.hardware.secd@1.0-service
 vendor/bin/secd
 vendor/etc/init/vendor.semc.hardware.secd@1.0-service.rc
@@ -635,51 +635,51 @@ vendor/lib64/libtee.so
 vendor/lib64/vendor.semc.hardware.secd@1.0_vendor.so
 
 # Security firmware
-etc/firmware/fidocrypto.b00
-etc/firmware/fidocrypto.b01
-etc/firmware/fidocrypto.b02
-etc/firmware/fidocrypto.b03
-etc/firmware/fidocrypto.mdt
-etc/firmware/tzattest.b00
-etc/firmware/tzattest.b01
-etc/firmware/tzattest.b02
-etc/firmware/tzattest.b03
-etc/firmware/tzattest.mdt
-etc/firmware/tzfingerprint.b00
-etc/firmware/tzfingerprint.b01
-etc/firmware/tzfingerprint.b02
-etc/firmware/tzfingerprint.b03
-etc/firmware/tzfingerprint.mdt
-etc/firmware/tzhdcp.b00
-etc/firmware/tzhdcp.b01
-etc/firmware/tzhdcp.b02
-etc/firmware/tzhdcp.b03
-etc/firmware/tzhdcp.mdt
-etc/firmware/tzlibasb.b00
-etc/firmware/tzlibasb.b01
-etc/firmware/tzlibasb.b02
-etc/firmware/tzlibasb.b03
-etc/firmware/tzlibasb.mdt
-etc/firmware/tzsuntory.b00
-etc/firmware/tzsuntory.b01
-etc/firmware/tzsuntory.b02
-etc/firmware/tzsuntory.b03
-etc/firmware/tzsuntory.mdt
-etc/firmware/tztpm.b00
-etc/firmware/tztpm.b01
-etc/firmware/tztpm.b02
-etc/firmware/tztpm.b03
-etc/firmware/tztpm.mdt
-etc/firmware/tzwidevine.b00
-etc/firmware/tzwidevine.b01
-etc/firmware/tzwidevine.b02
-etc/firmware/tzwidevine.b03
-etc/firmware/tzwidevine.mdt
-etc/firmware/tzwvcpybuf.b00
-etc/firmware/tzwvcpybuf.b01
-etc/firmware/tzwvcpybuf.b02
-etc/firmware/tzwvcpybuf.b03
-etc/firmware/tzwvcpybuf.mdt
+system/etc/firmware/fidocrypto.b00
+system/etc/firmware/fidocrypto.b01
+system/etc/firmware/fidocrypto.b02
+system/etc/firmware/fidocrypto.b03
+system/etc/firmware/fidocrypto.mdt
+system/etc/firmware/tzattest.b00
+system/etc/firmware/tzattest.b01
+system/etc/firmware/tzattest.b02
+system/etc/firmware/tzattest.b03
+system/etc/firmware/tzattest.mdt
+system/etc/firmware/tzfingerprint.b00
+system/etc/firmware/tzfingerprint.b01
+system/etc/firmware/tzfingerprint.b02
+system/etc/firmware/tzfingerprint.b03
+system/etc/firmware/tzfingerprint.mdt
+system/etc/firmware/tzhdcp.b00
+system/etc/firmware/tzhdcp.b01
+system/etc/firmware/tzhdcp.b02
+system/etc/firmware/tzhdcp.b03
+system/etc/firmware/tzhdcp.mdt
+system/etc/firmware/tzlibasb.b00
+system/etc/firmware/tzlibasb.b01
+system/etc/firmware/tzlibasb.b02
+system/etc/firmware/tzlibasb.b03
+system/etc/firmware/tzlibasb.mdt
+system/etc/firmware/tzsuntory.b00
+system/etc/firmware/tzsuntory.b01
+system/etc/firmware/tzsuntory.b02
+system/etc/firmware/tzsuntory.b03
+system/etc/firmware/tzsuntory.mdt
+system/etc/firmware/tztpm.b00
+system/etc/firmware/tztpm.b01
+system/etc/firmware/tztpm.b02
+system/etc/firmware/tztpm.b03
+system/etc/firmware/tztpm.mdt
+system/etc/firmware/tzwidevine.b00
+system/etc/firmware/tzwidevine.b01
+system/etc/firmware/tzwidevine.b02
+system/etc/firmware/tzwidevine.b03
+system/etc/firmware/tzwidevine.mdt
+system/etc/firmware/tzwvcpybuf.b00
+system/etc/firmware/tzwvcpybuf.b01
+system/etc/firmware/tzwvcpybuf.b02
+system/etc/firmware/tzwvcpybuf.b03
+system/etc/firmware/tzwvcpybuf.mdt
 
 # Sensors - from daisy - V11.0.21.0.QDLMIXM
 vendor/bin/sensors.qti|fa96c853b27dad6e7547ddc119a0718194626c9e
@@ -694,7 +694,7 @@ vendor/lib/sensors.ssc.so
 vendor/lib64/sensors.ssc.so
 
 # TA
-lib64/libtpm.so
+system/lib64/libtpm.so
 vendor/bin/hw/vendor.somc.hardware.miscta@1.0-service
 vendor/bin/sct_service
 vendor/bin/ta_qmi_service
@@ -727,5 +727,5 @@ vendor/lib/libwvhidl.so|f3af14a511e98ade5758088b3fba574c8ca6c5a4
 vendor/lib64/libprotobuf-cpp-lite-3.9.1.so|528adc63953fe9eb1176f1bacedd9d03b0f21e1e
 
 # WiFi
-etc/firmware/wlan/bcmdhd/fw_bcmdhd.bin:vendor/firmware/wlan/bcmdhd/fw_bcmdhd.bin
-etc/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin:vendor/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin
+system/etc/firmware/wlan/bcmdhd/fw_bcmdhd.bin:vendor/firmware/wlan/bcmdhd/fw_bcmdhd.bin
+system/etc/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin:vendor/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin
