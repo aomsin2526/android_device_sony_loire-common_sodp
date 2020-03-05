@@ -127,13 +127,30 @@ $(IMS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
 
-VULKAN_32_SYMLINK := $(TARGET_OUT_VENDOR)/lib/vulkan.msm8952.so
+EGL_LIBS := libEGL_adreno.so libGLESv2_adreno.so libq3dtools_adreno.so
+EGL_32_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/lib/,$(notdir $(EGL_LIBS)))
+$(EGL_32_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "EGL 32 lib link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+EGL_64_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/lib64/,$(notdir $(EGL_LIBS)))
+$(EGL_64_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "EGL 64 lib link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(EGL_32_SYMLINKS) $(EGL_64_SYMLINKS)
+
+VULKAN_32_SYMLINK := $(TARGET_OUT_VENDOR)/lib/vulkan.adreno.so
 $(VULKAN_32_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	@echo "Vulkan 32 lib symlink: $@"
 	@mkdir -p $(dir $@)
 	$(hide) ln -sf hw/$(notdir $@) $@
 
-VULKAN_64_SYMLINK := $(TARGET_OUT_VENDOR)/lib64/vulkan.msm8952.so
+VULKAN_64_SYMLINK := $(TARGET_OUT_VENDOR)/lib64/vulkan.adreno.so
 $(VULKAN_64_SYMLINK): $(LOCAL_INSTALLED_MODULE)
 	@echo "Vulkan 64 lib symlink: $@"
 	@mkdir -p $(dir $@)

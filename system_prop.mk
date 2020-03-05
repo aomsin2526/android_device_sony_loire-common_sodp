@@ -133,16 +133,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.demo.hdmirotationlock=false \
     persist.hwc.enable_vds=1 \
     persist.hwc.mdpcomp.enable=true \
+    ro.hardware.egl=adreno \
+    ro.hardware.vulkan=adreno \
     ro.opengles.version=196610 \
     vendor.display.disable_skip_validate=1 \
     vendor.display.disable_color_transform=1 \
     vendor.display.skip_extension_intf=1 \
     vendor.display.enable_default_color_mode=1 \
     vendor.gralloc.disable_ubwc=1
-
-# Disable buffer age (b/74534157)
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.hwui.use_buffer_age=false
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
