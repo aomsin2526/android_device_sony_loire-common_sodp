@@ -370,6 +370,24 @@ vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so|bb2c6f9dabeacf88ecd8a4210716664
 vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so|c551369158590ce5bd19c5c7817a3e29be82889c
 vendor/lib64/vendor.qti.latency@2.0.so|a65daa87e3fe935164d314f112c07d960b6d6c4f
 
+# Display (HDR) - from FP3 - REL-8901.4.A.0019.1-gms-edfd6a4e-user
+vendor/lib/libhdr_tm.so|04d3cc1e1c0f9b85ccbee1c86c913665d2fe02f2
+vendor/lib64/libhdr_tm.so|a1b9bbad12217e6b79951774801aa54be6460fd6
+
+# Display (SDM) - from FP3 - REL-8901.4.A.0019.1-gms-edfd6a4e-user
+vendor/lib/libscalar.so|c78e4b32170501fd85daa8804aaa54afbcb40dd2
+vendor/lib/libsdm-color.so|6384a5eef8062889cf9e34e6eea0026fbfca44e9
+vendor/lib/libsdm-diag.so|62e295e92a09eb07ee77966c775ef1b136198a5e
+-vendor/lib/libsdm-disp-vndapis.so|7bc8ae0bb731344312358edca4559a215dfa0f06
+vendor/lib/libsdmextension.so|34972380240e8448ede4c24dc702ea76e97d4cef
+vendor/lib/libtinyxml2_1.so|7410663300606be35e233783fb2c4969f66c9c0e
+vendor/lib64/libscalar.so|fb38a16b3c082a8cb861905c32dff71187dca2b7
+vendor/lib64/libsdm-color.so|d9bec7004ec8fd292bb0cd3388359448ca96bd23
+vendor/lib64/libsdm-diag.so|b6b6f2b602c2b19763d262a021ce6ee5562d7dc6
+-vendor/lib64/libsdm-disp-vndapis.so|8e92d1f17735c26658c17148da6e1882b5bc6fb0
+vendor/lib64/libsdmextension.so|4428ff01496cc0c07f623fb813eb8e0047df1ecc
+vendor/lib64/libtinyxml2_1.so|ff32deb110acb02cb5def5f3404f9064c1276483
+
 # DPM
 vendor/bin/dpmQmiMgr
 vendor/lib/com.qualcomm.qti.dpm.api@1.0_vendor.so
