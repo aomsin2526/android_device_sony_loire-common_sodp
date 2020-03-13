@@ -14,13 +14,15 @@ allow hal_perf_default cgroup:file r_file_perms;
 allow hal_perf_default latency_device:chr_file rw_file_perms;
 allow hal_perf_default mpctl_data_file:dir rw_dir_perms;
 allow hal_perf_default mpctl_data_file:file create_file_perms;
-allow hal_perf_default proc_kernel_sched:file rw_file_perms;
+allow hal_perf_default proc:file rw_file_perms;
 allow hal_perf_default sysfs_devices_system_cpu:file w_file_perms;
+allow hal_perf_default sysfs_kgsl:file rw_file_perms;
 allow hal_perf_default sysfs_msm_perf:dir search;
 allow hal_perf_default sysfs_msm_perf:file rw_file_perms;
+allow hal_perf_default sysfs_process_reclaim:dir r_dir_perms;
+allow hal_perf_default sysfs_process_reclaim:file rw_file_perms;
 allow hal_perf_default sysfs_msm_subsys:dir r_dir_perms;
 allow hal_perf_default sysfs_msm_subsys:file rw_file_perms;
-dontaudit hal_perf_default self:capability dac_override;
 r_dir_file(hal_perf_default, sysfs_graphics)
 r_dir_file(hal_perf_default, sysfs_kgsl)
 r_dir_file(hal_perf_default, sysfs_memory)

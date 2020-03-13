@@ -54,8 +54,6 @@ type persist_time_file, file_type;
 
 # /proc
 type proc_irq, fs_type, proc_type;
-type proc_kernel_sched, fs_type, proc_type;
-type proc_vm_swap, fs_type, proc_type;
 
 # /sys
 type sysfs_camera, sysfs_type, fs_type;
@@ -68,6 +66,7 @@ type sysfs_mmc, sysfs_type, fs_type;
 type sysfs_msm_perf, sysfs_type, fs_type;
 type sysfs_msm_subsys, sysfs_type, fs_type;
 type sysfs_power_management, sysfs_type, fs_type;
+type sysfs_process_reclaim, fs_type, sysfs_type;
 type sysfs_qns, sysfs_type, fs_type;
 type sysfs_rmtfs, sysfs_type, fs_type;
 type sysfs_smd_open_timeout, sysfs_type, fs_type;
