@@ -162,10 +162,6 @@ on post-fs-data
     # Create directory for voiceprint
     mkdir /data/misc/qvop 0771 system system
 
-    # Create folder for mm-qcamera-daemon
-    mkdir /data/misc/camera 0770 camera camera
-    mkdir /data/vendor/camera 0770 camera camera
-
     mkdir /data/media 0770 media_rw media_rw
     chown media_rw media_rw /data/media
 
@@ -312,12 +308,6 @@ on post-fs-data
     mkdir /dev/socket/scd 0755 system system
     mkdir /data/scd 0700 system system
 
-    # SONY: Camera
-    chown cameraserver camera /sys/devices/sony_camera_0/info
-    chmod 0770 /sys/devices/sony_camera_0/info
-    chown cameraserver camera /sys/devices/sony_camera_1/info
-    chmod 0770 /sys/devices/sony_camera_1/info
-
     # Sony IDD
     mkdir /idd/lost+found 0770 root root
     mkdir /idd/output 0755 oem_2987 oem_2987
@@ -447,16 +437,6 @@ on boot
     chown system system /persist/speccfg/submask
     chown system system /persist/speccfg/partition
 
-    # Cameralight
-    chown cameraserver system /sys/class/leds/led:flash_0/brightness
-    chown cameraserver system /sys/class/leds/led:flash_1/brightness
-    chown cameraserver system /sys/class/leds/led:torch_0/brightness
-    chown cameraserver system /sys/class/leds/led:torch_1/brightness
-    chown cameraserver system /sys/class/leds/led:switch/brightness
-    chown cameraserver system /sys/class/leds/led:switch/strobe
-    chown cameraserver system /sys/class/leds/led:switch/duration
-    chown cameraserver system /sys/class/leds/led:switch/fault_status
-
     # Cover mode
     chown system system /sys/devices/virtual/input/clearpad/cover_mode_enabled
     chown system system /sys/devices/virtual/input/clearpad/cover_win_bottom
@@ -465,12 +445,6 @@ on boot
     chown system system /sys/devices/virtual/input/clearpad/cover_win_top
 
 # Services begin here
-
-service vendor.qcamerasvr /vendor/bin/mm-qcamera-daemon
-    class late_start
-    user camera
-    group camera system inet input graphics
-    socket cammw_tintless stream 0660 camera camera
 
 service vendor.tad_static /vendor/bin/tad_static /dev/block/bootdevice/by-name/TA 0,16
     class core

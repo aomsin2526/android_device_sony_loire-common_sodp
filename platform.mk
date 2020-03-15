@@ -115,7 +115,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
-    camera.qcom \
     Snap \
     vendor.qti.hardware.camera.device@1.0
 
@@ -324,9 +323,6 @@ PRODUCT_PACKAGES += \
 # SimDetect
 PRODUCT_PACKAGES += \
     SimDetect
-
-# Shims
-PRODUCT_PACKAGES += libshim_camera
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)

@@ -36,8 +36,6 @@ genfscon sysfs /devices/platform/soc/soc:qcom,bcl/power_supply                  
 genfscon sysfs /devices/platform/soc/soc:qcom,cpubw                              u:object_r:sysfs_msm_subsys:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,gpubw                              u:object_r:sysfs_msm_subsys:s0
 genfscon sysfs /devices/soc0                                            u:object_r:sysfs_soc:s0
-genfscon sysfs /devices/sony_camera_0/info                              u:object_r:sysfs_camera:s0
-genfscon sysfs /devices/sony_camera_1/info                              u:object_r:sysfs_camera:s0
 genfscon sysfs /devices/virtual/graphics/fb0                            u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/virtual/graphics/fb1                            u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/virtual/rotator/mdss_rotator/caps               u:object_r:sysfs_graphics:s0

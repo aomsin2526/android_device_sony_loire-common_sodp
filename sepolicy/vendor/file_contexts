@@ -22,7 +22,6 @@
 /dev/video([0-9])+                              u:object_r:video_device:s0
 
 # dev socket nodes
-/dev/socket/cammw_tintless                      u:object_r:camera_somc_socket:s0
 /dev/socket/ims_datad                           u:object_r:ims_socket:s0
 /dev/socket/ims_qmid                            u:object_r:ims_socket:s0
 /dev/socket/msm_irqbalance                      u:object_r:irqbalance_socket:s0
@@ -75,7 +74,6 @@
 /(vendor|system/vendor)/bin/loc_launcher           u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/lowi-server            u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/mlog_qmi_service       u:object_r:mlog_qmi_service_exec:s0
-/(vendor|system/vendor)/bin/mm-qcamera-daemon      u:object_r:mm-qcamerad_exec:s0
 /(vendor|system/vendor)/bin/msm_irqbalance         u:object_r:irqbalance_exec:s0
 /(vendor|system/vendor)/bin/netmgrd                u:object_r:netmgrd_exec:s0
 /(vendor|system/vendor)/bin/pm-proxy               u:object_r:per_mgr_exec:s0

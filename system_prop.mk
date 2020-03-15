@@ -72,8 +72,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=1 \
     persist.sys.camera.display.lmax=1280x720 \
     persist.sys.camera.display.umax=1920x1080 \
-    media.camera.ts.monotonic=1 \
-    persist.camera.gyro.disable=0
+    media.camera.ts.monotonic=1
 
 # Charger
 PRODUCT_PROPERTY_OVERRIDES += \
