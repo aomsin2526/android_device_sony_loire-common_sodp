@@ -7,6 +7,7 @@ type hal_idd_fallback_hwservice, hwservice_manager_type;
 type hal_idd_hwservice, hwservice_manager_type;
 type hal_imsrcsd_hwservice, hwservice_manager_type;
 type hal_imsrtp_hwservice, hwservice_manager_type;
+type hal_iwlan_hwservice, hwservice_manager_type;
 type hal_latency_hwservice, hwservice_manager_type;
 type hal_miscta_hwservice, hwservice_manager_type;
 type hal_perf_hwservice, hwservice_manager_type;

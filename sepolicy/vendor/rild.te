@@ -6,6 +6,8 @@ use_per_mgr(rild)
 qmux_socket(rild)
 netmgr_socket(rild)
 
+add_hwservice(rild, hal_iwlan_hwservice)
+
 set_prop(rild, vendor_radio_prop)
 
 #============= rild ==============

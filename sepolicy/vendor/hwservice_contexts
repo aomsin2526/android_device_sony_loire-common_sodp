@@ -8,6 +8,7 @@ vendor.nxp.nxpese::INxpEse                                      u:object_r:nxpes
 vendor.qti.gnss::ILocHidlGnss                                   u:object_r:hal_gnss_hwservice:s0
 vendor.qti.hardware.cryptfshw::ICryptfsHw                       u:object_r:hal_keymaster_hwservice:s0
 vendor.qti.data.factory::IFactory                               u:object_r:hal_datafactory_hwservice:s0
+vendor.qti.hardware.data.iwlan::IIWlan                          u:object_r:hal_iwlan_hwservice:s0
 vendor.qti.hardware.data.latency::ILinkLatency                  u:object_r:hal_latency_hwservice:s0
 vendor.qti.hardware.dsp::IDspService                            u:object_r:hal_dspmanager_hwservice:s0
 vendor.qti.hardware.perf::IPerf                                 u:object_r:hal_perf_hwservice:s0
