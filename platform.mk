@@ -353,6 +353,7 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service.legacy \
     hostapd \
     libwpa_client \
+    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
 
