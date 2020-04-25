@@ -11,6 +11,9 @@ camera.disable_zsl_mode=true
 persist.sys.camera.display.lmax=1280x720
 persist.sys.camera.display.umax=1920x1080
 
+# Dex2oat
+dalvik.vm.dex2oat64.enabled=true
+
 # Display
 ro.qualcomm.cabl=0
 
