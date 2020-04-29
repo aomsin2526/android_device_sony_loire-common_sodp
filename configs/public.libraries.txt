@@ -5,3 +5,5 @@ libsdsprpc.so
 libOpenCL.so
 libqvrservice_client.so
 libtzcom.so
+libprotobuf-cpp-full.so
+libprotobuf-cpp-lite.so
