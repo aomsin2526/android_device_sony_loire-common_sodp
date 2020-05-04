@@ -157,8 +157,6 @@ on enable-low-power
 
     write /proc/sys/vm/watermark_scale_factor 1
 
-    start qcom-post-boot
-
     # Set perfd properties
     setprop vendor.post_boot.parsed 1
 

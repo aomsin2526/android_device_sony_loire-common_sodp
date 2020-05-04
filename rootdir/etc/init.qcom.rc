@@ -657,13 +657,6 @@ service vendor.sec_daemon /vendor/bin/secd
     socket secd_credmgr_sock stream 0660 system oem_2996
     class main
 
-service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
-    class late_start
-    user root
-    group root system
-    disabled
-    oneshot
-
 service msim-sh /vendor/bin/init.qcom.msim.sh
     class core
     user root
