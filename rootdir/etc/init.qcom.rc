@@ -646,11 +646,6 @@ service vendor.sensors /vendor/bin/sensors.qcom
     user system
     group system
 
-service vendor.thermanager /vendor/bin/thermanager /vendor/etc/thermanager.xml
-    class main
-    user root
-    group root system
-
 service vendor.time_daemon /vendor/bin/time_daemon
     class main
     user root
