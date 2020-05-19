@@ -1,2 +1,9 @@
 #============= init ==============
+allow init {
+    adsprpcd_file
+    firmware_file
+    idd_rca_file 
+    idd_root_dir 
+    persist_file
+}:dir mounton;
 allow init tmpfs:lnk_file create;
