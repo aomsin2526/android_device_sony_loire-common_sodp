@@ -15,6 +15,7 @@ wakelock_use(cnd)
 qmux_socket(cnd)
 
 get_prop(cnd, hwservicemanager_prop)
+get_prop(cnd, wifi_prop);
 
 #============= cnd ==============
 allow cnd cnd_data_file:dir rw_dir_perms;
