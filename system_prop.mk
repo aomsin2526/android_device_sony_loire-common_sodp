@@ -26,6 +26,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.feature.hdmi_edid.enable=true \
     vendor.audio.feature.hdmi_passthrough.enable=false \
     vendor.audio.feature.hfp.enable=true \
+    vendor.audio.feature.incall_music.enable=true \
     vendor.audio.feature.kpi_optimize.enable=true \
     vendor.audio.feature.multi_voice_session.enable=true \
     vendor.audio.feature.snd_mon.enable=true \
