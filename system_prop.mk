@@ -72,7 +72,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=1 \
     persist.sys.camera.display.lmax=1280x720 \
     persist.sys.camera.display.umax=1920x1080 \
-    media.camera.ts.monotonic=1
+    vendor.camera.lowpower.record.enable=1
 
 # Charger
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -140,7 +140,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_color_transform=1 \
     vendor.display.skip_extension_intf=1 \
     vendor.display.enable_default_color_mode=1 \
-    vendor.gralloc.disable_ubwc=1
+    vendor.gralloc.disable_ubwc=1 \
+    vendor.video.disable.ubwc=1
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -167,7 +168,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable_pframes=1 \
     vendor.vidc.disable.split.mode=1 \
     vendor.vidc.enc.narrow.searchrange=1 \
-    vidc.enc.dcvs.extra-buff-count=2
+    vendor.vidc.enc.dcvs.extra-buff-count=2
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.fuse_sdcard=true

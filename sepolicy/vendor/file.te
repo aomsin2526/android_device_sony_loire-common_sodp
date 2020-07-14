@@ -1,4 +1,5 @@
 # /data
+type camera_vendor_data_file, file_type, data_file_type;
 type cnd_data_file, file_type, data_file_type;
 type credmgrd_data_file, file_type, data_file_type, core_data_file_type;
 type location_data_file, file_type, data_file_type;
@@ -55,6 +56,7 @@ type persist_time_file, file_type;
 type proc_irq, fs_type, proc_type;
 
 # /sys
+type sysfs_camera, sysfs_type, fs_type;
 type sysfs_graphics, sysfs_type, fs_type;
 type sysfs_irq, sysfs_type, fs_type;
 type sysfs_kgsl, sysfs_type, fs_type;
