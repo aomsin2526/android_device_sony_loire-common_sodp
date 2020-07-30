@@ -29,7 +29,7 @@
         <string name="gps.lpp_profile">2</string>
         <string name="gps.use_emergency_pdn_for_emergency_supl">0</string>
         <string name="gps.a_glonass_pos_protocol_select">2</string>
-        <boolean name="show_4g_for_lte_data_icon_bool" value="false" />
+        <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
         <boolean name="hide_lte_plus_data_icon_bool" value="false" />
         <string name="default_vm_number_string" />
         <string name="wcdma_default_signal_strength_measurement_string">rssi</string>
