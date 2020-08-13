@@ -4,5 +4,8 @@ allow domain debugfs_kgsl:dir search;
 # Silence /dev/stune logspam
 dontaudit domain device:file w_file_perms;
 
+# allow all context to read sysfs_kgsl
+allow { domain - isolated_app } sysfs_kgsl:dir search;
+
 # allow all context to read gpu model
 allow { domain - isolated_app } sysfs_kgsl_gpu_model:file r_file_perms;
