@@ -839,5 +839,5 @@ vendor/lib64/libwvhidl.so|e602682d2357d4ec2ae7a97229c3831e629e08e0
 vendor/lib64/mediadrm/libwvdrmengine.so|3d86fff84c6a7699f3dcedf5605a31eae528b163
 
 # WiFi
-etc/firmware/wlan/bcmdhd/fw_bcmdhd.bin
-etc/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin
+etc/firmware/wlan/bcmdhd/fw_bcmdhd.bin:vendor/firmware/wlan/bcmdhd/fw_bcmdhd.bin
+etc/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin:vendor/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin
