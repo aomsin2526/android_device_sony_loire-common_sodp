@@ -18,6 +18,7 @@ cc_binary {
     relative_install_path: "hw",
     vendor: true,
     init_rc: ["android.hardware.light@2.0-service.loire.rc"],
+    vintf_fragments: ["android.hardware.light@2.0-service.loire.xml"],
     srcs: ["service.cpp", "Light.cpp"],
 
     shared_libs: [

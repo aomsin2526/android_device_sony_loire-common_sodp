@@ -6,6 +6,7 @@ LOCAL_MODULE := android.hardware.power@1.2-service.loire
 LOCAL_INIT_RC := android.hardware.power@1.2-service.loire.rc
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_MODULE_TAGS := optional
+LOCAL_VINTF_FRAGMENTS := android.hardware.power@1.2-service.loire.xml
 LOCAL_VENDOR_MODULE := true
 
 LOCAL_HEADER_LIBRARIES := libhardware_headers
