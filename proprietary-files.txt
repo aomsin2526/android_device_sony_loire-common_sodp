@@ -830,13 +830,13 @@ vendor/bin/time_daemon|0557e5c402bd0a7eabc79417c67ac6c13bb5d0ed
 vendor/lib/libtime_genoff.so|87dfe50d46e306b73efcd859ce9c7c9fa86cd5b5
 vendor/lib64/libtime_genoff.so|e341ec29dbfb6d1fae84915a6151fd56d25f4ddc
 
-# Widevine - from poplar - 47.2.A.8.24
-vendor/bin/hw/android.hardware.drm@1.1-service.widevine|62000c39e78a2118a0c9be04f430099c2f1022c9
-vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc|ed7bb839961ce66e14af12ba2d5252030966753d
-vendor/lib/libwvhidl.so|f526b34f354855710821703c37cb17c584d045d4
-vendor/lib/mediadrm/libwvdrmengine.so|4100f43270b98d3ea3d756fcc5aae0109c2d04ef
-vendor/lib64/libwvhidl.so|e602682d2357d4ec2ae7a97229c3831e629e08e0
-vendor/lib64/mediadrm/libwvdrmengine.so|3d86fff84c6a7699f3dcedf5605a31eae528b163
+# Widevine - from walley - RP1A.200720.009
+vendor/bin/hw/android.hardware.drm@1.3-service.widevine|5e64027d1fbdd74c971cbf1481578673798520d5
+vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc|c35e1a6f9a6faff19064a81e07c4be82ceaf4bb5
+vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml|ebebcf8f367641480cf7d512fc06e6ab777527be
+vendor/lib/libprotobuf-cpp-lite-3.9.1.so|4ea6804a4a53ce64d0320083f3d08aaa9f5bf1a1
+vendor/lib/libwvhidl.so|f3af14a511e98ade5758088b3fba574c8ca6c5a4
+vendor/lib64/libprotobuf-cpp-lite-3.9.1.so|528adc63953fe9eb1176f1bacedd9d03b0f21e1e
 
 # WiFi
 etc/firmware/wlan/bcmdhd/fw_bcmdhd.bin:vendor/firmware/wlan/bcmdhd/fw_bcmdhd.bin
