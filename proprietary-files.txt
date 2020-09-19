@@ -734,7 +734,7 @@ vendor/lib64/libtime_genoff.so|e341ec29dbfb6d1fae84915a6151fd56d25f4ddc
 # Widevine - from walley - RP1A.200720.009
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine|5e64027d1fbdd74c971cbf1481578673798520d5
 vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc|c35e1a6f9a6faff19064a81e07c4be82ceaf4bb5
-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml|ebebcf8f367641480cf7d512fc06e6ab777527be
+-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml|ebebcf8f367641480cf7d512fc06e6ab777527be
 vendor/lib/libprotobuf-cpp-lite-3.9.1.so|4ea6804a4a53ce64d0320083f3d08aaa9f5bf1a1
 vendor/lib/libwvhidl.so|f3af14a511e98ade5758088b3fba574c8ca6c5a4
 vendor/lib64/libprotobuf-cpp-lite-3.9.1.so|528adc63953fe9eb1176f1bacedd9d03b0f21e1e
