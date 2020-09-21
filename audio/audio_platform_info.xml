@@ -81,5 +81,8 @@
         <usecase name="USECASE_INCALL_MUSIC_UPLINK" type="out" id="1" />
         <usecase name="USECASE_INCALL_MUSIC_UPLINK2" type="out" id="36" />
         <usecase name="USECASE_AUDIO_SPKR_CALIB_TX" type="in" id="37"/>
+        <usecase name="USECASE_INCALL_REC_UPLINK" type="in" id="14" />
+        <usecase name="USECASE_INCALL_REC_DOWNLINK" type="in" id="14" />
+        <usecase name="USECASE_INCALL_REC_UPLINK_AND_DOWNLINK" type="in" id="14" />
     </pcm_ids>
 </audio_platform_info>
