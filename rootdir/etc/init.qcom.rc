@@ -672,10 +672,6 @@ on property:persist.data.mode=concurrent
     enable vendor.netmgrd
     enable vendor.port-bridge
 
-on property:ro.data.large_tcp_window_size=true
-    # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
-    write /proc/sys/net/ipv4/tcp_adv_win_scale  2
-
 on property:sys.boot_completed=1
     # Reset read ahead for dm-0 and dm-1 to 128kb
     write /sys/block/dm-0/queue/read_ahead_kb 128
