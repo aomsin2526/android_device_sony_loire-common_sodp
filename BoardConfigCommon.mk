@@ -163,6 +163,9 @@ USE_SENSOR_MULTI_HAL := true
 # Qualcomm hardware
 BOARD_USES_QCOM_HARDWARE := true
 
+# Memfd
+TARGET_HAS_MEMFD_BACKPORT := true
+
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
 TARGET_USES_INTERACTION_BOOST := true
