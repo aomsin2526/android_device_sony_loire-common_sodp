@@ -53,6 +53,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Charger
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.charger.disable_init_blank=true \
     ro.charger.enable_suspend=true
 
 # CNE
