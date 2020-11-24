@@ -32,11 +32,11 @@ endif
 LOCAL_C_INCLUDES += \
     external/skia/include/core \
     external/skia/include/images \
-    $(TARGET_OUT_HEADERS)/qcom/display \
     $(LOCAL_PATH)/QCamera2/stack/common \
     $(LOCAL_PATH)/QCamera2/stack/mm-camera-interface/inc
 
 LOCAL_HEADER_LIBRARIES := generated_kernel_headers
+LOCAL_HEADER_LIBRARIES += display_headers
 
 LOCAL_MODULE:= camera_test
 LOCAL_VENDOR_MODULE := true
