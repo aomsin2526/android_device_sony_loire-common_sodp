@@ -21,6 +21,7 @@ cc_library {
         "libgui",
         "libutils",
     ],
+    system_ext_specific: true,
 }
 
 cc_library_shared {
@@ -31,6 +32,7 @@ cc_library_shared {
     ],
     shared_libs: ["libui"],
     compile_multilib: "64",
+    system_ext_specific: true,
 }
 
 cc_library {

@@ -176,11 +176,11 @@ etc/firmware/cmnlib.b03
 etc/firmware/cmnlib.mdt
 
 # CNE - from daisy - QKQ1.191002.002
-product/lib64/com.quicinc.cne.api@1.0.so|06764410022518f75a8e7fa1de35b7577cdbe8f9
-product/lib64/com.quicinc.cne.api@1.1.so|8940ad6defe4ffba387a259a698c2def51f1d5fa
-product/lib64/com.quicinc.cne.constants@1.0.so|e2f9123a013c2c116b02a1e057870f885808f654
-product/lib64/com.quicinc.cne.constants@2.0.so|b58e07086d9992d0911391ad185f277e1cfd4fe5
-product/lib64/com.quicinc.cne.constants@2.1.so|92fc6a953b061fea1895e58fa298ce8de8a6d03c
+product/lib64/com.quicinc.cne.api@1.0.so:system_ext/lib64/com.quicinc.cne.api@1.0.so|06764410022518f75a8e7fa1de35b7577cdbe8f9
+product/lib64/com.quicinc.cne.api@1.1.so:system_ext/lib64/com.quicinc.cne.api@1.1.so|8940ad6defe4ffba387a259a698c2def51f1d5fa
+product/lib64/com.quicinc.cne.constants@1.0.so:system_ext/lib64/com.quicinc.cne.constants@1.0.so|e2f9123a013c2c116b02a1e057870f885808f654
+product/lib64/com.quicinc.cne.constants@2.0.so:system_ext/lib64/com.quicinc.cne.constants@2.0.so|b58e07086d9992d0911391ad185f277e1cfd4fe5
+product/lib64/com.quicinc.cne.constants@2.1.so:system_ext/lib64/com.quicinc.cne.constants@2.1.so|92fc6a953b061fea1895e58fa298ce8de8a6d03c
 system/etc/cne/Nexus/ATT/ATT_profiles.xml|a0039cb3a4c5a4ca1adf897904b61c91e32d06f7|33e568627fd3f94dc45bca1c01ad10e6d8fb5b52
 system/etc/cne/Nexus/ROW/ROW_profiles.xml|e3907ff71cbbe0f1073ec1bf0223d26c8282aa35|238e785e9674b27c4b2365958d127533d7293132
 system/etc/cne/Nexus/VZW/VZW_profiles.xml|0d35b3266ea656d8868ae8f5d7e938f4859e9b0a|0f63b632e3a3f114def7aeadaabd13851c8ceec5
@@ -370,26 +370,26 @@ vendor/lib64/vendor.semc.system.idd.fallback@1.0_vendor.so
 vendor/lib64/vendor.semc.system.idd@1.0_vendor.so
 
 # IMS - from daisy - QKQ1.191002.002
-product/lib64/libimscamera_jni.so|7cb89110cca94d37d68c705f12a7a5a4ee106139
-product/lib64/libimsmedia_jni.so|3540752cc3658261ea3c909f03018eea4398f84e
--product/priv-app/ims/ims.apk|9c4ca91e0ec7a567d22251d7ca0640abf13fdd7b
+product/lib64/libimscamera_jni.so:system_ext/lib64/libimscamera_jni.so|7cb89110cca94d37d68c705f12a7a5a4ee106139
+product/lib64/libimsmedia_jni.so:system_ext/lib64/libimsmedia_jni.so|3540752cc3658261ea3c909f03018eea4398f84e
+-product/priv-app/ims/ims.apk:system_ext/priv-app/ims/ims.apk|9c4ca91e0ec7a567d22251d7ca0640abf13fdd7b
 
 # IMS
-lib/com.qualcomm.qti.imscmservice@1.0.so
-lib/lib-imscamera.so
-lib/lib-imsvideocodec.so
-lib/lib-imsvtextutils.so
-lib/lib-imsvtutils.so
-lib/librcc.so
-lib/vendor.qti.imsrtpservice@1.0.so
-lib64/com.qualcomm.qti.imscmservice@1.0.so
-lib64/lib-imscamera.so
-lib64/lib-imsvideocodec.so
-lib64/lib-imsvt.so
-lib64/lib-imsvtextutils.so
-lib64/lib-imsvtutils.so
-lib64/librcc.so
-lib64/vendor.qti.imsrtpservice@1.0.so
+lib/com.qualcomm.qti.imscmservice@1.0.so:system_ext/lib/com.qualcomm.qti.imscmservice@1.0.so
+lib/lib-imscamera.so:system_ext/lib/lib-imscamera.so
+lib/lib-imsvideocodec.so:system_ext/lib/lib-imsvideocodec.so
+lib/lib-imsvtextutils.so:system_ext/lib/lib-imsvtextutils.so
+lib/lib-imsvtutils.so:system_ext/lib/lib-imsvtutils.so
+lib/librcc.so:system_ext/lib/librcc.so
+lib/vendor.qti.imsrtpservice@1.0.so:system_ext/lib/vendor.qti.imsrtpservice@1.0.so
+lib64/com.qualcomm.qti.imscmservice@1.0.so:system_ext/lib64/com.qualcomm.qti.imscmservice@1.0.so
+lib64/lib-imscamera.so:system_ext/lib64/lib-imscamera.so
+lib64/lib-imsvideocodec.so:system_ext/lib64/lib-imsvideocodec.so
+lib64/lib-imsvt.so:system_ext/lib64/lib-imsvt.so
+lib64/lib-imsvtextutils.so:system_ext/lib64/lib-imsvtextutils.so
+lib64/lib-imsvtutils.so:system_ext/lib64/lib-imsvtutils.so
+lib64/librcc.so:system_ext/lib64/librcc.so
+lib64/vendor.qti.imsrtpservice@1.0.so:system_ext/lib64/vendor.qti.imsrtpservice@1.0.so
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
@@ -506,10 +506,10 @@ vendor/lib/libprotobuf-c.so
 vendor/lib64/libprotobuf-c.so
 
 # QMI
-etc/permissions/qti_libpermissions.xml
-etc/permissions/qti_permissions.xml|6993660f18d05de4dd16bb9352beca45868d80ed
-lib/libdiag_system.so
-lib64/libdiag_system.so
+etc/permissions/qti_libpermissions.xml:system_ext/etc/permissions/qti_libpermissions.xml
+etc/permissions/qti_permissions.xml:system_ext/etc/permissions/qti_permissions.xml|6993660f18d05de4dd16bb9352beca45868d80ed
+lib/libdiag_system.so:system_ext/lib/libdiag_system.so
+lib64/libdiag_system.so:system_ext/lib64/libdiag_system.so
 vendor/bin/irsc_util
 vendor/bin/mlog_qmi_service
 vendor/lib/libdiag.so
@@ -548,13 +548,13 @@ vendor/lib/libqmi_cci.so|a921e84ec500f7cfb7fe88a4ffba149581410a44
 vendor/lib64/libqmi_cci.so|411a074dc765fb263bec50531ce5c408dd72388f
 
 # RIL
--app/QtiTelephonyService/QtiTelephonyService.apk
-etc/permissions/qcrilhook.xml
-etc/permissions/telephonyservice.xml
-framework/qcrilhook.jar
-framework/QtiTelephonyServicelibrary.jar
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-product/framework/qti-telephony-common.jar|b4d187700f279cdbd40e74b4c3be4504f10d8b29
+-app/QtiTelephonyService/QtiTelephonyService.apk:system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+etc/permissions/qcrilhook.xml:system_ext/etc/permissions/qcrilhook.xml
+etc/permissions/telephonyservice.xml:system_ext/etc/permissions/telephonyservice.xml
+framework/qcrilhook.jar:system_ext/framework/qcrilhook.jar
+framework/QtiTelephonyServicelibrary.jar:system_ext/framework/QtiTelephonyServicelibrary.jar
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+product/framework/qti-telephony-common.jar:system_ext/framework/qti-telephony-common.jar|b4d187700f279cdbd40e74b4c3be4504f10d8b29
 vendor/bin/ATFWD-daemon
 vendor/bin/netmgrd
 vendor/bin/port-bridge

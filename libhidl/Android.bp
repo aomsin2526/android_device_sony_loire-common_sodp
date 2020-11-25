@@ -16,12 +16,14 @@
 
 cc_library_shared {
     name: "android.hidl.base@1.0",
+    system_ext_specific: true,
     vendor_available: true,
     shared_libs: ["libhidlbase"],
 }
 
 cc_library_shared {
     name: "android.hidl.manager@1.0",
+    system_ext_specific: true,
     vendor_available: true,
     shared_libs: ["libhidlbase"],
 }
