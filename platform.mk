@@ -123,6 +123,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
 
+# ConfigStore
+PRODUCT_PACKAGES += \
+    disable_configstore
+
 # Device-specific settings
 PRODUCT_PACKAGES += \
     SonyParts
