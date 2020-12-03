@@ -307,10 +307,6 @@ on post-fs-data
     mkdir /rca/plugins 0750 oem_2987 oem_2987
     restorecon_recursive /rca
 
-    # Set aggressive read ahead for dm-0 and dm-1 during boot up
-    write /sys/block/dm-0/queue/read_ahead_kb 2048
-    write /sys/block/dm-1/queue/read_ahead_kb 2048
-
     setprop vold.post_fs_data_done 1
 
 on early-boot
@@ -673,10 +669,6 @@ on property:persist.data.mode=concurrent
     enable vendor.port-bridge
 
 on property:sys.boot_completed=1
-    # Reset read ahead for dm-0 and dm-1 to 128kb
-    write /sys/block/dm-0/queue/read_ahead_kb 128
-    write /sys/block/dm-1/queue/read_ahead_kb 128
-
     write /sys/class/block/mmcblk1/queue/scheduler cfq
     write /sys/class/block/mmcblk1/bdi/max_ratio 1
 
