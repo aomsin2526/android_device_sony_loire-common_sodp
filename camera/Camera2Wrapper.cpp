@@ -91,7 +91,7 @@ static int check_vendor_module() {
  * Camera2 wrapper fixup functions
  *******************************************************************/
 
-static char* camera2_fixup_getparams(int id __unused, const char* settings) {
+static char* camera2_fixup_getparams(int id, const char* settings) {
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
 
@@ -99,6 +99,9 @@ static char* camera2_fixup_getparams(int id __unused, const char* settings) {
     ALOGV("%s: Original parameters:", __FUNCTION__);
     params.dump();
 #endif
+
+    // Set preferred video preview size
+    params.set(CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1280x720");
 
     if (params.get(KEY_SONY_IMAGE_STABILISER_VALUES)) {
         const char* supportedIsModes = params.get(KEY_SONY_IMAGE_STABILISER_VALUES);
