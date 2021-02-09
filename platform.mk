@@ -273,7 +273,8 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-loire
+    android.hardware.power-service-loire \
+    vendor.qti.hardware.perf@2.0
 
 # Preopt SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
