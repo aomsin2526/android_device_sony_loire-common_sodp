@@ -154,7 +154,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     av.debug.disable.pers.cache=1 \
     debug.stagefright.omx_default_rank=0 \
-    debug.stagefright.omx_default_rank.sw-audio=1 \
     media.aac_51_output_enabled=true \
     mm.enable.qcom_parser=1048575 \
     mm.enable.smoothstreaming=true \
