@@ -1,0 +1,25 @@
+cc_binary {
+    name: "vendor.qti.hardware.vibrator.service.loire",
+    vendor: true,
+    relative_install_path: "hw",
+    init_rc: ["vendor.qti.hardware.vibrator.service.loire.rc"],
+    vintf_fragments: [
+        "vendor.qti.hardware.vibrator.service.loire.xml",
+    ],
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+    srcs: [
+        "Vibrator.cpp",
+        "service.cpp",
+    ],
+    shared_libs: [
+        "libcutils",
+        "libutils",
+        "libbase",
+        "liblog",
+        "libbinder_ndk",
+        "android.hardware.vibrator-ndk_platform",
+    ],
+}
