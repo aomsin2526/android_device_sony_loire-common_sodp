@@ -117,6 +117,7 @@
 /data/credmgr(/.*)?            u:object_r:credmgrd_data_file:s0
 /data/etc(/.*)?                u:object_r:ta_data_file:s0
 /data/nfc(/.*)?                u:object_r:nfc_data_file:s0
+/data/vendor/audio(/.*)?       u:object_r:audio_vendor_data_file:s0
 /data/vendor/camera(/.*)?      u:object_r:camera_vendor_data_file:s0
 /data/vendor/connectivity(/.*)?       u:object_r:cnd_data_file:s0
 /data/vendor/location(/.*)?    u:object_r:location_data_file:s0

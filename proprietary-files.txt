@@ -21,22 +21,21 @@ vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
 vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
 vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_skel.so
 
-# Audio
-vendor/lib/libacdb-fts.so
-vendor/lib/libacdbloader.so
-vendor/lib/libacdbrtac.so
-vendor/lib/libadiertac.so
-vendor/lib/libadm.so
-vendor/lib/libaudcal.so
-vendor/lib/libaudioalsa.so
-vendor/lib/libdrc.so
-vendor/lib/libsurround_3mic_proc.so
-vendor/lib64/libacdb-fts.so
-vendor/lib64/libacdbloader.so
-vendor/lib64/libacdbrtac.so
-vendor/lib64/libadiertac.so
-vendor/lib64/libaudcal.so
-vendor/lib64/libaudioalsa.so
+# Audio - from akatsuki - 52.1.A.3.137
+vendor/lib/libacdb-fts.so|90fbffe695df041332ba75f98ed4ba60f60c62db
+vendor/lib/libacdbloader.so|a2932fdc3103721c84f02ca0c49fddf977b86a04
+vendor/lib/libacdbrtac.so|b15a1af30140b1ffe6e179294bf3f497581595a4
+vendor/lib/libadiertac.so|4da6dd43bfc887582c765a48e538572d69088c86
+vendor/lib/libadm.so|10f2fe9028ad0da6b8337b0894f366fbddb6b3ec
+vendor/lib/libaudcal.so|56003613ab60763677bd30dd446f97b6f1fd151b
+vendor/lib/libaudioalsa.so|075ee009d19e3a7b897c4e15ef8d69691e81214c
+vendor/lib/libdrc.so|fd9cfa48d504937feb7468f8820ffc49cf49ddfe
+vendor/lib64/libacdb-fts.so|dd7746c3820bc36a95de8bff68e560463b1dd18f
+vendor/lib64/libacdbloader.so|cb326d988e271ecad7f32cc3380cacf847c5fcbe
+vendor/lib64/libacdbrtac.so|217dea643dfb3312e44adb9ca1ab765bd8f10141
+vendor/lib64/libadiertac.so|1d1e9be83f019f8ddc8f859f1c7df6540ba92bf8
+vendor/lib64/libaudcal.so|7a70996b7207e6d9c2143ff3f7c6a02af9376a9a
+vendor/lib64/libaudioalsa.so|5a3d2400b25d073be45cc777a2dada281d9e9aa9
 
 # Bluetooth
 etc/firmware/BCM43xx.hcd:vendor/firmware/BCM4345C0.hcd
