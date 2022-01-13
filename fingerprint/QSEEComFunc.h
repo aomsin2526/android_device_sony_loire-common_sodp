@@ -5,8 +5,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#ifndef __QSEECOMFUNC_H_
-#define __QSEECOMFUNC_H_
+#pragma once
 
 #include <dlfcn.h>
 #include <fcntl.h>
@@ -81,5 +80,3 @@ struct qcom_km_ion_info_t {
 int32_t qsee_open_handle(struct qsee_handle_t** handle);
 int qsee_free_handle(struct qsee_handle_t** handle);
 char* qsee_error_strings(int err);
-
-#endif  // __QSEECOMFUNC_H_

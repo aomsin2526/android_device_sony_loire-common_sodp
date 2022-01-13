@@ -5,8 +5,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#ifndef __QSEECOMAPI_H_
-#define __QSEECOMAPI_H_
+#pragma once
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -268,5 +267,3 @@ int QSEECom_app_load_query(struct QSEECom_handle* handle, char* app_name);
 #ifdef __cplusplus
 }
 #endif
-
-#endif  // __QSEECOMAPI_H_

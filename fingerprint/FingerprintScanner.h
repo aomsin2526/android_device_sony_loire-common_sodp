@@ -5,8 +5,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#ifndef __FINGERPRINTSCANNER_H_
-#define __FINGERPRINTSCANNER_H_
+#pragma once
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -276,5 +275,3 @@ err_t fpc_keep_awake(const fpc_event_t* event, int awake, unsigned int timeout);
 #ifdef __cplusplus
 }
 #endif
-
-#endif  // __FINGERPRINTSCANNER_H_
