@@ -30,6 +30,7 @@
 #define LOG_TAG "vendor.qti.vibrator"
 
 #include <dirent.h>
+#include <fcntl.h>
 #include <inttypes.h>
 #include <log/log.h>
 #include <string.h>
