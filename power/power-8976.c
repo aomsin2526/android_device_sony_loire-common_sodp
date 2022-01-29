@@ -36,6 +36,7 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <time.h>
 #include <unistd.h>
 
 #define LOG_TAG "QTI PowerHAL"
@@ -133,9 +134,9 @@ static int process_video_decode_hint(void* metadata) {
     return HINT_NONE;
 }
 
-static int process_interaction_hint(void* data) {
+static void process_interaction_hint(void* data) {
     static struct timespec s_previous_boost_timespec;
-    static int s_previous_duration = 0;
+    static int interaction_handle = -1;
 
     struct timespec cur_boost_timespec;
     long long elapsed_time;
@@ -144,8 +145,8 @@ static int process_interaction_hint(void* data) {
     if (data) {
         int input_duration = *((int*)data);
         if (input_duration > duration) {
-            duration = (input_duration > kMaxInteractiveDuration) ?
-                                         kMaxInteractiveDuration : input_duration;
+            duration = (input_duration > kMaxInteractiveDuration) ? kMaxInteractiveDuration
+                                                                  : input_duration;
         }
     }
 
@@ -156,14 +157,16 @@ static int process_interaction_hint(void* data) {
     // also detect if we're doing anything resembling a fling
     // support additional boosting in case of flings
     if (elapsed_time < 250000 && duration <= 750) {
-        return HINT_HANDLED;
+        return;
     }
     s_previous_boost_timespec = cur_boost_timespec;
-    s_previous_duration = duration;
 
-    perf_hint_enable_with_type(VENDOR_HINT_SCROLL_BOOST, duration, SCROLL_VERTICAL);
+    if (CHECK_HANDLE(interaction_handle)) {
+        release_request(interaction_handle);
+    }
 
-    return HINT_HANDLED;
+    interaction_handle =
+            perf_hint_enable_with_type(VENDOR_HINT_SCROLL_BOOST, duration, SCROLL_VERTICAL);
 }
 
 static int process_activity_launch_hint(void* data) {
@@ -202,7 +205,8 @@ int power_hint_override(power_hint_t hint, void* data) {
             ret_val = process_video_decode_hint(data);
             break;
         case POWER_HINT_INTERACTION:
-            ret_val = process_interaction_hint(data);
+            process_interaction_hint(data);
+            ret_val = HINT_HANDLED;
             break;
         case POWER_HINT_LAUNCH:
             ret_val = process_activity_launch_hint(data);

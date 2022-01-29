@@ -2,33 +2,29 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := android.hardware.power@1.2-service.loire
-LOCAL_INIT_RC := android.hardware.power@1.2-service.loire.rc
 LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_MODULE_TAGS := optional
-LOCAL_VINTF_FRAGMENTS := android.hardware.power@1.2-service.loire.xml
-LOCAL_VENDOR_MODULE := true
-
-LOCAL_HEADER_LIBRARIES := libhardware_headers
 
 LOCAL_SHARED_LIBRARIES := \
-    libbase \
+    liblog \
     libcutils \
     libdl \
-    libhidlbase \
-    liblog \
+    libbase \
     libutils \
-    android.hardware.power@1.2
+    android.hardware.power-ndk_platform \
+    libbinder_ndk
+
+LOCAL_HEADER_LIBRARIES := \
+    libhardware_headers
 
 LOCAL_SRC_FILES := \
-    hint-data.c \
-    list.c \
-    metadata-parser.c \
-    power-8952.c \
-    Power.cpp \
     power-common.c \
-    service.cpp \
-    utils.c
+    metadata-parser.c \
+    utils.c \
+    list.c \
+    hint-data.c \
+    power-8976.c \
+    Power.cpp \
+    main.cpp
 
 LOCAL_CFLAGS += -Wall -Wextra -Werror
 
@@ -39,5 +35,12 @@ endif
 ifeq ($(TARGET_USES_INTERACTION_BOOST),true)
     LOCAL_CFLAGS += -DINTERACTION_BOOST
 endif
+
+LOCAL_MODULE := android.hardware.power-service-loire
+LOCAL_INIT_RC := android.hardware.power-service-loire.rc
+LOCAL_MODULE_TAGS := optional
+LOCAL_CFLAGS += -Wno-unused-parameter -Wno-unused-variable
+LOCAL_VENDOR_MODULE := true
+LOCAL_VINTF_FRAGMENTS := android.hardware.power-service-loire.xml
 
 include $(BUILD_EXECUTABLE)
