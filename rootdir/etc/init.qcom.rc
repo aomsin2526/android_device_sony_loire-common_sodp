@@ -561,7 +561,7 @@ service vendor.port-bridge /vendor/bin/port-bridge
 service vendor.per_mgr /vendor/bin/pm-service
     class core
     user system
-    group system
+    group system net_raw
 
 service vendor.per_proxy /vendor/bin/pm-proxy
     class core
