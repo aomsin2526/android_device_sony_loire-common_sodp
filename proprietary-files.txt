@@ -445,34 +445,37 @@ vendor/bin/msm_irqbalance|3f7a923d9d01dbfda40ebdfdd27a62167df69c13
 # Keystore
 vendor/lib64/hw/keystore.msm8952.so
 
-# Media
-lib/libOmxVpp.so
-lib/libvpplibrary.so
-lib64/libOmxVpp.so
-lib64/libvpplibrary.so
-vendor/lib/libI420colorconvert.so
-vendor/lib/libmm-color-convertor.so
-vendor/lib/libmmosal_proprietary.so
-vendor/lib/libOmxAacDec.so
-vendor/lib/libOmxAlacDec.so
-vendor/lib/libOmxAlacDecSw.so
-vendor/lib/libOmxAmrwbplusDec.so
-vendor/lib/libOmxApeDec.so
-vendor/lib/libOmxApeDecSw.so
-vendor/lib/libOmxEvrcDec.so
-vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libOmxWmaDec.so
-vendor/lib64/libI420colorconvert.so
-vendor/lib64/libmm-color-convertor.so
-vendor/lib64/libOmxAacDec.so
-vendor/lib64/libOmxAlacDec.so
-vendor/lib64/libOmxAlacDecSw.so
-vendor/lib64/libOmxAmrwbplusDec.so
-vendor/lib64/libOmxApeDec.so
-vendor/lib64/libOmxApeDecSw.so
-vendor/lib64/libOmxEvrcDec.so
-vendor/lib64/libOmxQcelp13Dec.so
-vendor/lib64/libOmxWmaDec.so
+# Media - from FP3 - REL-8901.4.A.0019.1-gms-edfd6a4e-user
+vendor/lib/libAlacSwDec.so|be3d6e539f748742d3d28437bbcb498c1750f102
+vendor/lib/libApeSwDec.so|e25491a04de205238a53ec1727bdbd08c7875cf4
+vendor/lib/libOmxAacDec.so|ce6447b7138f0e0cf365d97668a5ded072683234
+vendor/lib/libOmxAlacDec.so|5a9a6b1a19094a5a501485a2aa0ea06e06b8da2a
+vendor/lib/libOmxAlacDecSw.so|59055e1c00ed82f7c310dcf78d4104b9f803d12e
+vendor/lib/libOmxAmrDec.so|78ad175f009fe3fe3e316c9469184142ae813b24
+vendor/lib/libOmxAmrwbplusDec.so|087c71ccc858e4e5d048f5150c39b7f3619ccf02
+vendor/lib/libOmxApeDec.so|85bb0aa592b11111de73063d850c4afa4c9f00cd
+vendor/lib/libOmxApeDecSw.so|c36f7253818ee759988ba430896590fec4f0c570
+vendor/lib/libOmxEvrcDec.so|3f58234a838bed1360ba80c2fe09c05173b1e623
+vendor/lib/libOmxG711Dec.so|e95941e80d00bf94944868750e1c55ef2aa601ba
+vendor/lib/libOmxQcelp13Dec.so|49291073551d311fde33f76eed6b420615bee382
+vendor/lib/libOmxVpp.so|76daeaf7b83dec5f55f2dc194cc8c47ead7ce511
+vendor/lib/libOmxWmaDec.so|f93ed022df05fbf6b7cbda0bd88eebfac47f47da
+vendor/lib/libvpplibrary.so|13c6073c9a84b5508cd2612e41a9d0336135afed
+vendor/lib64/libAlacSwDec.so|9fbfad65ffca33e1ac480e9cb056467ac75a6d5a
+vendor/lib64/libApeSwDec.so|76d3cc02ca1c3cdc3c71e57dc6e53027d2bf3d37
+vendor/lib64/libOmxAacDec.so|30497a40f46ae39f892711e2832afc9c78849d6f
+vendor/lib64/libOmxAlacDec.so|dd61a841edb4a0559eedaad89b7f324dda9beaac
+vendor/lib64/libOmxAlacDecSw.so|03514dfb643466d9532b1f02c1cfa31043fedeca
+vendor/lib64/libOmxAmrDec.so|cd2aa1f1e3c89403cba569a1fac956eb867a5914
+vendor/lib64/libOmxAmrwbplusDec.so|d433f688b0d484680cf8dd5f2584350996c1555e
+vendor/lib64/libOmxApeDec.so|f06d1248d5b6cf07fd942460a67fcda2c259ab5f
+vendor/lib64/libOmxApeDecSw.so|1536b0c27fd161e845f6615f73792fa66cf7027e
+vendor/lib64/libOmxEvrcDec.so|a9e8773ab80ac66636c2ece5b4675977e79a1b43
+vendor/lib64/libOmxG711Dec.so|149553fd2c299b3b7c97816f2408b30912b930ca
+vendor/lib64/libOmxQcelp13Dec.so|ed18fa656acca276ad53f0cf79e193524377938c
+vendor/lib64/libOmxVpp.so|e999fe7835e8e4786095493539c439a554ca6bdc
+vendor/lib64/libOmxWmaDec.so|36eaa580575d346714ef68e4a8dad51420e71b60
+vendor/lib64/libvpplibrary.so|89b49c112864bf0d33c07c78fb7750d4bd7eb663
 
 # Media firmware
 etc/firmware/venus.b00
