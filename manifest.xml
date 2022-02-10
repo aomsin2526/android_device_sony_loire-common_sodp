@@ -233,6 +233,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.qti.hardware.dsp</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IDspService</name>
+            <instance>dspservice</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.qti.hardware.cryptfshw</name>
         <transport>hwbinder</transport>
         <version>1.0</version>

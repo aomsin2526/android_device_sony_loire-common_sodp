@@ -1,25 +1,29 @@
 # All unpinned blobs below are extracted from F5122_Customized CE1_1302-5672_34.4.A.2.118_R1E
 
-# ADSP
-vendor/bin/adsprpcd
-vendor/lib/libadsp_default_listener.so
-vendor/lib/libadsprpc.so
-vendor/lib/libfastcvadsp_stub.so
-vendor/lib/libfastcvopt.so
-vendor/lib/libfastrpc_utf_stub.so
-vendor/lib64/libadsp_default_listener.so
-vendor/lib64/libadsprpc.so
-vendor/lib64/libfastrpc_utf_stub.so
+# ADSP - from PAN_sprout - RKQ1.200928.002 (3.240)
+vendor/bin/adsprpcd|b736b00857d64e74a3b9be887215124d186f95d5
+vendor/bin/dspservice|c7809e32581d5c6efac65a3a7689f43526c17bb8
+vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc|8f0eb84d3eb5fc0f683ef7b975b75044d56f513e
+vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc|fbf2bb38ca6bdddf98c7123da9e1f263a4eec55f
+vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy|f060101b26d3674bb173e5fc95e118f56a8ac15d
+vendor/lib/libadsp_default_listener.so|7bed67d442ce79de62b9a6ba398df321ef6b7397
+vendor/lib/libadsprpc.so|5d784c9f1ff7845b04ecba1c2592aad29ff53f7b
+vendor/lib/libfastcvopt.so|151040b1e9a4d78e4a66654a2f09af6ffd6e679d
+vendor/lib/libfastcvadsp_stub.so|70772d0bc39617430e27a21f89fccd93cc757185
+vendor/lib/vendor.qti.hardware.dsp@1.0.so|41bdb4d9eda88cebfbc3bc6db64ff875416dbf5a
+vendor/lib64/libadsp_default_listener.so|0324e797f6fdd15680df7fdacc51f713e40b9806
+vendor/lib64/libadsprpc.so|e1fe0a21169d116f6996070a097b530f758ceabd
+vendor/lib64/libfastcvopt.so|03da360f22884667c9110ff2384f8dca35e32671
+vendor/lib64/libfastcvadsp_stub.so|f4535845bc4f40e3cb8e79d090e5ed87b0acfbb0
+vendor/lib64/vendor.qti.hardware.dsp@1.0.so|5f30d9c5fff738e6194a36a5b93372fa32ec0471
 
-# ADSP modules
-vendor/lib/rfsa/adsp/libadsp_fd_skel.so
-vendor/lib/rfsa/adsp/libapps_mem_heap.so
-vendor/lib/rfsa/adsp/libdspCV_skel.so
-vendor/lib/rfsa/adsp/libexternal_dog_skel.so
-vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
-vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
-vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_skel.so
+# ADSP modules - from PAN_sprout - RKQ1.200928.002 (3.240)
+vendor/lib/rfsa/adsp/libapps_mem_heap.so|5c82ad9cfe3f30105d899e2a4e90cc7566f81252
+vendor/lib/rfsa/adsp/libdspCV_skel.so|628985174b0088bed21c866d7984d23855e5e150
+vendor/lib/rfsa/adsp/libfastcvadsp.so|9818625bfa018f517e32a8f4a1e7fb4b255e5049
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so|1ff4a48009e88435d93fd2b9b0c5ea59cedbb4f7
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so|944169db3ac67056b92ef4f850f69346958370b5
+vendor/lib/rfsa/adsp/libscveT2T_skel.so|91b9200dbb982abf0d6b440668252d892a616f66
 
 # Audio - from akatsuki - 52.1.A.3.137
 vendor/lib/libacdb-fts.so|90fbffe695df041332ba75f98ed4ba60f60c62db

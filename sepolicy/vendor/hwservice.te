@@ -2,6 +2,7 @@ type hal_atfwd_hwservice, hwservice_manager_type;
 type hal_cne_hwservice, hwservice_manager_type;
 type hal_datafactory_hwservice, hwservice_manager_type;
 type hal_dpmqmi_hwservice, hwservice_manager_type;
+type hal_dspmanager_hwservice, hwservice_manager_type;
 type hal_idd_fallback_hwservice, hwservice_manager_type;
 type hal_idd_hwservice, hwservice_manager_type;
 type hal_imsrcsd_hwservice, hwservice_manager_type;

@@ -1,9 +1,8 @@
-libqti-perfd-client.so
+libOpenCL.so
 libadsprpc.so
 libcdsprpc.so
-libsdsprpc.so
-libOpenCL.so
-libqvrservice_client.so
-libtzcom.so
+libfastcvopt.so
 libprotobuf-cpp-full.so
 libprotobuf-cpp-lite.so
+libqti-perfd-client.so
+libsdsprpc.so

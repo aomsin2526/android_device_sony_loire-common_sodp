@@ -1,4 +1,8 @@
 # HALs
+attribute hal_dspmanager;
+attribute hal_dspmanager_client;
+attribute hal_dspmanager_server;
+
 attribute hal_idd;
 attribute hal_idd_client;
 attribute hal_idd_server;

@@ -22,6 +22,13 @@ include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
+DSP_MOUNT_POINT := $(TARGET_OUT_VENDOR)/dsp
+$(DSP_MOUNT_POINT): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating $(DSP_MOUNT_POINT)"
+	@mkdir -p $(TARGET_OUT_VENDOR)/dsp
+
+ALL_DEFAULT_INSTALLED_MODULES += $(DSP_MOUNT_POINT)
+
 RFS_APQ_GNSS_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/apq/gnss/
 $(RFS_APQ_GNSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating RFS APQ GNSS folder structure: $@"

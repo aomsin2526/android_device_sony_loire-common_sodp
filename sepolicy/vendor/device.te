@@ -8,6 +8,7 @@ type rmnet_device, dev_type;
 type smd_device, dev_type;
 type ssr_device, dev_type;
 type thermal_device, dev_type;
+type xdsp_device, dev_type;
 
 # /dev/block
 type appslog_block_device, dev_type;

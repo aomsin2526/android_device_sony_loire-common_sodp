@@ -153,8 +153,9 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # Root
-BOARD_ROOT_EXTRA_FOLDERS := bt_firmware dsp firmware idd persist rca
+BOARD_ROOT_EXTRA_FOLDERS := bt_firmware firmware idd persist rca
 BOARD_ROOT_EXTRA_SYMLINKS := /data/tombstones:/tombstones
+BOARD_ROOT_EXTRA_SYMLINKS += /vendor/dsp:/dsp
 
 # WiFi
 BOARD_WLAN_DEVICE           := bcmdhd

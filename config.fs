@@ -10,6 +10,9 @@ value: 2904
 [AID_VENDOR_THERMAL]
 value: 2907
 
+[AID_VENDOR_FASTRPC]
+value: 2908
+
 [AID_VENDOR_QNS]
 value: 2985
 
