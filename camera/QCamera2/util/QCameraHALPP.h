@@ -35,6 +35,7 @@
 #include "QCameraPprocManager.h"
 
 // STL dependencies
+#include <fcntl.h>
 #include <unordered_map>
 #include <vector>
 #include <sys/stat.h>
