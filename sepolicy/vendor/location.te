@@ -6,7 +6,7 @@ net_domain(location)
 
 qmux_socket(location)
 
-get_prop(location, wifi_prop)
+get_prop(location, wifi_hal_prop)
 
 #============= location ==============
 allow location diag_device:chr_file rw_file_perms;
