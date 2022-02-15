@@ -174,6 +174,15 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy-lineage/vendor
 PRODUCT_PRIVATE_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/private
 PRODUCT_PUBLIC_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/public
 
+# Shims
+TARGET_LD_SHIM_LIBS := \
+    /vendor/bin/imsrcsd|libbase_shim.so \
+    /system/lib/lib-imscamera.so|libgui_shim.so \
+    /system/lib/lib-imsvideocodec.so|libui_shim.so \
+    /system/lib64/lib-imscamera.so|libgui_shim.so \
+    /system/lib64/lib-imsvideocodec.so|libui_shim.so \
+    /system/lib64/lib-imsvt.so|libgui_shim.so
+
 # Vendor SPL
 VENDOR_SECURITY_PATCH = "2018-09-01"
 
