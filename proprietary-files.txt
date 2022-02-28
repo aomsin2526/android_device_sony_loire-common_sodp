@@ -694,14 +694,16 @@ etc/firmware/tzwvcpybuf.b02
 etc/firmware/tzwvcpybuf.b03
 etc/firmware/tzwvcpybuf.mdt
 
-# Sensors
-vendor/bin/sensors.qcom
+# Sensors - from daisy - V11.0.21.0.QDLMIXM
+vendor/bin/sensors.qti|fa96c853b27dad6e7547ddc119a0718194626c9e
 vendor/etc/sensors/hals.conf|bf3677cbfa5ce5735662e8c259cb027969f65c87
-vendor/lib/libsensor_reg.so
-vendor/lib/libsensor1.so
+vendor/lib/libsensor_reg.so|8f113416861ab8c14613ebf3ea6eeb9997971624
+vendor/lib/libsensor1.so|a3bff5966ef0dd0623d385da9a8809f6dabb11f3
+vendor/lib64/libsensor_reg.so|54baa94535e7dd96804019810e90cfbec5519bf5
+vendor/lib64/libsensor1.so|24a1ee61b8d8d9494c7ce637bfdc280b428da5c8
+
+# Sensors (SSC)
 vendor/lib/sensors.ssc.so
-vendor/lib64/libsensor_reg.so
-vendor/lib64/libsensor1.so
 vendor/lib64/sensors.ssc.so
 
 # TA

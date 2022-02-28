@@ -94,13 +94,13 @@ user: AID_SYSTEM
 group: AID_SYSTEM
 caps: NET_BIND_SERVICE BLOCK_SUSPEND NET_ADMIN
 
-[vendor/bin/sensors.qcom]
+[vendor/bin/sensors.qti]
 mode: 0755
 user: AID_SYSTEM
 group: AID_SYSTEM
 caps: NET_BIND_SERVICE
 
-[system/vendor/bin/sensors.qcom]
+[system/vendor/bin/sensors.qti]
 mode: 0755
 user: AID_SYSTEM
 group: AID_SYSTEM

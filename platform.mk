@@ -207,6 +207,7 @@ PRODUCT_PACKAGES += \
     init.qcom.post_boot.sh \
     init.qcom.power.rc \
     init.qcom.rc \
+    init.qcom.sensors.sh \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
     ueventd.qcom.rc

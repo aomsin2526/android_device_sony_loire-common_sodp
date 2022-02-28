@@ -7,6 +7,7 @@ unix_socket_connect(sensors, tad, tad)
 
 #============= sensors ==============
 allow sensors diag_device:chr_file rw_file_perms;
+allow sensors mnt_vendor_file:dir r_dir_perms;
 allow sensors persist_file:dir r_dir_perms;
 allow sensors persist_sensors_file:dir rw_dir_perms;
 allow sensors persist_sensors_file:file create_file_perms;
