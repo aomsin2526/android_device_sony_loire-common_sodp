@@ -8,4 +8,5 @@ allow init {
 }:dir mounton;
 allow firmware_file self:filesystem associate;
 allow init firmware_file:filesystem { associate getattr mount relabelfrom };
+allow init sysfs_mmc:file w_file_perms;
 allow init system_file:file mounton;
