@@ -227,6 +227,9 @@ on post-fs-data
     mkdir /data/vendor/location 0770 gps gps
     mkdir /data/vendor/location/mq 0770 gps gps
     mkdir /data/vendor/location/xtwifi 0770 gps gps
+    mkdir /dev/socket/location 0770 gps gps
+    mkdir /dev/socket/location/mq 0770 gps gps
+    mkdir /dev/socket/location/xtra 0770 gps gps
 
     # Create /data/vendor/time folder for time-services
     mkdir /data/vendor/time/ 0700 system system
@@ -506,6 +509,12 @@ service vendor.irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
     class core
     user root
     oneshot
+
+service vendor.mlid /vendor/bin/mlid
+    class late_start
+    user gps
+    group gps
+    socket mlid stream 0666 gps gps
 
 service vendor.loc_launcher /vendor/bin/loc_launcher
     class late_start

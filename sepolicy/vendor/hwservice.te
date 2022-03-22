@@ -1,4 +1,5 @@
 type hal_atfwd_hwservice, hwservice_manager_type;
+type hal_cacert_hwservice, hwservice_manager_type;
 type hal_cne_hwservice, hwservice_manager_type;
 type hal_datafactory_hwservice, hwservice_manager_type;
 type hal_dpmqmi_hwservice, hwservice_manager_type;

@@ -25,6 +25,8 @@
 # dev socket nodes
 /dev/socket/ims_datad                           u:object_r:ims_socket:s0
 /dev/socket/ims_qmid                            u:object_r:ims_socket:s0
+/dev/socket/location(/.*)?                      u:object_r:location_socket:s0
+/dev/socket/mlid                                u:object_r:mlid_socket:s0
 /dev/socket/msm_irqbalance                      u:object_r:irqbalance_socket:s0
 /dev/socket/netmgr(/.*)?                        u:object_r:netmgrd_socket:s0
 /dev/socket/qmux_audio(/.*)?                    u:object_r:qmuxd_socket:s0
@@ -75,6 +77,7 @@
 /(vendor|system/vendor)/bin/irsc_util              u:object_r:irsc_util_exec:s0
 /(vendor|system/vendor)/bin/loc_launcher           u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/lowi-server            u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/mlid                   u:object_r:mlid_exec:s0
 /(vendor|system/vendor)/bin/mlog_qmi_service       u:object_r:mlog_qmi_service_exec:s0
 /(vendor|system/vendor)/bin/msm_irqbalance         u:object_r:irqbalance_exec:s0
 /(vendor|system/vendor)/bin/netmgrd                u:object_r:netmgrd_exec:s0
@@ -97,14 +100,16 @@
 /(vendor|system/vendor)/bin/time_daemon            u:object_r:time_daemon_exec:s0
 /(vendor|system/vendor)/bin/updatemiscta           u:object_r:updatemiscta_exec:s0
 /(vendor|system/vendor)/bin/xtra-daemon            u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/xtwifi-client          u:object_r:location_exec:s0
+/(vendor|system/vendor)/bin/xtwifi-inet-agent      u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.loire u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@[0-9]+\.[0-9]+-service\.clearkey          u:object_r:hal_drm_clearkey_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@[0-9]+\.[0-9]+-service\.widevine          u:object_r:hal_drm_widevine_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@.*-service-qti                           u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.health@2\.0-service\.loire      u:object_r:hal_health_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.loire       u:object_r:hal_light_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power-service-loire             u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.usb@1\.0-service\.loire         u:object_r:hal_usb_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.gnss@2\.0-service                     u:object_r:hal_gnss_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.cryptfshw@1\.0-service-qti\.qsee   u:object_r:hal_keymaster_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@2\.0-service           u:object_r:hal_perf_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.loire    u:object_r:hal_vibrator_default_exec:s0
@@ -124,6 +129,7 @@
 /data/vendor/camera(/.*)?      u:object_r:camera_vendor_data_file:s0
 /data/vendor/connectivity(/.*)?       u:object_r:cnd_data_file:s0
 /data/vendor/location(/.*)?    u:object_r:location_data_file:s0
+/data/vendor/location/mq/location-mq-s u:object_r:location_socket:s0
 /data/vendor/mediadrm(/.*)?    u:object_r:mediadrm_vendor_data_file:s0
 /data/vendor/netmgr(/.*)?      u:object_r:netmgr_data_file:s0
 /data/vendor/nfc(/.*)?         u:object_r:nfc_vendor_data_file:s0

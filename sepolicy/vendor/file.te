@@ -20,6 +20,8 @@ type debugfs_rpm, debugfs_type, fs_type;
 # /dev/socket
 type ims_socket, file_type;
 type irqbalance_socket, file_type;
+type location_socket, file_type, data_file_type;
+type mlid_socket, file_type, mlstrustedobject;
 type netmgrd_socket, file_type;
 type qmuxd_socket, file_type;
 type qns_socket, file_type;
