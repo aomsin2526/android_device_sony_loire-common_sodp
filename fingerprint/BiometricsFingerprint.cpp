@@ -6,7 +6,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.loire"
+#define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service.loire"
 
 #include "BiometricsFingerprint.h"
 
@@ -23,10 +23,8 @@ namespace android {
 namespace hardware {
 namespace biometrics {
 namespace fingerprint {
-namespace V2_1 {
+namespace V2_3 {
 namespace implementation {
-
-using RequestStatus = android::hardware::biometrics::fingerprint::V2_1::RequestStatus;
 
 BiometricsFingerprint::BiometricsFingerprint() : mWt(this) {
     if (fpc_init(&fpc, mWt.getEventFd()) < 0) {
@@ -82,10 +80,6 @@ Return<uint64_t> BiometricsFingerprint::setNotify(
         const sp<IBiometricsFingerprintClientCallback>& clientCallback) {
     std::lock_guard<std::mutex> lock(mClientCallbackMutex);
     mClientCallback = clientCallback;
-    // This is here because HAL 2.1 doesn't have a way to propagate a
-    // unique token for its driver. Subsequent versions should send a unique
-    // token for each call to setNotify(). This is fine as long as there's only
-    // one fingerprint device on the platform.
     return reinterpret_cast<uint64_t>(this);
 }
 
@@ -274,15 +268,13 @@ Return<RequestStatus> BiometricsFingerprint::setActiveGroup(uint32_t gid,
                                                             const hidl_string& storePath) {
     int result;
 
-    if (storePath.size() >= PATH_MAX || storePath.size() <= 0) {
-        ALOGE("Bad path length: %zd", storePath.size());
-        return RequestStatus::SYS_EINVAL;
-    }
-    if (access(storePath.c_str(), W_OK)) {
+    // Return invalid for paths that the HAL is unable to write to.
+    std::string path = storePath.c_str();
+    if (path.compare("") == 0 || path.compare("/") == 0) {
         return RequestStatus::SYS_EINVAL;
     }
 
-    sprintf(db_path, "%s/user.db", storePath.c_str());
+    sprintf(db_path, "%s/user.db", path.c_str());
     this->gid = gid;
 
     ALOGI("%s: storage path set to: %s", __func__, db_path);
@@ -317,6 +309,19 @@ Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operation_id,
 
     bool success = mWt.waitForState(AsyncState::Authenticate);
     return success ? RequestStatus::SYS_OK : RequestStatus::SYS_EAGAIN;
+}
+
+Return<bool> BiometricsFingerprint::isUdfps(uint32_t /*sensorId*/) {
+    return false;
+}
+
+Return<void> BiometricsFingerprint::onFingerDown(uint32_t /*x*/, uint32_t /*y*/, float /*minor*/,
+                                                 float /*major*/) {
+    return Void();
+}
+
+Return<void> BiometricsFingerprint::onFingerUp() {
+    return Void();
 }
 
 void BiometricsFingerprint::IdleAsync() {
@@ -520,7 +525,7 @@ void BiometricsFingerprint::AuthenticateAsync() {
 }
 
 }  // namespace implementation
-}  // namespace V2_1
+}  // namespace V2_3
 }  // namespace fingerprint
 }  // namespace biometrics
 }  // namespace hardware

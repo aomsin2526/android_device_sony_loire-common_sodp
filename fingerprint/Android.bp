@@ -6,10 +6,10 @@
 //
 
 cc_binary {
-    name: "android.hardware.biometrics.fingerprint@2.1-service.loire",
+    name: "android.hardware.biometrics.fingerprint@2.3-service.loire",
     defaults: ["hidl_defaults"],
-    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.loire.rc"],
-    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.1-service.loire.xml"],
+    init_rc: ["android.hardware.biometrics.fingerprint@2.3-service.loire.rc"],
+    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.3-service.loire.xml"],
     vendor: true,
     relative_install_path: "hw",
     srcs: [
@@ -28,5 +28,7 @@ cc_binary {
         "libutils",
         "libdl",
         "android.hardware.biometrics.fingerprint@2.1",
+        "android.hardware.biometrics.fingerprint@2.2",
+        "android.hardware.biometrics.fingerprint@2.3",
     ],
 }
