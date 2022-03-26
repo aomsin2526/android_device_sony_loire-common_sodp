@@ -61,4 +61,5 @@ vendor.gralloc.disable_ahardware_buffer u:object_r:vendor_display_prop:s0
 vendor.gralloc.disable_ubwc       u:object_r:vendor_display_prop:s0
 vendor.gralloc.map_fb_memory      u:object_r:vendor_display_prop:s0
 vendor.ims.                       u:object_r:ims_prop:s0
+vendor.media.msm8956hw            u:object_r:vendor_media_msm8956hw_prop:s0
 vendor.peripheral.                u:object_r:vendor_per_mgr_state_prop:s0
