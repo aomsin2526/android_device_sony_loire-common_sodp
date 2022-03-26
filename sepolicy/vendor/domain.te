@@ -1,3 +1,5 @@
+get_prop(domain, public_vendor_default_prop)
+
 #============= domain ==============
 allow domain debugfs_kgsl:dir search;
 

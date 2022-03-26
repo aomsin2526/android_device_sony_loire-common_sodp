@@ -1,6 +1,8 @@
 typeattribute vendor_init data_between_core_and_vendor_violators;
 
+get_prop(vendor_init, atfwd_start_prop)
 get_prop(vendor_init, vendor_usb_prop)
+set_prop(vendor_init, vendor_radio_prop)
 
 #============= vendor_init ==============
 allow vendor_init proc:file write;
