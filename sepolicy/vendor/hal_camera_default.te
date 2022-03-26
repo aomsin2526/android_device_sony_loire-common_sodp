@@ -17,6 +17,7 @@ allow hal_camera_default qdisplay_service:service_manager find;
 allow hal_camera_default self:socket create_socket_perms;
 allowxperm hal_camera self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
 dontaudit hal_camera_default kernel:system module_request;
+dontaudit hal_camera_default vendor_display_prop:file r_file_perms;
 r_dir_file(hal_camera_default, mnt_vendor_file);
 r_dir_file(hal_camera_default, persist_sensors_file);
 r_dir_file(hal_camera_default, sysfs_camera);

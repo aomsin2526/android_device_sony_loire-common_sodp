@@ -1,3 +1,5 @@
+get_prop(surfaceflinger, vendor_display_prop)
+
 #============= surfaceflinger ==============
 allow surfaceflinger sysfs_mdss_mdp_caps:file r_file_perms;
 r_dir_file(surfaceflinger, sysfs_graphics)

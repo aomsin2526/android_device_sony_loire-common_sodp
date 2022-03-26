@@ -2,3 +2,4 @@ hal_client_domain(mediacodec, hal_perf)
 
 #============= mediacodec ==============
 r_dir_file(mediacodec, sysfs_soc)
+dontaudit mediacodec vendor_display_prop:file r_file_perms;
