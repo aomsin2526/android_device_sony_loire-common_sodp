@@ -21,3 +21,4 @@ allow rild shell_exec:file rx_file_perms;
 allow rild toolbox_exec:file rx_file_perms;
 allow rild vendor_file:file { ioctl lock };
 allowxperm rild self:socket ioctl msm_sock_ipc_ioctls;
+r_dir_file(rild, radio_core_data_file)
