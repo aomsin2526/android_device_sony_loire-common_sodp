@@ -121,6 +121,9 @@
 /(vendor|system/vendor)/bin/init\.qcom\.post_boot\.sh        u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.sensors\.sh          u:object_r:qti_init_shell_exec:s0
 
+# sysfs
+/sys/devices/virtual/bdi/[0-9]+:[0-9]+/read_ahead_kb         u:object_r:sysfs_mmc:s0
+
 # /data
 /data/credmgr(/.*)?            u:object_r:credmgrd_data_file:s0
 /data/etc(/.*)?                u:object_r:ta_data_file:s0
