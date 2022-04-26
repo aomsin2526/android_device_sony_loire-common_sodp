@@ -6,4 +6,6 @@ allow init {
     idd_root_dir
     persist_file
 }:dir mounton;
+allow firmware_file self:filesystem associate;
+allow init firmware_file:filesystem { associate getattr mount relabelfrom };
 allow init system_file:file mounton;

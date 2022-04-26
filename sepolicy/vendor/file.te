@@ -34,7 +34,7 @@ type adsprpcd_file, file_type, mlstrustedobject, vendor_file_type;
 
 # non-hlos mount points
 type bt_firmware_file, fs_type, contextmount_type;
-type firmware_file, fs_type, contextmount_type;
+type firmware_file, file_type, contextmount_type, vendor_file_type;
 
 # /idd
 type idd_rca_file, file_type;
