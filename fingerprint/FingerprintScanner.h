@@ -35,7 +35,7 @@ extern "C" {
 #define FPC_IOCRIRQ _IOR(FPC_IOC_MAGIC, 0x83, int)
 #define FPC_IOCRIRQPOLL _IOR(FPC_IOC_MAGIC, 0x84, int)
 
-#define FP_TZAPP_PATH "/system/etc/firmware/"
+#define FP_TZAPP_PATH "/vendor/firmware/"
 #define FP_TZAPP_NAME "tzfingerprint"
 
 #define KM_TZAPP_PATH "/vendor/firmware_mnt/image/"
