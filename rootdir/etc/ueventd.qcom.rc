@@ -300,3 +300,6 @@ firmware_directories /vendor/firmware_mnt/image/
 
 # TA
 /dev/block/bootdevice/by-name/TA 0770  oem_2997     oem_2997
+
+#KGSL
+/sys/class/kgsl/kgsl-3d0    perfcounter              0660    root    shell
