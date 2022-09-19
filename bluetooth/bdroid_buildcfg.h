@@ -22,30 +22,7 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#pragma push_macro("PROPERTY_VALUE_MAX")
-
-#include <cutils/properties.h>
-#include <string.h>
-
-static inline const char* getBTDefaultName()
-{
-    char device[PROPERTY_VALUE_MAX];
-    property_get("ro.product.device", device, "");
-
-    if (strstr(device, "kugo"))
-        return "Xperia X Compact";
-    if (strstr(device, "suzu"))
-        return "Xperia X";
-
-    return "";
-}
-
-// Default local name
-#define BTM_DEF_LOCAL_NAME getBTDefaultName()
-
 // VSC spec support
 #define BLE_VND_INCLUDED TRUE
-
-#pragma pop_macro("PROPERTY_VALUE_MAX")
 
 #endif
