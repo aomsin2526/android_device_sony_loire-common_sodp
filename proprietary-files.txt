@@ -402,7 +402,7 @@ system/lib64/vendor.qti.imsrtpservice@1.0.so:system_ext/lib64/vendor.qti.imsrtps
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
-vendor/bin/imsrcsd
+vendor/bin/imsrcsd|af5fb0e407f77b0d11138e317ed67595cca3ae5f
 vendor/lib/com.qualcomm.qti.imscmservice@1.0_vendor.so
 vendor/lib/lib-imscmservice.so
 vendor/lib/lib-imsdpl.so
