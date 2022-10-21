@@ -102,6 +102,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service \
+    android.hardware.bluetooth@1.0.vendor \
     libbt-vendor
 
 # Camera
@@ -143,6 +144,7 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
+    android.hardware.drm@1.3.vendor \
     android.hardware.drm-service.clearkey
 
 # Fingerprint
@@ -160,6 +162,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
+    android.hardware.gnss@2.0.vendor \
     libjson
 
 PRODUCT_COPY_FILES += \
@@ -177,9 +180,12 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
+    android.hidl.base@1.0.vendor\
     android.hidl.manager@1.0 \
     libhidltransport \
-    libhwbinder
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
 
 # IMS
 PRODUCT_PACKAGES += \
@@ -238,9 +244,12 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_c2_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_video.xml
 
+PRODUCT_PACKAGES += \
+    libavservices_minijail.vendor \
+
 # Net
 PRODUCT_PACKAGES += \
-    android.system.net.netd@1.0 \
+    android.system.net.netd@1.0.vendor \
     libandroid_net \
     netutils-wrapper-1.0
 
@@ -272,7 +281,7 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-loire \
-    vendor.qti.hardware.perf@2.0
+    vendor.qti.hardware.perf@2.0.vendor
 
 PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
@@ -288,7 +297,7 @@ PRODUCT_PACKAGES += \
 
 # QTI
 PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect
+    libqti_vndfwk_detect.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti.xml \
@@ -317,6 +326,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge
+
+# Shims
+PRODUCT_PACKAGES += \
+    libshim_binder
 
 # SimDetect
 PRODUCT_PACKAGES += \
@@ -355,6 +368,11 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service.loire
+
+# VNDK
+PRODUCT_PACKAGES += \
+    libgui_vendor \
+    libstdc++.vendor
 
 # Wifi
 PRODUCT_PACKAGES += \

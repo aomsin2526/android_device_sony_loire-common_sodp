@@ -175,3 +175,12 @@
 
 # /
 /tombstones                    u:object_r:rootfs:s0
+
+# Same hal process libs
+/(vendor|system/vendor)/lib(64)?/hw/gralloc\.msm8952\.so   u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libadreno_utils\.so       u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libgralloc\.qti\.so       u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libgrallocutils\.so       u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libgsl\.so                u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libllvm-glnext\.so        u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libqdMetaData\.so         u:object_r:same_process_hal_file:s0

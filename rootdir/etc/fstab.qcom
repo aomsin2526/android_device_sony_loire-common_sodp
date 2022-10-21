@@ -6,6 +6,7 @@
 /dev/block/bootdevice/by-name/boot          /boot                  emmc    defaults                                         recoveryonly
 /dev/block/bootdevice/by-name/FOTAKernel    /recovery              emmc    defaults                                         recoveryonly
 /dev/block/bootdevice/by-name/system        /system                ext4    ro,barrier=1                                     wait,recoveryonly
+/dev/block/bootdevice/by-name/oem           /vendor                ext4    ro,barrier=1                                     wait,recoveryonly
 /dev/block/bootdevice/by-name/userdata      /data                  ext4    nosuid,nodev,noatime,barrier=1,noauto_da_alloc   latemount,wait,check,formattable,fileencryption=aes-256-xts:aes-256-cts:v1,quota
 /dev/block/bootdevice/by-name/cache         /cache                 ext4    nosuid,nodev,noatime,barrier=1                   wait,check
 /dev/block/bootdevice/by-name/persist       /persist               ext4    nosuid,nodev,noatime,no_sehash_xattr,barrier=1   wait,check

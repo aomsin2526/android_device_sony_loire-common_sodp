@@ -31,7 +31,6 @@ allow netmgrd self:tcp_socket create_socket_perms;
 allow netmgrd self:udp_socket create_socket_perms;
 allow netmgrd sysfs_net:dir r_dir_perms;
 allow netmgrd sysfs_net:file rw_file_perms;
-allow netmgrd system_file:file x_file_perms;
 allow netmgrd system_net_netd_hwservice:hwservice_manager find;
 allowxperm netmgrd self:socket ioctl msm_sock_ipc_ioctls;
 allowxperm netmgrd self:udp_socket ioctl priv_sock_ioctls;
