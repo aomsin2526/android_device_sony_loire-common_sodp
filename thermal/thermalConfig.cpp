@@ -42,6 +42,108 @@ namespace V2_0 {
 namespace implementation {
 	constexpr std::string_view socIDPath("/sys/devices/soc0/soc_id");
 
+	std::vector<std::string> cpu_sensors_8956 =
+	{
+		"apc1-cpu0-usr",
+		"apc1-cpu1-usr",
+		"cpuss0-usr",
+		"cpuss0-usr",
+		"cpuss0-usr",
+		"cpuss0-usr",
+	};
+
+	std::vector<struct target_therm_cfg> sensor_cfg_8956 =
+	{
+		{
+			TemperatureType::CPU,
+			cpu_sensors_8956,
+			"",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::GPU,
+			{ "gpu-usr" },
+			"GPU",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::SKIN,
+			{ "xo-therm-adc" },
+			"skin",
+			40000,
+			95000,
+			40000,
+			true,
+		},
+		{
+			TemperatureType::BCL_PERCENTAGE,
+			{ "soc" },
+			"soc",
+			10,
+			2,
+			10,
+			false,
+		},
+	};
+
+	std::vector<std::string> cpu_sensors_8976 =
+	{
+		"apc1-cpu0-usr",
+		"apc1-cpu1-usr",
+		"apc1-cpu2-usr",
+		"apc1-cpu3-usr",
+		"cpuss0-usr",
+		"cpuss0-usr",
+		"cpuss0-usr",
+		"cpuss0-usr",
+	};
+
+	std::vector<struct target_therm_cfg> sensor_cfg_8976 =
+	{
+		{
+			TemperatureType::CPU,
+			cpu_sensors_8976,
+			"",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::GPU,
+			{ "gpu-usr" },
+			"GPU",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::SKIN,
+			{ "xo-therm-adc" },
+			"skin",
+			40000,
+			95000,
+			40000,
+			true,
+		},
+		{
+			TemperatureType::BCL_PERCENTAGE,
+			{ "soc" },
+			"soc",
+			10,
+			2,
+			10,
+			false,
+		},
+	};
+
 	std::vector<std::string> cpu_sensors_439 =
 	{
 		"apc1-cpu0-usr",
@@ -943,6 +1045,10 @@ namespace implementation {
 
 	const std::unordered_map<int, std::vector<struct target_therm_cfg>>
 		msm_soc_map = {
+		{266, sensor_cfg_8956},
+		{274, sensor_cfg_8956},
+		{277, sensor_cfg_8976},
+		{278, sensor_cfg_8976},
 		{353, sensor_cfg_439},
 		{354, sensor_cfg_439},
 		{363, sensor_cfg_439},
