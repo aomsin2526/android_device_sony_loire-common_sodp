@@ -39,6 +39,10 @@
 /dev/socket/secd_credmgr_sock                   u:object_r:secd_credmgr_socket:s0
 /dev/socket/secd_devsec_sock                    u:object_r:secd_devsec_socket:s0
 /dev/socket/tad                                 u:object_r:tad_socket:s0
+/dev/socket/thermal-send-client                 u:object_r:thermal_socket:s0
+/dev/socket/thermal-recv-client                 u:object_r:thermal_socket:s0
+/dev/socket/thermal-recv-passive-client         u:object_r:thermal_socket:s0
+/dev/socket/thermal-send-rule                   u:object_r:thermal_socket:s0
 
 # dev block nodes
 /dev/block/mmcblk0                                                u:object_r:root_block_device:s0
@@ -98,6 +102,7 @@
 /(vendor|system/vendor)/bin/taimport               u:object_r:taimport_exec:s0
 /(vendor|system/vendor)/bin/tftp_server            u:object_r:rfs_access_exec:s0
 /(vendor|system/vendor)/bin/time_daemon            u:object_r:time_daemon_exec:s0
+/(vendor|system/vendor)/bin/thermal-engine         u:object_r:thermal-engine_exec:s0
 /(vendor|system/vendor)/bin/updatemiscta           u:object_r:updatemiscta_exec:s0
 /(vendor|system/vendor)/bin/xtra-daemon            u:object_r:location_exec:s0
 /(vendor|system/vendor)/bin/xtwifi-client          u:object_r:location_exec:s0

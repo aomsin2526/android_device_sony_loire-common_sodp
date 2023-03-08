@@ -708,9 +708,12 @@ vendor/lib64/libmiscta.so
 -vendor/lib64/libta.so
 vendor/lib64/vendor.somc.hardware.miscta@1.0_vendor.so
 
-# Thermal
--vendor/lib/libthermalclient.so
--vendor/lib64/libthermalclient.so
+# Thermal - from FP3 - REL-8901.4.A.0019.1-gms-edfd6a4e-user
+vendor/bin/thermal-engine|7e4bd3bfdf72b669f17cd9befa7f286ebf871c38
+vendor/etc/init/init_thermal-engine.rc|a0310f09da9f09c67e110607b73aec9f9f981c4c
+vendor/etc/thermal-engine.conf|c6c9312b7c7b52926cf7d0fc9bff933d90967100
+-vendor/lib/libthermalclient.so|b9c1bfd3aa5ee2d092941141bf9f6e456ee2fb43
+-vendor/lib64/libthermalclient.so|f95bc07fbb05944489c2890397c4a603a7cbe021
 
 # Time services - from poplar - 47.2.A.8.24
 -vendor/app/TimeService/TimeService.apk|44698e55fe4ea1dad568838d537257f2aaec5e47
