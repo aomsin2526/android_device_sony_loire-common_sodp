@@ -44,10 +44,6 @@ vendor/lib64/libaudioalsa.so|5a3d2400b25d073be45cc777a2dada281d9e9aa9
 # Bluetooth
 system/etc/firmware/BCM43xx.hcd:vendor/firmware/BCM4345C0.hcd
 
-# Bluetooth (aptX) - from crosshatch - RQ1A.201205.003
-system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
-system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
-
 # Camera - from SW_BINARIES_FOR_XPERIA_ANDROID_9.0_2.3.2_V9_LOIRE
 vendor/lib/libchromaflash.so|4d721d170da3383bb8c6cca2c471e7c4cf0f7509
 vendor/lib/libflash_pmic.so|208ef37a2930643790528d71b4f680980765ebeb
