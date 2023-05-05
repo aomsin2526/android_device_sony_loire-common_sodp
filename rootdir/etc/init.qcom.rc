@@ -469,6 +469,9 @@ service vendor.loc_launcher /vendor/bin/loc_launcher
     user gps
     group gps
 
+on property:persist.sys.xtra-daemon.enabled=*
+    restart vendor.loc_launcher
+
 service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance_little_big.conf
     class core
     user root
