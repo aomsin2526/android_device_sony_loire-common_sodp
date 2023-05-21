@@ -78,6 +78,13 @@ public:
     ndk::ScopedAStatus getSupportedBraking(std::vector<Braking>* supported) override;
     ndk::ScopedAStatus composePwle(const std::vector<PrimitivePwle> &composite,
                                const std::shared_ptr<IVibratorCallback> &callback) override;
+
+private:
+    static const std::string effectToName(Effect effect);
+    static uint32_t effectToMs(Effect effect, ndk::ScopedAStatus* status);
+    static float strengthToAmplitude(EffectStrength es, ndk::ScopedAStatus* status);
+    static float durationAmplitude(float amplitude);
+    float mDurationAmplitude;
 };
 
 }  // namespace vibrator
