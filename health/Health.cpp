@@ -56,7 +56,7 @@ constexpr char kCycleCountsBins[] = "/sys/class/power_supply/bms/device/cycle_co
 static BatteryRechargingControl battRechargingControl;
 static BatteryInfoUpdate battInfoUpdate;
 static CycleCountBackupRestore ccBackupRestoreBMS(
-    8, kCycleCountsBins, "/persist/battery/qcom_cycle_counts_bins");
+    8, kCycleCountsBins, "/mnt/vendor/persist/battery/qcom_cycle_counts_bins");
 static LearnedCapacityBackupRestore lcBackupRestore;
 
 #define EMMC_DIR "/sys/devices/platform/soc/7824900.sdhci"

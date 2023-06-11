@@ -4,6 +4,7 @@ allow init {
     firmware_file
     idd_rca_file
     idd_root_dir
+    mnt_vendor_file
     persist_file
 }:dir mounton;
 allow firmware_file self:filesystem associate;

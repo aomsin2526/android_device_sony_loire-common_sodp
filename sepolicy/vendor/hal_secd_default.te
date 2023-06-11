@@ -7,5 +7,6 @@ init_daemon_domain(hal_secd_default)
 unix_socket_connect(hal_secd_default, secd_devsec, secd)
 
 #============= hal_secd_default ==============
+allow hal_secd_default mnt_vendor_file:dir search;
 allow hal_secd_default persist_file:dir w_dir_perms;
 allow hal_secd_default persist_file:file create_file_perms;

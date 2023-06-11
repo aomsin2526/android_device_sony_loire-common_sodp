@@ -8,6 +8,7 @@ domain_auto_trans(init, vendor_shell_exec, qti_init_shell)
 set_prop(qti_init_shell, vendor_sensors_prop)
 
 #============= qti_init_shell ==============
+allow qti_init_shell mnt_vendor_file:dir search;
 allow qti_init_shell persist_sensors_file:dir setattr;
 allow qti_init_shell persist_sensors_file:file setattr;
 allow qti_init_shell self:capability { chown fowner };

@@ -6,6 +6,7 @@ init_daemon_domain(time_daemon)
 
 #============= time_daemon ==============
 allow time_daemon diag_device:chr_file rw_file_perms;
+allow time_daemon mnt_vendor_file:dir search;
 allow time_daemon persist_file:dir search;
 allow time_daemon persist_time_file:dir w_dir_perms;
 allow time_daemon persist_time_file:file create_file_perms;
