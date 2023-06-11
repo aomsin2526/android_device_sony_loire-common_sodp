@@ -2,8 +2,6 @@
 type fingerprint_device, dev_type;
 
 # /dev/block
-type appslog_block_device, dev_type;
-type diag_block_device, dev_type;
 type ltalabel_block_device, dev_type;
 type qnovo_block_device, dev_type;
 type tad_block_device, dev_type;

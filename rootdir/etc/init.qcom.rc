@@ -116,16 +116,6 @@ on fs
     chown oem_2985 oem_2985 /sys/class/qns/battery_type
     start vendor.qns
 
-    # Sony IDD and RCA
-    chown oem_2987 oem_2987 /idd
-    chmod 0751 /idd
-    exec /vendor/bin/rm -r /idd/lost+found
-    symlink /idd /mnt/idd
-    chown oem_2987 oem_2987 /rca
-    chmod 0750 /rca
-    exec /vendor/bin/rm -r /rca/lost+found
-    symlink /rca /mnt/rca
-
     chown root system /mnt/vendor/persist
     chmod 0771 /mnt/vendor/persist
     restorecon_recursive /mnt/vendor/persist
@@ -304,8 +294,6 @@ on post-fs-data
     # Create FTM_AP dir for factory test
     mkdir /data/FTM_AP 0775 system system
 
-    mkdir /data/credmgr 0770 system oem_2996
-
     mkdir /data/etc 0755 root shell
 
     # create directory for widevine
@@ -314,16 +302,6 @@ on post-fs-data
     # Create directory for scd
     mkdir /dev/socket/scd 0755 system system
     mkdir /data/scd 0700 system system
-
-    # Sony IDD
-    mkdir /idd/lost+found 0770 root root
-    mkdir /idd/output 0755 oem_2987 oem_2987
-    mkdir /idd/socket 0711 oem_2987 oem_2987
-    mkdir /idd/startup-prober 0700 root root
-
-    restorecon_recursive /idd
-    mkdir /rca/plugins 0750 oem_2987 oem_2987
-    restorecon_recursive /rca
 
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
@@ -572,13 +550,6 @@ service vendor.taimport /vendor/bin/taimport
     user root
     group system drmrpc
     oneshot
-
-service vendor.sec_daemon /vendor/bin/secd
-    user system
-    group system
-    socket secd_devsec_sock stream 0660 system oem_2996
-    socket secd_credmgr_sock stream 0660 system oem_2996
-    class main
 
 service msim-sh /vendor/bin/init.qcom.msim.sh
     class core

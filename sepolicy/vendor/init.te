@@ -1,1 +1,0 @@
-allow init { idd_rca_file idd_root_dir }:dir mounton;

@@ -1,5 +1,4 @@
 # /data
-type credmgrd_data_file, file_type, data_file_type, core_data_file_type;
 type ta_data_file, file_type, data_file_type, core_data_file_type;
 
 # debugfs
@@ -7,16 +6,7 @@ type debugfs_rmt_storage, debugfs_type, fs_type;
 
 # /dev/socket
 type qns_socket, file_type;
-type secd_credmgr_socket, file_type;
-type secd_devsec_socket, file_type;
 type tad_socket, file_type;
-
-# /idd
-type idd_rca_file, file_type;
-type idd_root_dir, file_type;
-type idd_data_file, file_type;
-type idd_output_file, file_type;
-type idd_socket_file, file_type;
 
 # /mnt/qns
 type qns_file, file_type;
