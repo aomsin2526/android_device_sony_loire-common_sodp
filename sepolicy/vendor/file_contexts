@@ -18,8 +18,8 @@
 /(vendor|system/vendor)/bin/qns                    u:object_r:qns_exec:s0
 /(vendor|system/vendor)/bin/sct_service            u:object_r:sct_service_exec:s0
 /(vendor|system/vendor)/bin/ta_qmi_service         u:object_r:ta_qmi_service_exec:s0
-/(vendor|system/vendor)/bin/tad_static             u:object_r:tad_exec:s0
-/(vendor|system/vendor)/bin/taimport               u:object_r:taimport_exec:s0
+/(vendor|system/vendor)/bin/tad                    u:object_r:tad_exec:s0
+/(vendor|system/vendor)/bin/taimport_vendor        u:object_r:taimport_vendor_exec:s0
 /(vendor|system/vendor)/bin/updatemiscta           u:object_r:updatemiscta_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.loire u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.loire           u:object_r:hal_light_default_exec:s0
@@ -27,6 +27,7 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@2\.0-service\.loire     u:object_r:hal_thermal_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.usb@1\.0-service\.loire         u:object_r:hal_usb_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.loire    u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.somc\.hardware\.miscta@1\.0-service        u:object_r:hal_miscta_default_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.msim\.sh             u:object_r:init-qcom-msim-sh_exec:s0
 
 # /
@@ -35,13 +36,14 @@
 /tombstones                    u:object_r:rootfs:s0
 
 # /data
-/data/etc(/.*)?                u:object_r:ta_data_file:s0
+/data/vendor/etc(/.*)?         u:object_r:ta_vendor_data_file:s0
 
 # /mnt/qns
 /mnt/qns(/.*)?                 u:object_r:qns_file:s0
 
 # /mnt/vendor/persist
 /mnt/vendor/persist/battery(/.*)?         u:object_r:persist_battery_file:s0
+/mnt/vendor/persist/wlan(/.*)?            u:object_r:persist_wlan_file:s0
 
 # /sys
 /sys/devices/virtual/input/input[0-9]+/wakeup_gesture        u:object_r:sysfs_touch:s0

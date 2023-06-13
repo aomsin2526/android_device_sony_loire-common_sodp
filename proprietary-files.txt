@@ -691,17 +691,22 @@ vendor/lib64/libsensor1.so|24a1ee61b8d8d9494c7ce637bfdc280b428da5c8
 vendor/lib/sensors.ssc.so
 vendor/lib64/sensors.ssc.so
 
-# TA
-system/lib64/libtpm.so:vendor/lib64/libtpm.so|0ab52eef072dce3a1cb01324ea9b52eaf819cc83
-vendor/bin/sct_service
-vendor/bin/ta_qmi_service
-vendor/bin/tad_static|b8f534e23bf71dff19c973c97222a0d6e40506f8
-vendor/bin/taimport
-vendor/bin/updatemiscta
-vendor/lib/libmiscta.so
-vendor/lib/libta.so
-vendor/lib64/libmiscta.so
-vendor/lib64/libta.so
+# TA - from akatsuki - 52.1.A.3.137
+vendor/bin/hw/vendor.somc.hardware.miscta@1.0-service|c84f3140577daf0119b7782662540785a9b54dde
+vendor/bin/sct_service|d1a60b71a8cd8f3a7763514e782e54541ef25e38
+vendor/bin/ta_qmi_service|7473b1a3787095d6a2bc5022393e0f61736cbc46
+vendor/bin/tad|0fe3daaa4a4dace32944ebb8daf52fdffdcfac8a|
+vendor/bin/taimport_vendor|881193db8c2136852279f9f4d7cbb8bbfe7b4cbd
+vendor/bin/updatemiscta|39877d02fd724bce3fa0f96085a5209adda39b37
+vendor/etc/init/init.taqmi.rc|62d481175010ee5f3eb8ac628161549eb7a20beb
+vendor/etc/init/sct_service.rc|5a078b50547642e236b2f02a0345aaeb34a2c96a
+vendor/etc/init/taimport_vendor.rc|4ca82761c0edea2328135431c2f0007f80ef6b2b
+vendor/etc/init/updatemiscta.rc|24a327e625517c073349545f831bf0e995232acf
+vendor/etc/init/vendor.somc.hardware.miscta@1.0-service.rc|666428a82ff6c43b3a765825c160ed32106080b8
+vendor/lib64/libMiscTaWrapper.so|53069a945c728f47fc59c16ebd7cb404f3cb4436
+vendor/lib64/libmiscta.so|36eda58c500316fb0cda0d0e9b114fdc061406ab
+vendor/lib64/libta.so|c1cd2048f7729f11daf7e8978680a659ea2ba767
+vendor/lib64/vendor.somc.hardware.miscta@1.0.so|4ebf19d447872c7af28bed0aff965187d634f8cb
 
 # Thermal - from FP3 - REL-8901.4.A.0019.1-gms-edfd6a4e-user
 vendor/bin/thermal-engine|7e4bd3bfdf72b669f17cd9befa7f286ebf871c38

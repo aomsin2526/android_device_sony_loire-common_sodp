@@ -1,3 +1,4 @@
+vendor_internal_prop(semc_version_prop)
 vendor_internal_prop(tee_listener_prop)
 vendor_internal_prop(updatemiscta_prop)
 vendor_restricted_prop(keymaster_prop)

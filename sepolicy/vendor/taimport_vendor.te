@@ -1,0 +1,13 @@
+type taimport_vendor, domain;
+type taimport_vendor_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(taimport_vendor)
+
+unix_socket_connect(taimport_vendor, tad, tad)
+
+allow taimport_vendor mnt_vendor_file:dir search;
+allow taimport_vendor persist_wlan_file:dir rw_dir_perms;
+allow taimport_vendor persist_wlan_file:file create_file_perms;
+allow taimport_vendor self:capability setgid;
+allow taimport_vendor ta_vendor_data_file:dir rw_dir_perms;
+allow taimport_vendor ta_vendor_data_file:file create_file_perms;

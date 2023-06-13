@@ -86,7 +86,7 @@ on fs
     wait /dev/block/mmcblk0p1
     chown oem_2997 oem_2997 /dev/block/mmcblk0p1
     chmod 0770 /dev/block/mmcblk0p1
-    start vendor.tad_static
+    start vendor.tad
 
     # ZRAM setup
     write /sys/block/zram0/comp_algorithm lz4
@@ -294,8 +294,6 @@ on post-fs-data
     # Create FTM_AP dir for factory test
     mkdir /data/FTM_AP 0775 system system
 
-    mkdir /data/etc 0755 root shell
-
     # create directory for widevine
     mkdir /data/wv 0700 media media
 
@@ -331,9 +329,6 @@ on early-boot
     # HardwareInfo needs to be able to read CC bins and charge_full
     chmod 644 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/cycle_counts_bins
     chmod 644 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/power_supply/bms/charge_full
-
-    start vendor.ta_qmi_service
-    start vendor.sct_service
 
 on boot
     # Access permission for Bluetooth
@@ -436,15 +431,11 @@ on boot
 
 # Services begin here
 
-service vendor.tad_static /vendor/bin/tad_static /dev/block/bootdevice/by-name/TA 0,16
+service vendor.tad /vendor/bin/tad /dev/block/bootdevice/by-name/TA 0,16 2
     class core
     user oem_2997
     group oem_2997 root
     socket tad stream 0660 system oem_2993
-
-service vendor.sct_service /vendor/bin/sct_service
-    user root
-    disabled
 
 service vendor.atfwd /vendor/bin/ATFWD-daemon
     class late_start
@@ -534,22 +525,6 @@ service vendor.time_daemon /vendor/bin/time_daemon
     class main
     user root
     group root
-
-service vendor.ta_qmi_service /vendor/bin/ta_qmi_service
-    user root
-    disabled
-
-service vendor.updatemiscta /vendor/bin/updatemiscta
-    class main
-    user oem_2991
-    group oem_2993
-    oneshot
-
-service vendor.taimport /vendor/bin/taimport
-    class late_start
-    user root
-    group system drmrpc
-    oneshot
 
 service msim-sh /vendor/bin/init.qcom.msim.sh
     class core

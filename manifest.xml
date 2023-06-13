@@ -387,4 +387,13 @@
             <instance>imsrtpservice</instance>
         </interface>
     </hal>
+    <hal format="hidl">
+        <name>vendor.somc.hardware.miscta</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IMisctaGlobal</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </manifest>
