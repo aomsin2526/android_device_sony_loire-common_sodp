@@ -1,4 +1,1 @@
-binder_call(rild, hal_secd_default)
-
-allow rild hal_secd_hwservice:hwservice_manager find;
-allow rild vendor_file:file { lock ioctl };
+binder_call(rild, qtidataservices_app)
