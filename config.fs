@@ -130,12 +130,6 @@ user: AID_GPS
 group: AID_GPS
 caps: SETUID SETGID
 
-[bt_firmware/]
-mode: 0771
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: 0
-
 [dsp/]
 mode: 0771
 user: AID_MEDIA

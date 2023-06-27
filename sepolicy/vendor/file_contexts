@@ -150,7 +150,6 @@
 /dsp(/.*)?                     u:object_r:adsprpcd_file:s0
 
 # non-hlos mount points
-/bt_firmware(/.*)?             u:object_r:bt_firmware_file:s0
 /firmware(/.*)?                u:object_r:firmware_file:s0
 /(vendor|system/vendor)/firmware_mnt(/.*)? u:object_r:firmware_file:s0
 
