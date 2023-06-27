@@ -1,7 +1,0 @@
-hal_client_domain(mediacodec, hal_perf)
-
-get_prop(mediacodec, vendor_media_msm8956hw_prop)
-
-#============= mediacodec ==============
-r_dir_file(mediacodec, sysfs_soc)
-dontaudit mediacodec vendor_display_prop:file r_file_perms;

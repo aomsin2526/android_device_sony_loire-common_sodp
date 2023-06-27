@@ -1,3 +1,0 @@
-#============= kernel ==============
-allow kernel kernel:capability kill;
-allow kernel self:socket create;

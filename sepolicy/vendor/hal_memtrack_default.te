@@ -1,2 +1,0 @@
-#============= hal_memtrack_default ==============
-r_dir_file(hal_memtrack_default, sysfs_kgsl_proc);

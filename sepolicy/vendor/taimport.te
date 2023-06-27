@@ -6,7 +6,6 @@ init_daemon_domain(taimport)
 
 unix_socket_connect(taimport, tad, tad)
 
-#============= taimport ==============
 allow taimport self:capability setgid;
 allow taimport ta_data_file:dir rw_dir_perms;
 allow taimport ta_data_file:file create_file_perms;

@@ -1,4 +1,0 @@
-get_prop(zygote, vendor_display_prop)
-
-#============= zygote ==============
-allow zygote self:capability kill;

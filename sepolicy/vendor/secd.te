@@ -12,7 +12,6 @@ unix_socket_connect(secd, tad, tad)
 
 get_prop(secd, hwservicemanager_prop)
 
-#============= secd ==============
 allow secd credmgrd_data_file:dir rw_dir_perms;
 allow secd credmgrd_data_file:file create_file_perms;
 allow secd hal_idd_hwservice:hwservice_manager find;

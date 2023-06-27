@@ -1,8 +1,4 @@
 # HALs
-attribute hal_dspmanager;
-attribute hal_dspmanager_client;
-attribute hal_dspmanager_server;
-
 attribute hal_idd;
 attribute hal_idd_client;
 attribute hal_idd_server;
@@ -14,10 +10,6 @@ attribute hal_idd_fallback_server;
 attribute hal_miscta;
 attribute hal_miscta_client;
 attribute hal_miscta_server;
-
-attribute hal_perf;
-attribute hal_perf_client;
-attribute hal_perf_server;
 
 attribute hal_secd;
 attribute hal_secd_client;

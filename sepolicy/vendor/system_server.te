@@ -1,2 +1,0 @@
-dontaudit system_server self:capability sys_module;
-dontaudit system_server vendor_display_prop:file r_file_perms;
