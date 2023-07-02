@@ -143,7 +143,8 @@ PRODUCT_PACKAGES += \
     libqdutils \
     libqdMetaData \
     libqdMetaData.system \
-    libtinyxml
+    libtinyxml \
+    vendor.display.config@1.0.vendor
 
 # DRM
 PRODUCT_PACKAGES += \

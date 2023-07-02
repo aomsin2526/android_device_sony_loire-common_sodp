@@ -12,6 +12,4 @@ radio.                            u:object_r:vendor_radio_prop:s0
 ro.camera.                        u:object_r:camera_prop:s0
 ro.rfkilldisabled                 u:object_r:vendor_default_prop:s0
 ro.semc.                          u:object_r:exported_default_prop:s0
-sys.keymaster.loaded              u:object_r:keymaster_prop:s0
-sys.listeners.registered          u:object_r:tee_listener_prop:s0
 semc.version.                     u:object_r:semc_version_prop:s0

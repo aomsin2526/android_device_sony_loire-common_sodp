@@ -271,23 +271,23 @@ vendor/etc/init/dpmQmiMgr.rc|1538743661a5c48c15cd105beaad20f72953885a
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|d9f1aa7f93b928f42499d613d20ccbc60f279097
 vendor/lib64/libdpmqmihal.so|41eb89e66ba065c43a5eb79cd3c72cef0ee167aa
 
-# DRM
-vendor/bin/qseecomd
-vendor/lib/libQSEEComAPI.so
-vendor/lib64/libdrmfs.so
-vendor/lib64/libdrmtime.so
-vendor/lib64/libGPreqcancel.so
-vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libqisl.so
-vendor/lib64/libQSEEComAPI.so
-vendor/lib64/librpmb.so
-vendor/lib64/libsecureui.so
-vendor/lib64/libsecureui_svcsock.so
-vendor/lib64/libssd.so
-vendor/lib64/libStDrvInt.so
+# DRM - from FP3 - REL-6.A.018.0-gms-1f4b2a90-user
+vendor/bin/qseecomd|5b40595c23a54d13fb611311a4ab9b22a9428e86
+vendor/etc/gpfspath_oem_config.xml|7aeade35b0bbe27530f6aca8c1ed5192a7acf59d
+vendor/lib64/libdrmfs.so|95da701370dd40644baab29d60a6613888ce1ea0
+vendor/lib64/libdrmtime.so|ca5000d5e7f7c16f197fc669f7a5170023d2e4c9
+vendor/lib64/libGPreqcancel.so|b9efbc8623981e1249ad0a0f8964b2b655d2b334
+vendor/lib64/libGPreqcancel_svc.so|d539a9c7368973264e71700824b21ce8e5339441
+vendor/lib64/libqisl.so|c79719eebc094c2af9561e8df2c158638b111b70
+vendor/lib64/libQSEEComAPI.so|c94db2c194c9edebe5e6c40d63bec1589432d62e
+vendor/lib64/librpmb.so|4ae66b5b5d27b0302bb1d0a5f2396958ed8209c9
+vendor/lib64/libsecureui.so|1cb5b3e219c31b6fe5e7ba5b27d434e045e085ed
+vendor/lib64/libsecureui_svcsock.so|ba9f7aa7605e54110afea5d9921381f6e6d71a19
+vendor/lib64/libssd.so|5b9ac8a457118b1e1b80f87fdc0e78d916ee099a
+vendor/lib64/libStDrvInt.so|1161fc5b029125b2ac87a27e88555c14725f182f
 
-# Gatekeeper
-vendor/lib64/hw/gatekeeper.msm8952.so
+# Gatekeeper - from FP3 - REL-6.A.018.0-gms-1f4b2a90-user
+vendor/lib64/hw/gatekeeper.msm8952.so|d760257a98254b9e87ae258e267b1a45a0ed7ecb
 
 # GPS - from daisy - V11.0.21.0.QDLMIXM
 vendor/bin/hw/android.hardware.gnss@2.0-service-qti|7f7006829005658c9b89c61ac02f107d3d6fe470
@@ -438,8 +438,8 @@ vendor/lib64/vendor.qti.imsrtpservice@3.0.so|460e589128fce0b0e83bb3c75aa32f7e1a9
 # IRQ balance - from marlin - PQ3A.190801.002
 vendor/bin/msm_irqbalance|3f7a923d9d01dbfda40ebdfdd27a62167df69c13
 
-# Keystore
-vendor/lib64/hw/keystore.msm8952.so
+# Keystore - from FP3 - REL-6.A.018.0-gms-1f4b2a90-user
+vendor/lib64/hw/keystore.msm8952.so|83a48633d4530c45e36cfb9cd7f3d63a8a5bc122
 
 # Media - from FP3 - REL-8901.4.A.0019.1-gms-edfd6a4e-user
 vendor/lib/libAlacSwDec.so|be3d6e539f748742d3d28437bbcb498c1750f102
@@ -720,6 +720,11 @@ vendor/etc/thermal-engine.conf|c6c9312b7c7b52926cf7d0fc9bff933d90967100
 vendor/bin/time_daemon|0557e5c402bd0a7eabc79417c67ac6c13bb5d0ed
 vendor/lib/libtime_genoff.so|87dfe50d46e306b73efcd859ce9c7c9fa86cd5b5
 vendor/lib64/libtime_genoff.so|e341ec29dbfb6d1fae84915a6151fd56d25f4ddc
+
+# Trusted User Interface - from FP3 - REL-6.A.018.0-gms-1f4b2a90-user
+vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|15378114c18fd1b1c8f9671f656396285ad1de48
+vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|f6b0e0e951394b609f0cb5c19e83a37447d9d292
 
 # Widevine - from walley - RP1A.200720.009
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine|5e64027d1fbdd74c971cbf1481578673798520d5
