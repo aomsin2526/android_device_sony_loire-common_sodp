@@ -73,12 +73,8 @@ on enable-low-power
     # Disable sched boost
     write /proc/sys/kernel/sched_boost 0
 
-    # Disable thermal & BCL hotplug to update governor settings
+    # Disable thermal to update governor settings
     write /sys/module/msm_thermal/core_control/enabled 0
-    write /sys/devices/soc/soc:qcom,bcl/mode "disable"
-    write /sys/devices/soc/soc:qcom,bcl/hotplug_mask 0
-    write /sys/devices/soc/soc:qcom,bcl/hotplug_soc_mask 0
-    write /sys/devices/soc/soc:qcom,bcl/mode "enable"
 
     # Bring CPU0 core online
     write /sys/devices/system/cpu/cpu0/online 1
@@ -134,12 +130,8 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 100
     write /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster 1
 
-    # Re-enable thermal & BCL hotplug
+    # Re-enable thermal
     write /sys/module/msm_thermal/core_control/enabled 1
-    write /sys/devices/soc/soc:qcom,bcl/mode "disable"
-    write /sys/devices/soc/soc:qcom,bcl/hotplug_mask 48
-    write /sys/devices/soc/soc:qcom,bcl/hotplug_soc_mask 48
-    write /sys/devices/soc/soc:qcom,bcl/mode "enable"
 
     # Enable timer migration to little cluster
     write /proc/sys/kernel/power_aware_timer_migration 1
