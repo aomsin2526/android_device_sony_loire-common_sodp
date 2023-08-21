@@ -681,13 +681,13 @@ system/etc/firmware/tzwvcpybuf.b02:vendor/firmware/tzwvcpybuf.b02
 system/etc/firmware/tzwvcpybuf.b03:vendor/firmware/tzwvcpybuf.b03
 system/etc/firmware/tzwvcpybuf.mdt:vendor/firmware/tzwvcpybuf.mdt
 
-# Sensors - from daisy - V11.0.21.0.QDLMIXM
-vendor/bin/sensors.qti|fa96c853b27dad6e7547ddc119a0718194626c9e
+# Sensors - from PAN_sprout - RKQ1.200928.002 (3.240)
+vendor/bin/sensors.qti|b54dac6ef080b17858bbdfaa399163606e37d793
 vendor/etc/sensors/hals.conf|bf3677cbfa5ce5735662e8c259cb027969f65c87
-vendor/lib/libsensor_reg.so|8f113416861ab8c14613ebf3ea6eeb9997971624
-vendor/lib/libsensor1.so|a3bff5966ef0dd0623d385da9a8809f6dabb11f3
-vendor/lib64/libsensor_reg.so|54baa94535e7dd96804019810e90cfbec5519bf5
-vendor/lib64/libsensor1.so|24a1ee61b8d8d9494c7ce637bfdc280b428da5c8
+vendor/lib/libsensor_reg.so|0fd388183c8e77178cf71ff3e9d0c86e5bcc962f
+vendor/lib/libsensor1.so|ad12458bcc6019211a7d2b50acdd98e57dd75681
+vendor/lib64/libsensor_reg.so|fe997638cfd335407ff6b21bb5a8306a15b8a025
+vendor/lib64/libsensor1.so|f648b722cb742bc245e774581b95833a79ffaa1a
 
 # Sensors (SSC)
 vendor/lib/sensors.ssc.so
