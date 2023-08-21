@@ -436,8 +436,8 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so|62cd64dbb25d082cfdc742fb03931ba0f9a
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so|fa120eaa7807ff43f3974a8e0146a8c00c78f623
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so|460e589128fce0b0e83bb3c75aa32f7e1a9494fd
 
-# IRQ balance - from marlin - PQ3A.190801.002
-vendor/bin/msm_irqbalance|3f7a923d9d01dbfda40ebdfdd27a62167df69c13
+# IRQ balance - from FP3 - REL-6.A.018.0-gms-1f4b2a90-user
+vendor/bin/msm_irqbalance|b075c2f4092c175950a2c26d19bf2013e2efd6d5
 
 # Keystore - from FP3 - REL-6.A.018.0-gms-1f4b2a90-user
 vendor/lib64/hw/keystore.msm8952.so|83a48633d4530c45e36cfb9cd7f3d63a8a5bc122
