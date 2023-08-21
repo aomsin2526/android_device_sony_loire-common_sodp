@@ -374,23 +374,6 @@ on boot
     mkdir /mnt/vendor/persist/time 0770 system system
     mkdir /mnt/vendor/persist/vpp 0770 media media
 
-    # Copy data/time to data/vendor/time
-    copy /data/time/ats_1 /data/vendor/time/ats_1
-    chown system net_raw /data/vendor/time/ats_1
-    chmod 0600 /data/vendor/time/ats_1
-    rm /data/time/ats_1
-
-    copy /data/time/ats_2 /data/vendor/time/ats_2
-    chown system net_raw /data/vendor/time/ats_2
-    chmod 0600 /data/vendor/time/ats_2
-    rm /data/time/ats_2
-
-    copy /data/time/ats_16 /data/vendor/time/ats_16
-    chown system net_raw /data/vendor/time/ats_16
-    chmod 0600 /data/vendor/time/ats_16
-    rm /data/time/ats_16
-    rmdir /data/time
-
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
@@ -525,11 +508,6 @@ service vendor.sensors.qti /vendor/bin/sensors.qti
     user system
     group system
     disabled
-
-service vendor.time_daemon /vendor/bin/time_daemon
-    class main
-    user root
-    group root
 
 service msim-sh /vendor/bin/init.qcom.msim.sh
     class core

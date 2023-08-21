@@ -717,11 +717,11 @@ vendor/etc/thermal-engine.conf|c6c9312b7c7b52926cf7d0fc9bff933d90967100
 -vendor/lib/libthermalclient.so|b9c1bfd3aa5ee2d092941141bf9f6e456ee2fb43
 -vendor/lib64/libthermalclient.so|f95bc07fbb05944489c2890397c4a603a7cbe021
 
-# Time services - from poplar - 47.2.A.8.24
--vendor/app/TimeService/TimeService.apk|44698e55fe4ea1dad568838d537257f2aaec5e47
-vendor/bin/time_daemon|0557e5c402bd0a7eabc79417c67ac6c13bb5d0ed
-vendor/lib/libtime_genoff.so|87dfe50d46e306b73efcd859ce9c7c9fa86cd5b5
-vendor/lib64/libtime_genoff.so|e341ec29dbfb6d1fae84915a6151fd56d25f4ddc
+# Time services - from munch - V14.0.3.0.TLMMIXM
+-vendor/app/TimeService/TimeService.apk|dbce138ec22510d2658ef9ce2bea291dc1f495eb
+vendor/bin/time_daemon|58de210cc26a113e9b7d4928ecd16709bb68bbd8
+vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
+vendor/lib64/libtime_genoff.so|3c2f96d4e75b29add42046e4d1ca3205e2447eeb
 
 # Trusted User Interface - from FP3 - REL-6.A.018.0-gms-1f4b2a90-user
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|15378114c18fd1b1c8f9671f656396285ad1de48
