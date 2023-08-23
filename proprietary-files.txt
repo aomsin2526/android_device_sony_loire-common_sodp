@@ -25,21 +25,18 @@ vendor/lib/rfsa/adsp/libfastcvadsp_skel.so|1ff4a48009e88435d93fd2b9b0c5ea59cedbb
 vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so|944169db3ac67056b92ef4f850f69346958370b5
 vendor/lib/rfsa/adsp/libscveT2T_skel.so|91b9200dbb982abf0d6b440668252d892a616f66
 
-# Audio - from akatsuki - 52.1.A.3.137
-vendor/lib/libacdb-fts.so|90fbffe695df041332ba75f98ed4ba60f60c62db
-vendor/lib/libacdbloader.so|a2932fdc3103721c84f02ca0c49fddf977b86a04
-vendor/lib/libacdbrtac.so|b15a1af30140b1ffe6e179294bf3f497581595a4
-vendor/lib/libadiertac.so|4da6dd43bfc887582c765a48e538572d69088c86
-vendor/lib/libadm.so|10f2fe9028ad0da6b8337b0894f366fbddb6b3ec
-vendor/lib/libaudcal.so|56003613ab60763677bd30dd446f97b6f1fd151b
-vendor/lib/libaudioalsa.so|075ee009d19e3a7b897c4e15ef8d69691e81214c
-vendor/lib/libdrc.so|fd9cfa48d504937feb7468f8820ffc49cf49ddfe
-vendor/lib64/libacdb-fts.so|dd7746c3820bc36a95de8bff68e560463b1dd18f
-vendor/lib64/libacdbloader.so|cb326d988e271ecad7f32cc3380cacf847c5fcbe
-vendor/lib64/libacdbrtac.so|217dea643dfb3312e44adb9ca1ab765bd8f10141
-vendor/lib64/libadiertac.so|1d1e9be83f019f8ddc8f859f1c7df6540ba92bf8
-vendor/lib64/libaudcal.so|7a70996b7207e6d9c2143ff3f7c6a02af9376a9a
-vendor/lib64/libaudioalsa.so|5a3d2400b25d073be45cc777a2dada281d9e9aa9
+# Audio - from FP3 - REL-6.A.018.0-gms-1f4b2a90-user
+vendor/lib/libacdb-fts.so|458980ecf3ba88c4e6d4862af727ac8b52a8c943
+vendor/lib/libacdbloader.so|8e5758fbaa7a1c717d7ff15851972951697a0ee2
+vendor/lib/libacdbrtac.so|2bfe2d2c49833b37dee10d2776d97bb368d5a1a5
+vendor/lib/libadiertac.so|53b70da188c6aee0333a1f4d368f7ac8ffba3fae
+vendor/lib/libadm.so|0c12ba8a37d5c01f49d58c36b9fb84354ae568a9
+vendor/lib/libaudcal.so|ea9f62700c66d8dbaf4575e567fa67046ee66a49
+vendor/lib64/libacdb-fts.so|05760bb66071dbe10c10f105901710c18e4b20ce
+vendor/lib64/libacdbloader.so|cf69f69f856ea26adfcee9b4a60d6c72bb9e4b2b
+vendor/lib64/libacdbrtac.so|7e3c1165cc2290446eb5fe198011e652f7ac6d29
+vendor/lib64/libadiertac.so|bf301460c27cb2f78bfb7f0821c1c103da321ff8
+vendor/lib64/libaudcal.so|82e7f821044492fa42dcad1e1ace91561cc8e463
 
 # Bluetooth
 system/etc/firmware/BCM43xx.hcd:vendor/firmware/BCM4345C0.hcd
