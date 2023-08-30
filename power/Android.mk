@@ -22,11 +22,15 @@ LOCAL_SRC_FILES := \
     utils.c \
     list.c \
     hint-data.c \
-    power-8976.c \
     Power.cpp \
     main.cpp
 
 LOCAL_CFLAGS += -Wall -Wextra -Werror
+
+# Include target-specific files.
+ifeq ($(call is-board-platform-in-list,msm8952), true)
+LOCAL_SRC_FILES += power-8976.c
+endif
 
 ifneq ($(TARGET_TAP_TO_WAKE_NODE),)
     LOCAL_CFLAGS += -DTAP_TO_WAKE_NODE=\"$(TARGET_TAP_TO_WAKE_NODE)\"
