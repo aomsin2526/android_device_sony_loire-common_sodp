@@ -560,8 +560,9 @@ vendor/lib64/libqmi_csi.so|6d22ed6353c791ea1804c195b92b02dc28a679c3
 vendor/lib64/libqmi_encdec.so|8a365cf7472c187c02fa0649e09fee529ded7563
 vendor/lib64/libqmiservices.so|2e259463cbeb329caec303b642ab4068c8d10be5
 
-# QMI (Modem Log)
-vendor/bin/mlog_qmi_service
+# QMI (Modem Log) - from akatsuki - 52.1.A.3.137
+vendor/bin/mlog_qmi_service|bc7166b482ef99a23a58f51d2fa4c8b8f48f7c5c
+vendor/etc/init/mlog_qmi_service.rc|891d046c6170a9b6d6fba25ab7693049b2ad4e81
 
 # RIL - from FP3 - REL-6.A.020.0-gms-88126537-user
 -system_ext/app/datastatusnotification/datastatusnotification.apk|abe3343065ffcfe3c315258831d073c6086139ae

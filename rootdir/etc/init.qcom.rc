@@ -355,7 +355,6 @@ on early-boot
     chmod 644 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/power_supply/bms/charge_full
 
     start vendor.ta_qmi_service
-    start vendor.mlog_qmi_service
     start vendor.sct_service
 
 on boot
@@ -508,10 +507,6 @@ service vendor.loc_launcher /vendor/bin/loc_launcher
     class late_start
     user gps
     group gps
-
-service vendor.mlog_qmi_service /vendor/bin/mlog_qmi_service
-    user root
-    disabled
 
 service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.conf
     class core
