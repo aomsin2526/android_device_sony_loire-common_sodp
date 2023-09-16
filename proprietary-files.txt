@@ -689,9 +689,9 @@ vendor/lib/libsensor1.so|ad12458bcc6019211a7d2b50acdd98e57dd75681
 vendor/lib64/libsensor_reg.so|fe997638cfd335407ff6b21bb5a8306a15b8a025
 vendor/lib64/libsensor1.so|f648b722cb742bc245e774581b95833a79ffaa1a
 
-# Sensors (SSC)
-vendor/lib/sensors.ssc.so
-vendor/lib64/sensors.ssc.so
+# Sensors (SSC) - from FP3 - REL-6.A.020.0-gms-88126537-user
+vendor/lib/sensors.ssc.so|30d8799c92db27699c90e12243447d7d999fbc85
+vendor/lib64/sensors.ssc.so|aeab604388f7e41e2da7dad76bf22bcf47a632db
 
 # TA - from akatsuki - 52.1.A.3.137
 vendor/bin/hw/vendor.somc.hardware.miscta@1.0-service|c84f3140577daf0119b7782662540785a9b54dde
