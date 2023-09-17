@@ -103,18 +103,6 @@ user: AID_SYSTEM
 group: AID_SYSTEM
 caps: NET_BIND_SERVICE
 
-[vendor/bin/slim_daemon]
-mode: 0755
-user: AID_GPS
-group: AID_GPS
-caps: NET_BIND_SERVICE
-
-[system/vendor/bin/slim_daemon]
-mode: 0755
-user: AID_GPS
-group: AID_GPS
-caps: NET_BIND_SERVICE
-
 [vendor/bin/loc_launcher]
 mode: 0755
 user: AID_GPS
