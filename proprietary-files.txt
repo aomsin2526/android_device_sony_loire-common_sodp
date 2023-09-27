@@ -273,8 +273,6 @@ vendor/lib64/libdpmqmihal.so|41eb89e66ba065c43a5eb79cd3c72cef0ee167aa
 
 # DRM - from FP3 - REL-6.A.018.0-gms-1f4b2a90-user
 vendor/bin/qseecomd|5b40595c23a54d13fb611311a4ab9b22a9428e86
-vendor/etc/gpfspath_oem_config.xml|7aeade35b0bbe27530f6aca8c1ed5192a7acf59d
-vendor/lib64/libdrmfs.so|95da701370dd40644baab29d60a6613888ce1ea0
 vendor/lib64/libdrmtime.so|ca5000d5e7f7c16f197fc669f7a5170023d2e4c9
 vendor/lib64/libGPreqcancel.so|b9efbc8623981e1249ad0a0f8964b2b655d2b334
 vendor/lib64/libGPreqcancel_svc.so|d539a9c7368973264e71700824b21ce8e5339441
@@ -285,6 +283,9 @@ vendor/lib64/libsecureui.so|1cb5b3e219c31b6fe5e7ba5b27d434e045e085ed
 vendor/lib64/libsecureui_svcsock.so|ba9f7aa7605e54110afea5d9921381f6e6d71a19
 vendor/lib64/libssd.so|5b9ac8a457118b1e1b80f87fdc0e78d916ee099a
 vendor/lib64/libStDrvInt.so|1161fc5b029125b2ac87a27e88555c14725f182f
+
+# DRM (LibFs)
+vendor/lib64/libdrmfs.so
 
 # Gatekeeper - from FP3 - REL-6.A.018.0-gms-1f4b2a90-user
 vendor/lib64/hw/gatekeeper.msm8952.so|d760257a98254b9e87ae258e267b1a45a0ed7ecb
