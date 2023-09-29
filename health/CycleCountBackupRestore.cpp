@@ -23,8 +23,8 @@ namespace health {
 
 static constexpr int kBackupTrigger = 20;
 
-CycleCountBackupRestore::CycleCountBackupRestore(int nb_buckets, const char *sysfs_path,
-                                                 const char *persist_path)
+CycleCountBackupRestore::CycleCountBackupRestore(int nb_buckets, const char* sysfs_path,
+                                                 const char* persist_path)
     : nb_buckets_(nb_buckets),
       saved_soc_(-1),
       soc_inc_(0),
@@ -58,7 +58,7 @@ void CycleCountBackupRestore::Backup(int battery_level) {
     }
 }
 
-void CycleCountBackupRestore::Read(const std::string &path, int *bins) {
+void CycleCountBackupRestore::Read(const std::string& path, int* bins) {
     std::string buffer;
 
     if (!android::base::ReadFileToString(path, &buffer)) {
@@ -78,7 +78,7 @@ void CycleCountBackupRestore::Read(const std::string &path, int *bins) {
     }
 }
 
-void CycleCountBackupRestore::Write(int *bins, const std::string &path) {
+void CycleCountBackupRestore::Write(int* bins, const std::string& path) {
     std::string str_data = "";
 
     for (int i = 0; i < nb_buckets_; ++i) {
@@ -105,10 +105,8 @@ void CycleCountBackupRestore::UpdateAndSave() {
             backup = true;
         }
     }
-    if (restore)
-        Write(hw_bins_, sysfs_path_);
-    if (backup)
-        Write(sw_bins_, persist_path_);
+    if (restore) Write(hw_bins_, sysfs_path_);
+    if (backup) Write(sw_bins_, persist_path_);
 }
 
 }  // namespace health

@@ -14,39 +14,50 @@
  * limitations under the License.
  */
 
-cc_library_shared {
-    name: "android.hardware.health@2.1-impl-loire",
-    stem: "android.hardware.health@2.0-impl-2.1-loire",
-
-    proprietary: true,
+cc_defaults {
+    name: "android.hardware.health-service.loire-defaults",
+    defaults: [
+        "libhealth_aidl_impl_user",
+        "libhealth_aidl_charger_defaults",
+    ],
     relative_install_path: "hw",
+    vintf_fragments: ["android.hardware.health-service.loire.xml"],
+    srcs: ["Health.cpp"],
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+    static_libs: [
+        "libhealth_aidl_impl",
+    ],
+}
+
+cc_binary {
+    name: "android.hardware.health-service.loire",
+    defaults: ["android.hardware.health-service.loire-defaults"],
+    proprietary: true,
+    init_rc: ["android.hardware.health-service.loire.rc"],
     srcs: [
-        "Health.cpp",
         "BatteryRechargingControl.cpp",
         "BatteryInfoUpdate.cpp",
         "CycleCountBackupRestore.cpp",
         "LearnedCapacityBackupRestore.cpp",
     ],
-
     cflags: [
-        "-Wall",
-        "-Werror",
         "-Wno-implicit-fallthrough", // warning in BatteryRechargingControl.cpp
     ],
-
-    static_libs: [
-        "android.hardware.health@1.0-convert",
-        "libbatterymonitor",
-        "libhealth2impl",
-        "libhealthloop",
-    ],
-
     shared_libs: [
+        "android.hardware.health-V1-ndk",
         "libbase",
         "libcutils",
-        "libhidlbase",
         "libutils",
-        "android.hardware.health@2.0",
-        "android.hardware.health@2.1",
     ],
+    overrides: ["charger"],
+}
+cc_binary {
+    name: "android.hardware.health-service.loire_recovery",
+    defaults: ["android.hardware.health-service.loire-defaults"],
+    recovery: true,
+    init_rc: ["android.hardware.health-service.loire_recovery.rc"],
+    overrides: ["charger.recovery"],
 }

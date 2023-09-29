@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#ifndef DEVICE_SONY_LOIRE_HEALTH_BATTERYRECHARGINGCONTROL_H
-#define DEVICE_SONY_LOIRE_HEALTH_BATTERYRECHARGINGCONTROL_H
+#pragma once
 
+#include <aidl/android/hardware/health/HealthInfo.h>
 #include <android-base/file.h>
 #include <android-base/logging.h>
 #include <android-base/strings.h>
@@ -39,9 +39,10 @@ enum RechargeState {
     INACTIVE           // Not active the recharging state checking
 };
 
+template <typename T>
 struct sysfsStringEnumMap {
-    const char *s;
-    int val;
+    const char* s;
+    T val;
 };
 
 /**
@@ -58,7 +59,7 @@ struct sysfsStringEnumMap {
 class BatteryRechargingControl {
   public:
     BatteryRechargingControl();
-    void updateBatteryProperties(struct android::BatteryProperties *props);
+    void updateBatteryProperties(aidl::android::hardware::health::HealthInfo* health_info);
 
   private:
     enum RechargeState state_;
@@ -66,8 +67,7 @@ class BatteryRechargingControl {
     /* Keeps track of the target level to detect OVER_LOADING or 0 when no target is set */
     int recharge_soc_;
 
-    int mapSysfsString(const char *str, struct sysfsStringEnumMap map[]);
-    int getBatteryStatus(const char *status);
+    aidl::android::hardware::health::BatteryStatus getBatteryStatus(const char* status);
     int RemapSOC(int);
     int64_t getTime();
 };
@@ -76,5 +76,3 @@ class BatteryRechargingControl {
 }  // namespace loire
 }  // namespace sony
 }  // namespace device
-
-#endif

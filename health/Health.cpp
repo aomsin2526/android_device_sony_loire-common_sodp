@@ -13,21 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#define LOG_TAG "android.hardware.health@2.1-impl-loire"
+#define LOG_TAG "android.hardware.health-service.loire"
 #include <android-base/logging.h>
 
 #include <android-base/file.h>
 #include <android-base/parseint.h>
 #include <android-base/strings.h>
-#include <android/hardware/health/2.0/types.h>
-#include <health2impl/Health.h>
+#include <android/hardware/health/translate-ndk.h>
+#include <health-impl/Health.h>
 #include <health/utils.h>
-#include <hal_conversion.h>
 
-#include "BatteryRechargingControl.h"
+#ifndef __ANDROID_RECOVERY__
+#include <health-impl/ChargerUtils.h>
 #include "BatteryInfoUpdate.h"
+#include "BatteryRechargingControl.h"
 #include "CycleCountBackupRestore.h"
 #include "LearnedCapacityBackupRestore.h"
+#endif  // !__ANDROID_RECOVERY__
+
 #include <fstream>
 #include <iomanip>
 #include <string>
@@ -37,17 +40,17 @@ namespace {
 
 using namespace std::literals;
 
-using android::hardware::health::V1_0::hal_conversion::convertFromHealthInfo;
-using android::hardware::health::V1_0::hal_conversion::convertToHealthInfo;
-using android::hardware::health::V2_0::DiskStats;
-using android::hardware::health::V2_0::StorageAttribute;
-using android::hardware::health::V2_0::StorageInfo;
-using android::hardware::health::V2_0::Result;
-using ::android::hardware::health::V2_1::IHealth;
+using aidl::android::hardware::health::DiskStats;
+using aidl::android::hardware::health::HalHealthLoop;
+using aidl::android::hardware::health::HealthInfo;
+using aidl::android::hardware::health::StorageInfo;
 using android::hardware::health::InitHealthdConfig;
 
-using ::device::sony::loire::health::BatteryRechargingControl;
+#ifndef __ANDROID_RECOVERY__
+using aidl::android::hardware::health::charger::ChargerCallback;
+using aidl::android::hardware::health::charger::ChargerModeMain;
 using ::device::sony::loire::health::BatteryInfoUpdate;
+using ::device::sony::loire::health::BatteryRechargingControl;
 using ::device::sony::loire::health::CycleCountBackupRestore;
 using ::device::sony::loire::health::LearnedCapacityBackupRestore;
 
@@ -56,8 +59,9 @@ constexpr char kCycleCountsBins[] = "/sys/class/power_supply/bms/device/cycle_co
 static BatteryRechargingControl battRechargingControl;
 static BatteryInfoUpdate battInfoUpdate;
 static CycleCountBackupRestore ccBackupRestoreBMS(
-    8, kCycleCountsBins, "/mnt/vendor/persist/battery/qcom_cycle_counts_bins");
+        8, kCycleCountsBins, "/mnt/vendor/persist/battery/qcom_cycle_counts_bins");
 static LearnedCapacityBackupRestore lcBackupRestore;
+#endif  // !__ANDROID_RECOVERY__
 
 #define EMMC_DIR "/sys/devices/platform/soc/7824900.sdhci"
 const std::string kEmmcHealthEol{EMMC_DIR "/health/eol"};
@@ -65,7 +69,6 @@ const std::string kEmmcHealthLifetimeA{EMMC_DIR "/health/lifetimeA"};
 const std::string kEmmcHealthLifetimeB{EMMC_DIR "/health/lifetimeB"};
 const std::string kEmmcVersion{"/sys/block/mmcblk0/device/fwrev"};
 const std::string kDiskStatsFile{"/sys/block/mmcblk0/stat"};
-const std::string kEmmcName{"MMC0"};
 
 std::ifstream assert_open(const std::string& path) {
     std::ifstream stream(path);
@@ -90,29 +93,30 @@ void read_emmc_version(StorageInfo* info) {
     info->version = ss.str();
 }
 
-void fill_emmc_storage_attribute(StorageAttribute* attr) {
-    attr->isInternal = true;
-    attr->isBootDevice = true;
-    attr->name = kEmmcName;
+#ifdef __ANDROID_RECOVERY__
+void private_healthd_board_init(struct healthd_config*) {}
+int private_healthd_board_battery_update(HealthInfo*) {
+    return 0;
 }
-
+#else  // !__ANDROID__RECOVERY__
 void private_healthd_board_init(struct healthd_config*) {
     ccBackupRestoreBMS.Restore();
     lcBackupRestore.Restore();
 }
 
-int private_healthd_board_battery_update(struct android::BatteryProperties *props) {
-    battRechargingControl.updateBatteryProperties(props);
-    battInfoUpdate.update(props);
-    ccBackupRestoreBMS.Backup(props->batteryLevel);
+int private_healthd_board_battery_update(HealthInfo* health_info) {
+    battRechargingControl.updateBatteryProperties(health_info);
+    battInfoUpdate.update(health_info);
+    ccBackupRestoreBMS.Backup(health_info->batteryLevel);
     lcBackupRestore.Backup();
     return 0;
 }
 
-void private_get_storage_info(std::vector<StorageInfo> &vec_storage_info) {
-    vec_storage_info.resize(1);
-    StorageInfo *storage_info = &vec_storage_info[0];
-    fill_emmc_storage_attribute(&storage_info->attr);
+#endif  // __ANDROID_RECOVERY__
+
+void private_get_storage_info(std::vector<StorageInfo>* vec_storage_info) {
+    vec_storage_info->resize(1);
+    StorageInfo* storage_info = &vec_storage_info->at(0);
 
     read_emmc_version(storage_info);
     read_value_from_file(kEmmcHealthEol, &storage_info->eol);
@@ -121,87 +125,92 @@ void private_get_storage_info(std::vector<StorageInfo> &vec_storage_info) {
     return;
 }
 
-void private_get_disk_stats(std::vector<DiskStats> &vec_stats) {
-    vec_stats.resize(1);
-    DiskStats *stats = &vec_stats[0];
-    fill_emmc_storage_attribute(&stats->attr);
+void private_get_disk_stats(std::vector<DiskStats>* vec_stats) {
+    vec_stats->resize(1);
+    DiskStats* stats = &vec_stats->at(0);
 
     auto stream = assert_open(kDiskStatsFile);
     // Regular diskstats entries
-    stream >> stats->reads >> stats->readMerges >> stats->readSectors >>
-      stats->readTicks >> stats->writes >> stats->writeMerges >>
-      stats->writeSectors >> stats->writeTicks >> stats->ioInFlight >>
-      stats->ioTicks >> stats->ioInQueue;
+    stream >> stats->reads >> stats->readMerges >> stats->readSectors >> stats->readTicks >>
+            stats->writes >> stats->writeMerges >> stats->writeSectors >> stats->writeTicks >>
+            stats->ioInFlight >> stats->ioTicks >> stats->ioInQueue;
     return;
 }
 }  // anonymous namespace
 
-namespace android {
-namespace hardware {
-namespace health {
-namespace V2_1 {
-namespace implementation {
+namespace aidl::android::hardware::health::implementation {
 class HealthImpl : public Health {
- public:
-  HealthImpl(std::unique_ptr<healthd_config>&& config)
-    : Health(std::move(config)) {}
+  public:
+    HealthImpl(std::string_view instance_name, std::unique_ptr<healthd_config>&& config)
+        : Health(std::move(instance_name), std::move(config)) {}
 
-  Return<void> getStorageInfo(getStorageInfo_cb _hidl_cb) override;
-  Return<void> getDiskStats(getDiskStats_cb _hidl_cb) override;
+    ndk::ScopedAStatus getDiskStats(std::vector<DiskStats>* out) override;
+    ndk::ScopedAStatus getStorageInfo(std::vector<StorageInfo>* out) override;
 
- protected:
-  void UpdateHealthInfo(HealthInfo* health_info) override;
-
+  protected:
+    void UpdateHealthInfo(HealthInfo* health_info) override;
 };
 
 void HealthImpl::UpdateHealthInfo(HealthInfo* health_info) {
-  struct BatteryProperties props;
-  convertFromHealthInfo(health_info->legacy.legacy, &props);
-  private_healthd_board_battery_update(&props);
-  convertToHealthInfo(&props, health_info->legacy.legacy);
+    private_healthd_board_battery_update(health_info);
 }
 
-Return<void> HealthImpl::getStorageInfo(getStorageInfo_cb _hidl_cb)
-{
-  std::vector<struct StorageInfo> info;
-  private_get_storage_info(info);
-  hidl_vec<struct StorageInfo> info_vec(info);
-  if (!info.size()) {
-      _hidl_cb(Result::NOT_SUPPORTED, info_vec);
-  } else {
-      _hidl_cb(Result::SUCCESS, info_vec);
-  }
-  return Void();
+ndk::ScopedAStatus HealthImpl::getStorageInfo(std::vector<StorageInfo>* out) {
+    private_get_storage_info(out);
+    if (out->empty()) {
+        return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+    }
+    return ndk::ScopedAStatus::ok();
 }
 
-Return<void> HealthImpl::getDiskStats(getDiskStats_cb _hidl_cb)
-{
-  std::vector<struct DiskStats> stats;
-  private_get_disk_stats(stats);
-  hidl_vec<struct DiskStats> stats_vec(stats);
-  if (!stats.size()) {
-      _hidl_cb(Result::NOT_SUPPORTED, stats_vec);
-  } else {
-      _hidl_cb(Result::SUCCESS, stats_vec);
-  }
-  return Void();
+ndk::ScopedAStatus HealthImpl::getDiskStats(std::vector<DiskStats>* out) {
+    private_get_disk_stats(out);
+    if (out->empty()) {
+        return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+    }
+    return ndk::ScopedAStatus::ok();
 }
 
-}  // namespace implementation
-}  // namespace V2_1
-}  // namespace health
-}  // namespace hardware
-}  // namespace android
+#ifndef __ANDROID_RECOVERY__
+class ChargerCallbackImpl : public ChargerCallback {
+  public:
+    ChargerCallbackImpl(const std::shared_ptr<HealthImpl>& service) : ChargerCallback(service) {}
+    bool ChargerEnableSuspend() override { return true; }
+};
+#endif
+}  // namespace aidl::android::hardware::health::implementation
 
-extern "C" IHealth* HIDL_FETCH_IHealth(const char* instance) {
-  using ::android::hardware::health::V2_1::implementation::HealthImpl;
-  if (instance != "default"sv) {
-      return nullptr;
-  }
-  auto config = std::make_unique<healthd_config>();
-  InitHealthdConfig(config.get());
+int main(int argc, char** argv) {
+#ifndef __ANDROID_RECOVERY__
+    using ::aidl::android::hardware::health::implementation::ChargerCallbackImpl;
+#endif
+    using ::aidl::android::hardware::health::implementation::HealthImpl;
 
-  private_healthd_board_init(config.get());
+    // Use kernel logging in recovery
+#ifdef __ANDROID_RECOVERY__
+    android::base::InitLogging(argv, android::base::KernelLogger);
+#endif
 
-  return new HealthImpl(std::move(config));
+    auto config = std::make_unique<healthd_config>();
+    InitHealthdConfig(config.get());
+
+    private_healthd_board_init(config.get());
+
+    auto binder = ndk::SharedRefBase::make<HealthImpl>("default"sv, std::move(config));
+
+    if (argc >= 2 && argv[1] == "--charger"sv) {
+        // In regular mode, start charger UI.
+#ifndef __ANDROID_RECOVERY__
+        LOG(INFO) << "Starting charger mode with UI.";
+        auto charger_callback = std::make_shared<ChargerCallbackImpl>(binder);
+        return ChargerModeMain(binder, charger_callback);
+#endif
+        // In recovery, ignore --charger arg.
+        LOG(INFO) << "Starting charger mode without UI.";
+    } else {
+        LOG(INFO) << "Starting health HAL.";
+    }
+
+    auto hal_health_loop = std::make_shared<HalHealthLoop>(binder, binder);
+    return hal_health_loop->StartLoop();
 }

@@ -1,0 +1,28 @@
+on fs
+    # For health HAL cycle count backup
+    mkdir /mnt/vendor/persist/battery 0700 system system
+
+on early-boot
+    # Health HAL needs to be able to RW
+    chown system system /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/cycle_counts_bins
+    chown system system /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/power_supply/bms/charge_full
+
+    # HardwareInfo needs to be able to read CC bins and charge_full
+    chmod 644 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/cycle_counts_bins
+    chmod 644 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/power_supply/bms/charge_full
+
+service vendor.health-loire /vendor/bin/hw/android.hardware.health-service.loire
+    class hal
+    user system
+    group system
+    capabilities WAKE_ALARM BLOCK_SUSPEND
+    file /dev/kmsg w
+
+service vendor.charger /vendor/bin/hw/android.hardware.health-service.loire --charger
+    class charger
+    user system
+    group system wakelock input graphics
+    capabilities SYS_BOOT
+    file /dev/kmsg w
+    file /sys/fs/pstore/console-ramoops-0 r
+    seclabel u:r:charger_vendor:s0

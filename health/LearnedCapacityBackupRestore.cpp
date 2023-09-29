@@ -112,8 +112,7 @@ void LearnedCapacityBackupRestore::UpdateAndSave() {
     bool backup = false;
     bool restore = false;
     if (hw_cap_) {
-        if (((hw_cap_ != sw_cap_) && (hw_cap_ != nom_cap_)) ||
-            (sw_cap_ == 0)) {
+        if (((hw_cap_ != sw_cap_) && (hw_cap_ != nom_cap_)) || (sw_cap_ == 0)) {
             sw_cap_ = hw_cap_;
             backup = true;
         } else if ((sw_cap_ > 0) && (hw_cap_ == nom_cap_)) {
@@ -121,10 +120,8 @@ void LearnedCapacityBackupRestore::UpdateAndSave() {
             restore = true;
         }
     }
-    if (restore)
-        SaveToSRAM();
-    if (backup)
-        SaveToStorage();
+    if (restore) SaveToSRAM();
+    if (backup) SaveToStorage();
 }
 
 }  // namespace health

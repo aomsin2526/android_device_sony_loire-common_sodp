@@ -18,24 +18,22 @@
 
 #include "BatteryInfoUpdate.h"
 
-#include <android-base/properties.h>
+using aidl::android::hardware::health::BatteryStatus;
+using aidl::android::hardware::health::HealthInfo;
 
 namespace device {
 namespace sony {
 namespace loire {
 namespace health {
 
-BatteryInfoUpdate::BatteryInfoUpdate() {
-}
+BatteryInfoUpdate::BatteryInfoUpdate() {}
 
-void BatteryInfoUpdate::update(struct android::BatteryProperties *props) {
-    if (props->batteryStatus == android::BATTERY_STATUS_NOT_CHARGING)
-        props->batteryStatus = android::BATTERY_STATUS_DISCHARGING;
-
+void BatteryInfoUpdate::update(HealthInfo* health_info) {
+    if (health_info->batteryStatus == BatteryStatus::NOT_CHARGING)
+        health_info->batteryStatus = BatteryStatus::DISCHARGING;
 }
 
 }  // namespace health
 }  // namespace loire
 }  // namespace sony
 }  // namespace device
-

@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-#ifndef DEVICE_SONY_LOIRE_HEALTH_BATTERYINFOUPDATE_H
-#define DEVICE_SONY_LOIRE_HEALTH_BATTERYINFOUPDATE_H
+#pragma once
 
+#include <aidl/android/hardware/health/HealthInfo.h>
 #include <batteryservice/BatteryService.h>
 
 namespace device {
@@ -27,14 +27,10 @@ namespace health {
 class BatteryInfoUpdate {
   public:
     BatteryInfoUpdate();
-    void update(struct android::BatteryProperties *props);
-
-  private:
+    void update(aidl::android::hardware::health::HealthInfo* health_info);
 };
 
 }  // namespace health
 }  // namespace loire
 }  // namespace sony
 }  // namespace device
-
-#endif // #ifndef DEVICE_SONY_LOIRE_HEALTH_BATTERYINFOUPDATE_H

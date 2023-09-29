@@ -122,9 +122,6 @@ on fs
 
     mkdir /mnt/vendor/persist/data 0700 system system
 
-    # For health HAL cycle count backup
-    mkdir /mnt/vendor/persist/battery 0700 system system
-
 on late-fs
     # Start services for bootanim
     start surfaceflinger
@@ -326,14 +323,6 @@ on early-boot
     chown system system /mnt/vendor/persist/sensors/registry/config
     chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
 
-    # Health HAL needs to be able to RW
-    chown system system /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/cycle_counts_bins
-    chown system system /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/power_supply/bms/charge_full
-
-    # HardwareInfo needs to be able to read CC bins and charge_full
-    chmod 644 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/cycle_counts_bins
-    chmod 644 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-02/200f000.qcom,spmi:qcom,pmi8950@2:qcom,fg/power_supply/bms/charge_full
-
 on boot
     # Access permission for Bluetooth
     chown bluetooth bluetooth /proc/bluetooth/sleep/lpm
@@ -434,13 +423,6 @@ on property:persist.vendor.radio.atfwd.start=false
 
 on property:vendor.radio.atfwd.start=false
     stop vendor.atfwd
-
-service vendor.charger /system/bin/charger
-    class charger
-    user system
-    group system graphics input
-    capabilities SYS_BOOT
-    seclabel u:r:charger:s0
 
 service vendor.qrtr-ns /vendor/bin/qrtr-ns -f
     class core

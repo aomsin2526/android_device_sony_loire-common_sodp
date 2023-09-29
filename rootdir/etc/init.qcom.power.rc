@@ -29,7 +29,7 @@ on boot
     # Enable sched boost
     write /proc/sys/kernel/sched_boost 1
 
-on charger
+on property:init.svc.vendor.charger=running
     # Disable thermal
     write /sys/module/msm_thermal/core_control/enabled 0
 

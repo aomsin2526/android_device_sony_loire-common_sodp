@@ -16,6 +16,9 @@
 
 #include "BatteryRechargingControl.h"
 
+using aidl::android::hardware::health::BatteryStatus;
+using aidl::android::hardware::health::HealthInfo;
+
 namespace device {
 namespace sony {
 namespace loire {
@@ -32,32 +35,31 @@ BatteryRechargingControl::BatteryRechargingControl() {
     recharge_soc_ = 0;
 }
 
-int BatteryRechargingControl::mapSysfsString(const char *str, struct sysfsStringEnumMap map[]) {
+template <typename T>
+static std::optional<T> mapSysfsString(const char* str, sysfsStringEnumMap<T> map[]) {
     for (int i = 0; map[i].s; i++)
-        if (!strncmp(str, map[i].s, strlen(map[i].s)))
-            return map[i].val;
+        if (!strcmp(str, map[i].s)) return map[i].val;
 
-    return -1;
+    return std::nullopt;
 }
 
-int BatteryRechargingControl::getBatteryStatus(const char *status) {
-    int ret;
-    struct sysfsStringEnumMap batteryStatusMap[] = {
-        {"Unknown", android::BATTERY_STATUS_UNKNOWN},
-        {"Charging", android::BATTERY_STATUS_CHARGING},
-        {"Discharging", android::BATTERY_STATUS_DISCHARGING},
-        {"Not charging", android::BATTERY_STATUS_NOT_CHARGING},
-        {"Full", android::BATTERY_STATUS_FULL},
-        {NULL, 0},
+BatteryStatus BatteryRechargingControl::getBatteryStatus(const char* status) {
+    static sysfsStringEnumMap<BatteryStatus> batteryStatusMap[] = {
+            {"Unknown", BatteryStatus::UNKNOWN},
+            {"Charging", BatteryStatus::CHARGING},
+            {"Discharging", BatteryStatus::DISCHARGING},
+            {"Not charging", BatteryStatus::NOT_CHARGING},
+            {"Full", BatteryStatus::FULL},
+            {NULL, BatteryStatus::UNKNOWN},
     };
 
-    ret = mapSysfsString(status, batteryStatusMap);
-    if (ret < 0) {
+    auto ret = mapSysfsString(status, batteryStatusMap);
+    if (!ret) {
         LOG(ERROR) << "Unknown battery status: " << status;
-        ret = android::BATTERY_STATUS_UNKNOWN;
+        *ret = BatteryStatus::UNKNOWN;
     }
 
-    return ret;
+    return *ret;
 }
 
 int64_t BatteryRechargingControl::getTime(void) {
@@ -66,13 +68,14 @@ int64_t BatteryRechargingControl::getTime(void) {
 
 int BatteryRechargingControl::RemapSOC(int soc) {
     double diff_sec = getTime() - start_time_;
-    double ret_soc =
-        round(soc * (diff_sec / kTransitionTime) + kFullSoc * (1 - (diff_sec / kTransitionTime)));
+    double ret_soc = round(soc * (diff_sec / kTransitionTime) +
+                           kFullSoc * (1 - (diff_sec / kTransitionTime)));
     LOG(INFO) << "RemapSOC: " << ret_soc;
     return ret_soc;
 }
 
-void BatteryRechargingControl::updateBatteryProperties(struct android::BatteryProperties *props) {
+void BatteryRechargingControl::updateBatteryProperties(
+        aidl::android::hardware::health::HealthInfo* health_info) {
     std::string charger_status;
     double elapsed_time;
     int cur_soc;
@@ -83,61 +86,60 @@ void BatteryRechargingControl::updateBatteryProperties(struct android::BatteryPr
     }
 
     charger_status = android::base::Trim(charger_status);
-    props->batteryStatus = getBatteryStatus(charger_status.c_str());
+    health_info->batteryStatus = getBatteryStatus(charger_status.c_str());
 
-    if ((state_ == INACTIVE) && (props->batteryLevel < kFullSoc))
-        return;
+    if ((state_ == INACTIVE) && (health_info->batteryLevel < kFullSoc)) return;
 
     LOG(INFO) << "Entry state_: " << state_ << " charger_status: " << charger_status
-              << " batteryLevel: " << props->batteryLevel;
+              << " batteryLevel: " << health_info->batteryLevel;
     switch (state_) {
         case INACTIVE:
             state_ = WAIT_EOC;
             recharge_soc_ = 0;
         case WAIT_EOC:
-            if (props->batteryLevel != kFullSoc) {
+            if (health_info->batteryLevel != kFullSoc) {
                 state_ = INACTIVE;
                 recharge_soc_ = 0;
             } else if (charger_status == kStatusIsFull) {
                 state_ = RECHARGING_CYCLE;
-                props->batteryLevel = kFullSoc;
+                health_info->batteryLevel = kFullSoc;
             } else if (charger_status != kStatusIsCharging) {
                 // charging stopped, assume no more power source
                 start_time_ = getTime();
                 state_ = NO_POWER_SOURCE;
-                props->batteryLevel = RemapSOC(props->batteryLevel);
+                health_info->batteryLevel = RemapSOC(health_info->batteryLevel);
             }
             break;
         case RECHARGING_CYCLE:
             if (charger_status == kStatusIsFull) {
                 recharge_soc_ = 0;
-                props->batteryLevel = kFullSoc;
+                health_info->batteryLevel = kFullSoc;
                 break;
             } else if (charger_status == kStatusIsCharging) {
                 // Recharging cycle start.
                 if (recharge_soc_ == 0) {
-                    recharge_soc_ = props->batteryLevel;
-                    props->batteryLevel = kFullSoc;
+                    recharge_soc_ = health_info->batteryLevel;
+                    health_info->batteryLevel = kFullSoc;
                 } else {
-                    if (props->batteryLevel < recharge_soc_) {
+                    if (health_info->batteryLevel < recharge_soc_) {
                         // overload condition
                         start_time_ = getTime();
                         state_ = OVER_LOADING;
-                        props->batteryLevel = RemapSOC(props->batteryLevel);
+                        health_info->batteryLevel = RemapSOC(health_info->batteryLevel);
                     } else {
-                        props->batteryLevel = kFullSoc;
+                        health_info->batteryLevel = kFullSoc;
                     }
                 }
             } else {
                 // charging stopped, assume no more power source
                 start_time_ = getTime();
                 state_ = NO_POWER_SOURCE;
-                props->batteryLevel = RemapSOC(props->batteryLevel);
+                health_info->batteryLevel = RemapSOC(health_info->batteryLevel);
             }
             break;
         case OVER_LOADING:
         case NO_POWER_SOURCE:
-            cur_soc = props->batteryLevel;
+            cur_soc = health_info->batteryLevel;
             elapsed_time = getTime() - start_time_;
             if (elapsed_time > kTransitionTime) {
                 LOG(INFO) << "Time is up, leave remap";
@@ -145,20 +147,20 @@ void BatteryRechargingControl::updateBatteryProperties(struct android::BatteryPr
                 break;
             } else {
                 LOG(INFO) << "Diff time: " << elapsed_time;
-                int battery_level = RemapSOC(props->batteryLevel);
-                if ((battery_level == props->batteryLevel) && (battery_level != kFullSoc)) {
+                int battery_level = RemapSOC(health_info->batteryLevel);
+                if ((battery_level == health_info->batteryLevel) && (battery_level != kFullSoc)) {
                     state_ = INACTIVE;
                     break;
                 }
-                props->batteryLevel = battery_level;
+                health_info->batteryLevel = battery_level;
             }
             if (charger_status == kStatusIsCharging) {
-                if ((props->batteryLevel == kFullSoc) && (cur_soc >= recharge_soc_)) {
+                if ((health_info->batteryLevel == kFullSoc) && (cur_soc >= recharge_soc_)) {
                     // When user plug in charger and the ret_soc is still 100%
                     // Change condition to Recharging cycle to avoid the SOC
                     // show lower than 100%. (Keep 100%)
                     state_ = RECHARGING_CYCLE;
-                    recharge_soc_ = props->batteryLevel;
+                    recharge_soc_ = health_info->batteryLevel;
                 }
             }
             break;
@@ -166,7 +168,7 @@ void BatteryRechargingControl::updateBatteryProperties(struct android::BatteryPr
             state_ = WAIT_EOC;
             break;
     }
-    LOG(INFO) << "Exit state_: " << state_ << " batteryLevel: " << props->batteryLevel;
+    LOG(INFO) << "Exit state_: " << state_ << " batteryLevel: " << health_info->batteryLevel;
 }
 
 }  // namespace health

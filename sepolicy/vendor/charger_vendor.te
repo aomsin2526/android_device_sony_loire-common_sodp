@@ -1,0 +1,6 @@
+r_dir_file(charger_vendor, sysfs_mmc)
+r_dir_file(charger_vendor, sysfs_mmc_host)
+
+allow charger_vendor mnt_vendor_file:dir search;
+allow charger_vendor persist_battery_file:dir rw_dir_perms;
+allow charger_vendor persist_battery_file:file create_file_perms;
