@@ -31,6 +31,8 @@
 #include "LearnedCapacityBackupRestore.h"
 #endif  // !__ANDROID_RECOVERY__
 
+#include "BatteryLed.h"
+
 #include <fstream>
 #include <iomanip>
 #include <string>
@@ -62,6 +64,10 @@ static CycleCountBackupRestore ccBackupRestoreBMS(
         8, kCycleCountsBins, "/mnt/vendor/persist/battery/qcom_cycle_counts_bins");
 static LearnedCapacityBackupRestore lcBackupRestore;
 #endif  // !__ANDROID_RECOVERY__
+
+using ::device::sony::loire::health::BatteryLed;
+static BatteryLed batteryLED;
+static bool useBatteryLED = false;
 
 #define EMMC_DIR "/sys/devices/platform/soc/7824900.sdhci"
 const std::string kEmmcHealthEol{EMMC_DIR "/health/eol"};
@@ -152,6 +158,8 @@ class HealthImpl : public Health {
 };
 
 void HealthImpl::UpdateHealthInfo(HealthInfo* health_info) {
+    if (useBatteryLED) batteryLED.update(health_info);
+
     private_healthd_board_battery_update(health_info);
 }
 
@@ -203,11 +211,15 @@ int main(int argc, char** argv) {
 #ifndef __ANDROID_RECOVERY__
         LOG(INFO) << "Starting charger mode with UI.";
         auto charger_callback = std::make_shared<ChargerCallbackImpl>(binder);
+        useBatteryLED = true;
         return ChargerModeMain(binder, charger_callback);
 #endif
         // In recovery, ignore --charger arg.
         LOG(INFO) << "Starting charger mode without UI.";
     } else {
+#ifdef __ANDROID_RECOVERY__
+        useBatteryLED = true;
+#endif  // __ANDROID_RECOVERY__
         LOG(INFO) << "Starting health HAL.";
     }
 

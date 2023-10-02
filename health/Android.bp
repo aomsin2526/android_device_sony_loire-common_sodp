@@ -22,7 +22,10 @@ cc_defaults {
     ],
     relative_install_path: "hw",
     vintf_fragments: ["android.hardware.health-service.loire.xml"],
-    srcs: ["Health.cpp"],
+    srcs: [
+        "BatteryLed.cpp",
+        "Health.cpp",
+    ],
     cflags: [
         "-Wall",
         "-Werror",
