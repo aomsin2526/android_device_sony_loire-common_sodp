@@ -141,9 +141,6 @@ on post-fs
     chown system graphics /dev/graphics/fb1
     chown system graphics /dev/graphics/fb2
 
-    # start clearpad_post_probe when filesystem is available for fwflash
-    write /sys/devices/virtual/input/clearpad/post_probe_start 1
-
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
 
