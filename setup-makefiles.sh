@@ -29,6 +29,9 @@ write_headers "kugo suzu"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
+if [ -s "${MY_DIR}/proprietary-files-recovery.txt" ]; then
+    echo "TARGET_RECOVERY_DEVICE_DIRS += vendor/$VENDOR/$DEVICE_COMMON/proprietary" >> "$BOARDMK"
+fi
 
 # Finish
 write_footers
@@ -42,6 +45,9 @@ if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
 
     # The standard device blobs
     write_makefiles "${MY_DIR}/../${DEVICE}/proprietary-files.txt" true
+    if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files-recovery.txt" ]; then
+        echo "TARGET_RECOVERY_DEVICE_DIRS += vendor/$VENDOR/$DEVICE/proprietary" >> "$BOARDMK"
+    fi
 
     # Finish
     write_footers
