@@ -44,6 +44,7 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Kernel properties
 TARGET_COMPILE_WITH_MSM_KERNEL := true
+TARGET_KERNEL_CONFIG := vendor/sony/loire_defconfig
 TARGET_KERNEL_SOURCE := kernel/sony/msm8956
 TARGET_KERNEL_VERSION := 4.9
 
