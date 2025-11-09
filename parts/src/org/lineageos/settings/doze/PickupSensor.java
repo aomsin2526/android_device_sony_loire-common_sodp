@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 The CyanogenMod Project
+ * Copyright (C) 2015 The CyanogenMod Project
  *               2017-2018,2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,35 +19,29 @@ package org.lineageos.settings.doze;
 
 import android.content.Context;
 import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.hardware.TriggerEvent;
+import android.hardware.TriggerEventListener;
 import android.util.Log;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class ProximitySensor implements SensorEventListener {
+public class PickupSensor {
 
     private static final boolean DEBUG = false;
-    private static final String TAG = "ProximitySensor";
-
-    // Minimum time until the device is considered to have been in the pocket: 2s
-    private static final int POCKET_MIN_DELTA_NS = 2000 * 1000 * 1000;
+    private static final String TAG = "PickupSensor";
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
     private Context mContext;
     private ExecutorService mExecutorService;
 
-    private boolean mSawNear = false;
-    private long mInPocketTime = 0;
-
-    public ProximitySensor(Context context) {
+    public PickupSensor(Context context) {
         mContext = context;
         mSensorManager = mContext.getSystemService(SensorManager.class);
-        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY, false);
+        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PICK_UP_GESTURE);
         mExecutorService = Executors.newSingleThreadExecutor();
     }
 
@@ -55,45 +49,26 @@ public class ProximitySensor implements SensorEventListener {
         return mExecutorService.submit(runnable);
     }
 
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-        boolean isNear = event.values[0] < mSensor.getMaximumRange();
-        if (mSawNear && !isNear) {
-            if (shouldPulse(event.timestamp)) {
-                DozeUtils.wakeOrLaunchDozePulse(mContext);
-            }
-        } else {
-            mInPocketTime = event.timestamp;
-        }
-        mSawNear = isNear;
-    }
-
-    private boolean shouldPulse(long timestamp) {
-        long delta = timestamp - mInPocketTime;
-
-        if (DozeUtils.isPocketGestureEnabled(mContext)) {
-            return delta >= POCKET_MIN_DELTA_NS;
-        }
-        return false;
-    }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        /* Empty */
-    }
-
     protected void enable() {
         if (DEBUG) Log.d(TAG, "Enabling");
         submit(() -> {
-            mSensorManager.registerListener(this, mSensor,
-                    SensorManager.SENSOR_DELAY_NORMAL);
+            mSensorManager.requestTriggerSensor(mPickupListener, mSensor);
         });
     }
 
     protected void disable() {
         if (DEBUG) Log.d(TAG, "Disabling");
         submit(() -> {
-            mSensorManager.unregisterListener(this, mSensor);
+            mSensorManager.cancelTriggerSensor(mPickupListener, mSensor);
         });
     }
+
+    private TriggerEventListener mPickupListener = new TriggerEventListener() {
+        @Override
+        public void onTrigger(TriggerEvent event) {
+            if (DEBUG) Log.d(TAG, "Triggered");
+            DozeUtils.wakeOrLaunchDozePulse(mContext);
+            enable();
+        }
+    };
 }

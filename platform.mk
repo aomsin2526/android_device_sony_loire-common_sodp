@@ -333,10 +333,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.loire
 
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
-
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.loire
@@ -348,16 +344,45 @@ PRODUCT_PACKAGES += \
 # VNDK
 PRODUCT_PACKAGES += \
     libgui_vendor \
-    libstdc++.vendor
+    libstdc++_vendor
 
 # Wifi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
+    android.hardware.wifi-service \
     hostapd \
     libwpa_client \
     WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
+
+###
+PRODUCT_PACKAGES += \
+    libion.vendor \
+    libnetutils.vendor \
+    libsqlite.vendor \
+    libprotobuf-cpp-full-3.9.1-vendorcompat \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat \
+    libhidlbase_shim \
+    libhidlbase_shim.vendor \
+    libpower.vendor \
+    android.frameworks.sensorservice@1.0.vendor \
+    libstagefright_softomx_plugin.vendor \
+    android.hardware.camera.common@1.0 \
+    android.hardware.camera.common@1.0.vendor \
+    android.hardware.camera.device@3.3 \
+    android.hardware.camera.device@3.3.vendor \
+    android.hardware.camera.device@3.4 \
+    android.hardware.camera.device@3.4.vendor \
+    android.hardware.camera.device@3.5 \
+    android.hardware.camera.device@3.5.vendor \
+    android.hardware.camera.device@3.6 \
+    android.hardware.camera.device@3.6.vendor \
+    android.hardware.camera.provider@2.4 \
+    android.hardware.camera.provider@2.4.vendor \
+    android.hardware.camera.provider@2.5 \
+    android.hardware.camera.provider@2.5.vendor \
+    android.hardware.camera.provider@2.6 \
+    android.hardware.camera.provider@2.6.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/bcmdhd.cal:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/bcmdhd/bcmdhd.cal \

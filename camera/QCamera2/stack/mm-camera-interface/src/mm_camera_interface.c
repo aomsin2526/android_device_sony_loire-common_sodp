@@ -3261,6 +3261,8 @@ int32_t mm_camera_load_shim_lib()
         return -1;
     }
 
+    int32_t (*mm_camera_shim_module_init)(mm_camera_shim_ops_t *shim_ops) = NULL;
+
     *(void **)&mm_camera_shim_module_init =
             dlsym(qdaemon_lib, "mct_shimlayer_process_module_init");
     if (!mm_camera_shim_module_init) {
