@@ -15,6 +15,7 @@
 /dev/block/bootdevice/by-name/splash        /misc                  emmc    defaults                                         defaults
 /dev/block/by-name/system                   /system                ext4    ro,barrier=1,discard                             wait,first_stage_mount
 /dev/block/by-name/oem                      /vendor                ext4    ro,barrier=1,discard                             wait,first_stage_mount
+/dev/block/by-name/oem                      /vendor                squashfs    ro,barrier=1                                     wait,first_stage_mount
 
 /devices/platform/soc/7864900.sdhci/mmc_host*       auto           auto    defaults                                         wait,voldmanaged=sdcard1:auto,noemulatedsd
 /devices/platform/soc/78db000.usb/msm_hsusb_host*   auto           auto    defaults                                         voldmanaged=usb:auto
