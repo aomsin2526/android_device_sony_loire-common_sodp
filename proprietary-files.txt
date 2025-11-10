@@ -265,7 +265,7 @@ system_ext/lib64/libdpmtcm.so|dff3d3dbacd18ed55b5758a174f5016ef9e7a896
 system_ext/lib64/vendor.qti.diaghal@1.0.so|dcc31fc969e846ea58ec91a37c1f1e77b49e731e
 vendor/bin/dpmQmiMgr|61a421804559b0e461439c19088acc01b871982a
 vendor/etc/init/dpmQmiMgr.rc|1538743661a5c48c15cd105beaad20f72953885a
-vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|d9f1aa7f93b928f42499d613d20ccbc60f279097
+vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so;MODULE_SUFFIX=_vendor|d9f1aa7f93b928f42499d613d20ccbc60f279097
 vendor/lib64/libdpmqmihal.so|41eb89e66ba065c43a5eb79cd3c72cef0ee167aa
 
 # DRM - from FP3 - REL-6.A.018.0-gms-1f4b2a90-user
@@ -421,7 +421,7 @@ vendor/lib64/vendor.qti.ims.rcsconfig@1.1.so|b2faf304adadcdd84b0dafeda6d4d568215
 vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so|aa98e9afc4cac9fa5be51bbba359a74973f9cf27
 vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so|62cd64dbb25d082cfdc742fb03931ba0f9abe434
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so|fa120eaa7807ff43f3974a8e0146a8c00c78f623
-vendor/lib64/vendor.qti.imsrtpservice@3.0.so|460e589128fce0b0e83bb3c75aa32f7e1a9494fd
+vendor/lib64/vendor.qti.imsrtpservice@3.0.so;MODULE_SUFFIX=_vendor|460e589128fce0b0e83bb3c75aa32f7e1a9494fd
 
 # IRQ balance - from FP3 - REL-6.A.018.0-gms-1f4b2a90-user
 vendor/bin/msm_irqbalance|b075c2f4092c175950a2c26d19bf2013e2efd6d5
@@ -478,7 +478,7 @@ system/etc/firmware/venus-v1.mbn:vendor/firmware/venus-v1.mbn
 system/etc/firmware/venus-v1.mdt:vendor/firmware/venus-v1.mdt
 
 # NFC
-system/lib64/hw/libpn547_fw.so:vendor/lib/libpn547_fw.so
+system/lib64/hw/libpn547_fw.so:vendor/lib64/libpn547_fw.so
 
 # Perf - from PAN_sprout - RKQ1.200928.002 (3.240)
 vendor/bin/hw/vendor.qti.hardware.perf@2.2-service|6b8f077dc724a202f3fc91c0255f88ad45cbdb62
