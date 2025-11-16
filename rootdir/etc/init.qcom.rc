@@ -55,11 +55,13 @@ on init
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
     # Update foreground cpuset now that processors are up
-    write /dev/cpuset/foreground/cpus 4-5
-    write /dev/cpuset/background/cpus 0-3
-    write /dev/cpuset/system-background/cpus 0-3
-    write /dev/cpuset/top-app/cpus 4-5
-    write /dev/cpuset/restricted/cpus 0-3
+    write /dev/cpuset/foreground/cpus 0-5
+    write /dev/cpuset/background/cpus 0-5
+    write /dev/cpuset/system-background/cpus 0-5
+    write /dev/cpuset/top-app/cpus 0-5
+    write /dev/cpuset/restricted/cpus 0-5
+    write /dev/cpuset/camera-daemon/cpus 0-5
+    write /dev/cpuset/foreground_window/cpus 0-5
 
     # Set default schedTune value for foreground/top-app
     write /dev/stune/foreground/schedtune.prefer_idle 1
