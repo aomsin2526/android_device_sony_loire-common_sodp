@@ -119,7 +119,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.-->
         <string name="gps.a_glonass_pos_protocol_select">2</string>
 
         <!-- Show 4G icon instead of LTE icon -->
-        <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+        <boolean name="show_4g_for_lte_data_icon_bool" value="false" />
 
         <!-- Show LTE+ icon if available -->
         <boolean name="hide_lte_plus_data_icon_bool" value="false" />
